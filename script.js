@@ -1,59 +1,40 @@
-const slider = document.querySelector('.slider-wrapper');
 const boxes = document.querySelectorAll('.info-box');
-const totalPages = boxes.length;
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
 let current = 0;
 
-// Function to update slider position
-function updateSlider() {
-  const offset = -current * 520; // box width + margin
-  slider.style.transform = `translateX(${offset}px)`;
+function showBox(newIndex) {
+  if(newIndex === current) return;
+
+  const oldBox = boxes[current];
+  const newBox = boxes[newIndex];
+
+  // Determine direction
+  if(newIndex > current || (current === boxes.length -1 && newIndex === 0)) {
+    oldBox.classList.remove('active','left','right');
+    oldBox.classList.add('left'); // slide left
+    newBox.classList.remove('left','right');
+    newBox.classList.add('active'); // slide in from right
+  } else {
+    oldBox.classList.remove('active','left','right');
+    oldBox.classList.add('right'); // slide right
+    newBox.classList.remove('left','right');
+    newBox.classList.add('active'); // slide in from left
+  }
+
+  current = newIndex;
 }
 
-// Attach arrow events to all buttons
-boxes.forEach((box, index) => {
-  const prevBtn = box.querySelector('#prev') || box.querySelector(`#prev${index+1}`);
-  const nextBtn = box.querySelector('#next') || box.querySelector(`#next${index+1}`);
-
-  prevBtn.addEventListener('click', () => {
-    current = (current - 1 + totalPages) % totalPages;
-    updateSlider();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    current = (current + 1) % totalPages;
-    updateSlider();
-  });
+prevBtn.addEventListener('click', () => {
+  const newIndex = (current - 1 + boxes.length) % boxes.length;
+  showBox(newIndex);
 });
 
-// Initialize slider
-updateSlider();
-const slider = document.querySelector('.slider-wrapper');
-const boxes = document.querySelectorAll('.info-box');
-const totalPages = boxes.length;
-let current = 0;
-
-// Function to update slider position
-function updateSlider() {
-  const offset = -current * 520; // box width + margin
-  slider.style.transform = `translateX(${offset}px)`;
-}
-
-// Attach arrow events to all buttons
-boxes.forEach((box, index) => {
-  const prevBtn = box.querySelector('#prev') || box.querySelector(`#prev${index+1}`);
-  const nextBtn = box.querySelector('#next') || box.querySelector(`#next${index+1}`);
-
-  prevBtn.addEventListener('click', () => {
-    current = (current - 1 + totalPages) % totalPages;
-    updateSlider();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    current = (current + 1) % totalPages;
-    updateSlider();
-  });
+nextBtn.addEventListener('click', () => {
+  const newIndex = (current + 1) % boxes.length;
+  showBox(newIndex);
 });
 
-// Initialize slider
-updateSlider();
-
+// Initialize
+boxes[current].classList.add('active');
