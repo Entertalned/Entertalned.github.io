@@ -60,12 +60,14 @@ body::before {
   line-height: 1.6;
 }
 
-.social-links {
+/* Top-right social icons */
+.top-socials {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   display: flex;
   gap: 15px;
-  margin-top: 15px;
-  justify-content: center;
-  align-items: center;
+  z-index: 20;
 }
 
 .social-link img {
@@ -108,7 +110,8 @@ body::before {
   z-index: 10;
 }
 
-.github-link:hover .github-dropdown {
+.github-link:hover .github-dropdown,
+.github-dropdown:hover {
   opacity: 1;
   pointer-events: auto;
 }
@@ -123,5 +126,19 @@ body::before {
   .box {
     width: 85%;
     margin: 150px auto;
+  }
+
+  .top-socials {
+    gap: 10px;
+  }
+
+  .social-link img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .github-dropdown img {
+    width: 30px;
+    height: 30px;
   }
 }
