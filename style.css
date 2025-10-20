@@ -76,6 +76,13 @@ body::before {
   transform: scale(1.1);
   box-shadow: 0 0 40px rgba(255, 0, 0, 1);
   border-color: #ff3333;
+  <div class="dropdown">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+    </div>
+ </div>
 }
 
 @media (max-width: 768px) {
