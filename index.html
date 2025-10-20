@@ -3,28 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entertained</title>
+  <title>Red-Themed Panel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="content">
-    <h1>Welcome, I heard you wanted to know more?</h1>
-    <p class="description">Well, here ya go!.</p>
+    <div class="info-box">
+      <!-- Tabs/buttons to switch pages -->
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-page="1">Page 1</button>
+        <button class="tab-btn" data-page="2">Page 2</button>
+        <button class="tab-btn" data-page="3">Page 3</button>
+      </div>
 
-    <div class="box-container">
-      <div class="info-box">
-        <h3>Box 1</h3>
-        <p>Feature or description of Box 1.</p>
-      </div>
-      <div class="info-box">
-        <h3>Box 2</h3>
-        <p>Feature or description of Box 2.</p>
-      </div>
-      <div class="info-box">
-        <h3>Box 3</h3>
-        <p>Feature or description of Box 3.</p>
+      <!-- Page content -->
+      <div class="tab-content">
+        <div class="page" id="page1">
+          <h3>Page 1</h3>
+          <p>Welcome to the first page of the red-themed panel!</p>
+        </div>
+        <div class="page" id="page2">
+          <h3>Page 2</h3>
+          <p>This is the second page. Add any content you like here.</p>
+        </div>
+        <div class="page" id="page3">
+          <h3>Page 3</h3>
+          <p>Here is the third page of the panel. Keep it interactive!</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
