@@ -61,10 +61,15 @@ body::before {
 }
 
 /* GitHub link image */
+.github-link {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
 .github-link img {
   width: 80px;
   height: auto;
-  margin-top: 20px;
   border: 2px solid #ff0000;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
@@ -76,13 +81,47 @@ body::before {
   transform: scale(1.1);
   box-shadow: 0 0 40px rgba(255, 0, 0, 1);
   border-color: #ff3333;
-  <div class="dropdown">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-    </div>
- </div>
+}
+
+/* GitHub dropdown menu */
+.github-dropdown {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 100%; /* below the GitHub icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 10px 15px;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.github-link:hover .github-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(10px);
+}
+
+.github-dropdown img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+
+.github-dropdown img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+  border-color: #ff3333;
 }
 
 @media (max-width: 768px) {
@@ -90,7 +129,13 @@ body::before {
     width: 85%;
     margin: 150px auto;
   }
+
+  .github-dropdown {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
+
 /* Social icon row */
 .social-links {
   display: flex;
@@ -101,7 +146,7 @@ body::before {
 }
 
 .social-link img {
-  width: 45px; /* smaller size */
+  width: 45px;
   height: 45px;
   border: 2px solid #ff0000;
   border-radius: 50%;
@@ -114,35 +159,4 @@ body::before {
   transform: scale(1.15);
   box-shadow: 0 0 15px rgba(255, 0, 0, 1);
   border-color: #ff3333;
-}
-.github-link {
-  position: relative;
-  display: inline-block;
-}
-
-.github-dropdown {
-  display: none;
-  position: absolute;
-  top: 110%; /* slightly below the button */
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  border: 2px solid #ff0000;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-  z-index: 10;
-  white-space: nowrap;
-}
-
-.github-dropdown img {
-  width: 40px;
-  height: 40px;
-  margin: 0 5px;
-  border-radius: 5px;
-  border: 1px solid #ff0000;
-}
-
-.github-link:hover .github-dropdown {
-  display: flex;
 }
