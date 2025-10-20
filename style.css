@@ -1,75 +1,80 @@
-/* Background setup */
-body {
+/* === GLOBAL STYLES === */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  scroll-behavior: smooth;
+  color: white;
+}
+
+/* === BACKGROUND GIF === */
+body {
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  position: relative;
   overflow-x: hidden;
 }
 
-/* Dark overlay for contrast */
+/* === DARK OVERLAY FOR CONTRAST === */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   z-index: 0;
 }
 
-/* Each box fills the screen vertically */
-.box {
+/* === CONTAINER TO HOLD BOXES === */
+.content {
   position: relative;
   z-index: 1;
-  min-height: 100vh;           /* full screen height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px; /* space between boxes */
+  padding: 100px 0;
+}
+
+/* === INDIVIDUAL BOXES === */
+.box {
+  width: 80%;
+  min-height: 100vh; /* each box takes full screen height */
+  border: 4px solid #ff0000;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 50px;
-  border: 4px solid #ff0000;   /* BRIGHT red outline */
-  border-radius: 15px;
-  margin: 100px 0;             /* space between boxes */
-  background: rgba(0, 0, 0, 0.6); /* translucent dark background */
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+  transition: all 0.3s ease;
 }
 
-/* Text styles */
+/* === TEXT STYLES === */
 .box h2 {
-  font-size: 2.5rem;
-  color: #ff4d4d;
-  text-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+  font-size: 3rem;
+  color: #ff3b3b;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 20px;
 }
 
 .box p {
-  font-size: 1.2rem;
-  color: #ff9999;
-  text-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+  font-size: 1.3rem;
+  color: #ffb3b3;
   max-width: 700px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
 }
 
-/* Hover effect to make boxes glow more */
+/* === HOVER EFFECT === */
 .box:hover {
-  box-shadow: 0 0 60px rgba(255, 0, 0, 1);
-  border-color: #ff3333;
   transform: scale(1.02);
-  transition: all 0.3s ease;
-}
-
-/* Responsive tweak */
-@media (max-width: 700px) {
-  .box h2 {
-    font-size: 2rem;
-  }
-
-  .box p {
-    font-size: 1rem;
-  }
+  border-color: #ff4444;
+  box-shadow: 0 0 60px rgba(255, 0, 0, 0.9);
 }
