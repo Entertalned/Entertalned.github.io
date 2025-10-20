@@ -32,15 +32,15 @@ body::before {
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #00e0ff;
-  text-shadow: 0 0 20px rgba(0,224,255,0.8);
+  color: #ff4d4d; /* red title */
+  text-shadow: 0 0 20px rgba(255,77,77,0.8);
 }
 
 .description {
   font-size: 1.2rem;
   margin-bottom: 50px;
-  color: #80f0ff;
-  text-shadow: 0 0 10px rgba(0,224,255,0.5);
+  color: #ff9999;
+  text-shadow: 0 0 10px rgba(255,77,77,0.5);
 }
 
 /* Boxes container */
@@ -51,35 +51,35 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* Themed boxes matching GIF vibe */
+/* Red-themed boxes */
 .info-box {
-  background: rgba(0, 0, 0, 0.55); /* semi-transparent */
-  border: 2px solid #00e0ff;       /* neon cyan border */
+  background: rgba(0, 0, 0, 0.55);       /* semi-transparent for GIF */
+  border: 2px solid #ff4d4d;             /* red neon border */
   border-radius: 12px;
   padding: 25px;
   width: 280px;
   min-height: 150px;
-  box-shadow: 0 0 25px rgba(0,224,255,0.5);
+  box-shadow: 0 0 25px rgba(255,77,77,0.5);
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .info-box:hover {
   transform: translateY(-5px);
-  border-color: #00ffff;
-  box-shadow: 0 0 35px rgba(0,255,255,0.7);
+  border-color: #ff1a1a;
+  box-shadow: 0 0 35px rgba(255,26,26,0.7);
 }
 
 .info-box h3 {
   margin: 0 0 12px;
-  color: #00e0ff;
-  text-shadow: 0 0 15px rgba(0,224,255,0.7);
+  color: #ff4d4d;
+  text-shadow: 0 0 15px rgba(255,77,77,0.7);
 }
 
 .info-box p {
   margin: 0;
-  color: #80f0ff;
+  color: #ff9999;
   font-size: 1rem;
-  text-shadow: 0 0 8px rgba(0,224,255,0.5);
+  text-shadow: 0 0 8px rgba(255,77,77,0.5);
 }
 
 /* Responsive */
