@@ -97,7 +97,7 @@ body::before {
   color: #ff4d4d;
   text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 20px;
-  text-align: center; !Important 
+  text-align: center; !important 
 }
 
 /* About Me list */
