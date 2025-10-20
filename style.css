@@ -82,7 +82,7 @@ body::before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -97,14 +97,15 @@ body::before {
   color: #ff4d4d;
   text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 15px;
+  text-align: center;
 }
 
-.box p {
-  font-size: 1.1rem;
+.about-list {
+  list-style-type: disc; /* bullet points */
+  padding-left: 20px;
   color: #ffb3b3;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  max-width: 600px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 @media (max-width: 768px) {
