@@ -1,31 +1,42 @@
-const tabs = document.querySelectorAll('.tab-btn');
 const pages = document.querySelectorAll('.page');
-let currentPage = 0;
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
 
-function showPage(index) {
-  if(index === currentPage) return;
+let current = 0;
 
-  const oldPage = pages[currentPage];
-  const newPage = pages[index];
+function showPage(newIndex, direction) {
+  if (newIndex === current) return;
 
-  // Animate old page left
-  oldPage.classList.remove('active');
-  oldPage.classList.add('exit-left');
+  const oldPage = pages[current];
+  const newPage = pages[newIndex];
 
-  // Prepare new page
-  newPage.classList.remove('exit-left');
-  setTimeout(() => newPage.classList.add('active'), 20); // slight delay to trigger transition
+  // Set animation classes
+  if(direction === 'next') {
+    oldPage.classList.remove('active');
+    oldPage.classList.add('exit-left');
+    newPage.classList.remove('exit-left', 'exit-right');
+    newPage.style.left = '100%';
+    setTimeout(() => newPage.classList.add('active'), 20);
+  } else if(direction === 'prev') {
+    oldPage.classList.remove('active');
+    oldPage.classList.add('exit-right');
+    newPage.classList.remove('exit-left', 'exit-right');
+    newPage.style.left = '-100%';
+    setTimeout(() => newPage.classList.add('active'), 20);
+  }
 
-  // Update active button
-  tabs[currentPage].classList.remove('active');
-  tabs[index].classList.add('active');
-
-  currentPage = index;
+  current = newIndex;
 }
 
-// Initial page
-pages[currentPage].classList.add('active');
-
-tabs.forEach((tab, idx) => {
-  tab.addEventListener('click', () => showPage(idx));
+prevBtn.addEventListener('click', () => {
+  const newIndex = (current - 1 + pages.length) % pages.length;
+  showPage(newIndex, 'prev');
 });
+
+nextBtn.addEventListener('click', () => {
+  const newIndex = (current + 1) % pages.length;
+  showPage(newIndex, 'next');
+});
+
+// Initialize first page
+pages[current].classList.add('active');
