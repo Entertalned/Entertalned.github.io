@@ -1,80 +1,116 @@
-/* === GLOBAL STYLES === */
+/* Global setup */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-family: "Segoe UI", Arial, sans-serif;
-  scroll-behavior: smooth;
-  color: white;
-}
-
-/* === BACKGROUND GIF === */
 body {
+  height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
   background-size: cover;
-  position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+  color: #fff;
 }
 
-/* === DARK OVERLAY FOR CONTRAST === */
+/* Dark overlay for readability */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
-/* === CONTAINER TO HOLD BOXES === */
-.content {
+/* Center container */
+.container {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 150px; /* space between boxes */
-  padding: 100px 0;
+  text-align: center;
 }
 
-/* === INDIVIDUAL BOXES === */
+/* Box styling */
 .box {
-  width: 80%;
-  min-height: 100vh; /* each box takes full screen height */
+  width: 70vw;
+  max-width: 800px;
+  height: 60vh;
   border: 4px solid #ff0000;
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.7);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Each page inside the box */
+.page {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
 }
 
-/* === TEXT STYLES === */
-.box h2 {
-  font-size: 3rem;
-  color: #ff3b3b;
+.page.active {
+  left: 0;
+  opacity: 1;
+}
+
+.page.exit-left {
+  left: -100%;
+  opacity: 0;
+}
+
+/* Text styling */
+.page h2 {
+  font-size: 2.5rem;
+  color: #ff4d4d;
   text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 20px;
 }
 
-.box p {
+.page p {
   font-size: 1.3rem;
-  color: #ffb3b3;
-  max-width: 700px;
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  color: #ffcccc;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+  max-width: 600px;
 }
 
-/* === HOVER EFFECT === */
-.box:hover {
-  transform: scale(1.02);
-  border-color: #ff4444;
-  box-shadow: 0 0 60px rgba(255, 0, 0, 0.9);
+/* Buttons */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+button {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ff0000;
+  color: #ff4d4d;
+  font-size: 2rem;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+button:hover {
+  background: #ff0000;
+  color: white;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
 }
