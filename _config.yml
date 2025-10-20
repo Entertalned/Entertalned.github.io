@@ -1,5 +1,1 @@
-name: [Extension GUI]
-remote_theme: pages-themes/midnight@v0.2.0
-plugins:
-- jekyll-remote-theme 
-description: [This is a total test]
+
