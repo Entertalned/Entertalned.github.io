@@ -21,51 +21,49 @@ body::before {
   z-index: 0;
 }
 
-/* Top Bar */
+/* Top bar */
 .top-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #000;
-  border-bottom: 2px solid red;
+  background-color: #000; /* fully solid black */
+  border-bottom: 3px solid red;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  padding: 0 20px;
+  z-index: 1000;
 }
 
-.top-bar .site-name {
-  font-size: 1.5rem;
-  color: #ff4d4d;
-  font-weight: bold;
-}
-
-/* Social Buttons */
+/* Social buttons on left */
 .social-buttons {
-  position: fixed;
-  top: 10px;
-  right: 10px;
   display: flex;
   gap: 10px;
-  z-index: 101; /* above top-bar */
 }
 
-.social-buttons .social-link img {
-  width: 45px;
-  height: 45px;
+.social-link img {
+  width: 40px;
+  height: 40px;
   border: 2px solid #ff0000;
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.6);
-  box-shadow: 0 0 10px rgba(255,0,0,0.6);
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.social-buttons .social-link img:hover {
+.social-link img:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255,0,0,1);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
   border-color: #ff3333;
+}
+
+/* Site name on right */
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d4d;
 }
 
 /* Boxes */
@@ -74,7 +72,7 @@ body::before {
   z-index: 1;
   width: 50%;
   min-height: 250px;
-  margin: 100px auto;
+  margin: 120px auto 50px; /* leave space for top bar */
   padding: 40px 30px;
   border: 3px solid #ff0000;
   border-radius: 15px;
