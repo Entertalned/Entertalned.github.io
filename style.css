@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -21,8 +20,7 @@ body::before {
   z-index: 0;
 }
 
-/* Top black bar overlaying boxes */
-/* Solid black top bar */
+/* Top Bar */
 .top-bar {
   position: fixed;
   top: 0;
@@ -30,45 +28,46 @@ body::before {
   width: 100%;
   height: 60px;
   background-color: #000; /* solid black */
-  border-bottom: 3px solid #ff0000; /* red outline */
-  z-index: 1; /* below buttons */
-}
-
-
-/* Social buttons top left */
-.social-top-left {
-  position: fixed;
-  top: 10px; /* vertical offset inside the bar */
-  left: 20px;
+  border-bottom: 3px solid #ff0000;
   display: flex;
-  gap: 10px;
-  z-index: 2; /* above bar */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 10;
 }
 
-.top-button img {
+/* Bar title */
+.bar-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px; /* shift slightly right */
+}
+
+/* Top Buttons */
+.top-buttons a img {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  margin-left: 15px;
   border: 2px solid #ff0000;
-  border-radius: 50%;
-  background-color: rgba(0,0,0,0.6);
-  box-shadow: 0 0 10px rgba(255,0,0,0.6);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.top-button img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255,0,0,1);
+.top-buttons a img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1);
   border-color: #ff3333;
 }
 
 /* Boxes */
 .box {
   position: relative;
-  z-index: 0; /* below top bar */
+  z-index: 1;
   width: 50%;
   min-height: 250px;
-  margin: 100px auto 50px auto; /* top margin ensures bar overlays */
+  margin: 120px auto; /* top margin adjusted for top bar */
   padding: 40px 30px;
   border: 3px solid #ff0000;
   border-radius: 15px;
@@ -84,38 +83,28 @@ body::before {
 
 .box:hover {
   transform: scale(1.04);
-  box-shadow: 0 0 40px rgba(255,0,0,0.9);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
   border-color: #ff3333;
 }
 
 .box h2 {
   font-size: 1.8rem;
   color: #ff4d4d;
-  text-shadow: 0 0 20px rgba(255,0,0,1);
+  text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 15px;
 }
 
 .box p {
   font-size: 1.1rem;
   color: #ffb3b3;
-  text-shadow: 0 0 10px rgba(255,0,0,0.5);
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   max-width: 600px;
   line-height: 1.6;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .box {
     width: 85%;
-    margin: 120px auto 40px auto;
-  }
-
-  .top-button img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .social-top-left {
-    gap: 8px;
+    margin: 150px auto;
   }
 }
