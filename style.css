@@ -68,6 +68,7 @@ body::before {
   display: flex;
   gap: 15px;
   z-index: 20;
+  align-items: center;
 }
 
 .social-link img {
@@ -87,13 +88,13 @@ body::before {
 }
 
 /* GitHub dropdown */
-.github-link {
+.github-link-wrapper {
   position: relative;
 }
 
 .github-dropdown {
   position: absolute;
-  top: 60px;
+  top: 55px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -110,7 +111,8 @@ body::before {
   z-index: 10;
 }
 
-.github-link:hover .github-dropdown,
+/* Show dropdown only when hovering GitHub or the dropdown itself */
+.github-link-wrapper:hover .github-dropdown,
 .github-dropdown:hover {
   opacity: 1;
   pointer-events: auto;
