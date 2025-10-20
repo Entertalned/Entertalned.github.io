@@ -1,10 +1,11 @@
-/* Global reset */
+/* Reset defaults */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Background setup */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
@@ -13,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Subtle overlay for readability */
+/* Dark overlay for readability */
 body::before {
   content: "";
   position: fixed;
@@ -22,18 +23,18 @@ body::before {
   z-index: 0;
 }
 
-/* Box styling */
+/* Box layout */
 .box {
   position: relative;
   z-index: 1;
-  width: 20%;               /* smaller width */
-  min-height: 60vh;         /* smaller height so you scroll more */
-  margin: 150px auto;       /* space between boxes */
-  padding: 50px 30px;
+  width: 50%;               /* smaller width */
+  min-height: 250px;        /* much smaller height */
+  margin: 200px auto;       /* centered + spaced */
+  padding: 40px 30px;
   border: 3px solid #ff0000;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,40 +43,33 @@ body::before {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover glow */
 .box:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 50px rgba(255, 0, 0, 0.9);
+  transform: scale(1.04);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
   border-color: #ff3333;
 }
 
-/* Heading and paragraph styling */
+/* Text styles */
 .box h2 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   color: #ff4d4d;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
-  margin-bottom: 15px;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 1);
+  margin-bottom: 10px;
 }
 
 .box p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #ffb3b3;
-  max-width: 700px;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  max-width: 600px;
 }
 
-/* Responsive adjustment */
+/* Responsive tweak */
 @media (max-width: 768px) {
   .box {
-    width: 90%;
-    min-height: 50vh;
-    margin: 100px auto;
-  }
-
-  .box h2 {
-    font-size: 1.8rem;
-  }
-
-  .box p {
-    font-size: 1rem;
+    width: 85%;
+    min-height: 200px;
+    margin: 150px auto;
   }
 }
