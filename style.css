@@ -26,7 +26,7 @@ body::before {
 .box {
   position: relative;
   z-index: 1;
-  width: 70%;               /* smaller width */
+  width: 20%;               /* smaller width */
   min-height: 60vh;         /* smaller height so you scroll more */
   margin: 150px auto;       /* space between boxes */
   padding: 50px 30px;
