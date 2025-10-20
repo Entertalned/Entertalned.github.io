@@ -3,23 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red-Themed Scrolling Boxes</title>
+  <title>Red Themed Pages</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="box">
-    <h2>Box 1</h2>
-    <p>This is the first red-themed box. Scroll down to see more.</p>
-  </section>
+  <div class="container">
+    <div class="box">
+      <div class="page active">
+        <h2>Page 1</h2>
+        <p>This is the first page of your red-themed box.</p>
+      </div>
+      <div class="page">
+        <h2>Page 2</h2>
+        <p>This is the second page. Keep going!</p>
+      </div>
+      <div class="page">
+        <h2>Page 3</h2>
+        <p>This is the final page. Looks good!</p>
+      </div>
+    </div>
 
-  <section class="box">
-    <h2>Box 2</h2>
-    <p>This is the second box. Keep scrolling!</p>
-  </section>
+    <div class="controls">
+      <button id="prevBtn">&lt;</button>
+      <button id="nextBtn">&gt;</button>
+    </div>
+  </div>
 
-  <section class="box">
-    <h2>Box 3</h2>
-    <p>This is the third box. Nice scrolling!</p>
-  </section>
+  <script src="script.js"></script>
 </body>
 </html>
