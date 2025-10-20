@@ -29,7 +29,7 @@ body::before {
   background-color: #000;
   border-bottom: 2px solid red;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 10px 20px;
   z-index: 10;
@@ -39,12 +39,6 @@ body::before {
   width: 40px;
   height: 40px;
   margin-right: 10px;
-}
-
-.top-bar .site-name {
-  color: #ff4d4d;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 /* Box Styling */
@@ -62,8 +56,8 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: center; /* centers content horizontally */
+  text-align: center;  /* centers text inside boxes */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -85,11 +79,11 @@ body::before {
 .about-list {
   list-style-type: disc;
   padding-left: 20px;
-  text-align: left;
   color: #ffb3b3;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   max-width: 600px;
   line-height: 1.6;
+  text-align: left; /* keeps bullets aligned */
 }
 
 .about-list li {
@@ -145,9 +139,5 @@ body::before {
   .top-bar {
     flex-direction: column;
     gap: 10px;
-  }
-
-  .top-bar .site-name {
-    margin-top: 5px;
   }
 }
