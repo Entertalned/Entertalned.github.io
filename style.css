@@ -18,3 +18,50 @@ a {
 a:hover {
   text-decoration: underline;
 }
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #8b949e;
+}
+
+/* Layout for the boxes */
+.box-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* lets them wrap on smaller screens */
+}
+
+.info-box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+}
+
+.info-box h3 {
+  color: #58a6ff;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  color: #8b949e;
+  font-size: 0.95rem;
+}
