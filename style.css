@@ -28,7 +28,7 @@ body::before {
   position: relative;
   z-index: 1;
   width: 50%;               /* smaller width */
-  min-height: 250px;        /* much smaller height */
+  min-height: 20px;        /* much smaller height */
   margin: 200px auto;       /* centered + spaced */
   padding: 40px 30px;
   border: 3px solid #ff0000;
