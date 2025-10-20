@@ -87,16 +87,15 @@ body::before {
   border-color: #ff3333;
 }
 
-/* GitHub dropdown */
 .github-link-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column; /* Stack icon + dropdown */
+  align-items: center;
 }
 
 .github-dropdown {
-  position: absolute;
-  top: 55px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 5px; /* small space between icon and dropdown */
   display: flex;
   gap: 10px;
   padding: 10px;
@@ -107,16 +106,18 @@ body::before {
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  transform: translateY(-5px); /* small upward offset */
   z-index: 10;
 }
 
-/* Show dropdown only when hovering GitHub or the dropdown itself */
 .github-link-wrapper:hover .github-dropdown,
 .github-dropdown:hover {
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(0); /* slide into place */
 }
+
 
 .github-dropdown img {
   width: 40px;
