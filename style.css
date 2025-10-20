@@ -1,3 +1,4 @@
+/* Reset & base styles */
 * {
   margin: 0;
   padding: 0;
@@ -27,37 +28,43 @@ body::before {
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #000; /* solid black */
-  border-bottom: 3px solid #ff0000;
+  background-color: #000;
+  border-bottom: 2px solid red;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 10;
+  z-index: 100;
 }
 
-/* Bar title */
-.bar-title {
-  color: #fff;
+.top-bar .site-name {
   font-size: 1.5rem;
+  color: #ff4d4d;
   font-weight: bold;
-  margin-left: 10px; /* shift slightly right */
 }
 
-/* Top Buttons */
-.top-buttons a img {
-  width: 40px;
-  height: 40px;
-  margin-left: 15px;
+/* Social Buttons */
+.social-buttons {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 101; /* above top-bar */
+}
+
+.social-buttons .social-link img {
+  width: 45px;
+  height: 45px;
   border: 2px solid #ff0000;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.6);
+  box-shadow: 0 0 10px rgba(255,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.top-buttons a img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+.social-buttons .social-link img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(255,0,0,1);
   border-color: #ff3333;
 }
 
@@ -67,7 +74,7 @@ body::before {
   z-index: 1;
   width: 50%;
   min-height: 250px;
-  margin: 120px auto; /* top margin adjusted for top bar */
+  margin: 100px auto;
   padding: 40px 30px;
   border: 3px solid #ff0000;
   border-radius: 15px;
