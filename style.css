@@ -25,7 +25,7 @@ body::before {
   z-index: 1;
   width: 50%;
   min-height: 250px;
-  margin: 50px auto;
+  margin: 200px auto;
   padding: 40px 30px;
   border: 3px solid #ff0000;
   border-radius: 15px;
@@ -60,13 +60,38 @@ body::before {
   line-height: 1.6;
 }
 
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link img {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #ff0000;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.social-link img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  border-color: #ff3333;
+}
+
+/* GitHub dropdown */
 .github-link {
   position: relative;
 }
 
 .github-dropdown {
   position: absolute;
-  top: 90px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -76,17 +101,27 @@ body::before {
   border: 2px solid #ff0000;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255,0,0,0.6);
-  
-  /* HIDE dropdown by default */
+
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 10;
 }
 
-/* SHOW dropdown when hovering over GitHub icon */
 .github-link:hover .github-dropdown {
   opacity: 1;
   pointer-events: auto;
 }
 
+.github-dropdown img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .box {
+    width: 85%;
+    margin: 150px auto;
+  }
+}
