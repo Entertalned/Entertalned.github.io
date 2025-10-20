@@ -81,8 +81,8 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* align top */
-  align-items: flex-start;     /* align left for list */
-  text-align: left;
+  align-items: center;         /* center content horizontally */
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -109,11 +109,23 @@ body::before {
   line-height: 1.8;
 }
 
+/* Center list text inside box */
+.centered-list {
+  text-align: center;
+}
+
 /* Fix first bullet alignment */
 .about-list li {
   display: list-item;
-  text-align: left;
+  text-align: center;
   margin-bottom: 10px;
+}
+
+/* Projects box text */
+.projects-text {
+  color: #ffb3b3;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  line-height: 1.8;
 }
 
 @media (max-width: 768px) {
@@ -122,3 +134,4 @@ body::before {
     margin: 150px auto;
   }
 }
+
