@@ -25,7 +25,7 @@ body::before {
   z-index: 1;
   width: 50%;
   min-height: 250px;
-  margin: 200px auto;
+  margin: 50px auto;
   padding: 40px 30px;
   border: 3px solid #ff0000;
   border-radius: 15px;
@@ -60,83 +60,49 @@ body::before {
   line-height: 1.6;
 }
 
-/* GitHub link image */
+/* GitHub dropdown */
 .github-link {
   position: relative;
-  display: inline-block;
-  margin-top: 20px;
 }
 
-.github-link img {
-  width: 80px;
-  height: auto;
-  border: 2px solid #ff0000;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.github-link img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 40px rgba(255, 0, 0, 1);
-  border-color: #ff3333;
-}
-
-/* GitHub dropdown menu */
 .github-dropdown {
-  display: flex;
-  gap: 10px;
   position: absolute;
-  top: 100%; /* below the GitHub icon */
+  top: 90px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.85);
-  padding: 10px 15px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(0,0,0,0.8);
   border: 2px solid #ff0000;
   border-radius: 10px;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
   z-index: 10;
 }
 
 .github-link:hover .github-dropdown {
   opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(10px);
+  pointer-events: auto;
 }
 
 .github-dropdown img {
   width: 50px;
   height: 50px;
+  border-radius: 5px;
   border: 2px solid #ff0000;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .github-dropdown img:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 30px rgba(255, 0, 0, 1);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,0,0,0.9);
   border-color: #ff3333;
 }
 
-@media (max-width: 768px) {
-  .box {
-    width: 85%;
-    margin: 150px auto;
-  }
-
-  .github-dropdown {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-/* Social icon row */
+/* Social icons */
 .social-links {
   display: flex;
   gap: 15px;
@@ -159,4 +125,20 @@ body::before {
   transform: scale(1.15);
   box-shadow: 0 0 15px rgba(255, 0, 0, 1);
   border-color: #ff3333;
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 85%;
+    margin: 50px auto;
+  }
+
+  .github-dropdown {
+    top: 70px;
+  }
+
+  .github-dropdown img {
+    width: 40px;
+    height: 40px;
+  }
 }
