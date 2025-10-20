@@ -3,85 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIF Background Website</title>
+  <title>Themed GIF Background Website</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="content">
-    <h1>Welcome to My Website</h1>
-    <p class="description">This is a short description under the GIF background.</p>
+    <h1>Welcome to My Themed Site</h1>
+    <p class="description">This is a description. The boxes below match the GIF background theme.</p>
 
     <div class="box-container">
       <div class="info-box">
         <h3>Box 1</h3>
-        <p>Feature or description for Box 1.</p>
+        <p>Feature or description of Box 1.</p>
       </div>
       <div class="info-box">
         <h3>Box 2</h3>
-        <p>Feature or description for Box 2.</p>
+        <p>Feature or description of Box 2.</p>
       </div>
       <div class="info-box">
         <h3>Box 3</h3>
-        <p>Feature or description for Box 3.</p>
+        <p>Feature or description of Box 3.</p>
       </div>
     </div>
   </div>
 </body>
 </html>
-  <style>
-    /* page basics */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 40px;
-      background: #0d1117;
-      color: #c9d1d9;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    h1 { margin: 0 0 10px; color: #58a6ff; }
-    .description { color: #8b949e; margin-bottom: 30px; }
-
-    /* layout */
-    .box-container {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      align-items: stretch;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* visible outlined boxes */
-    .info-box {
-      background: #0b1220;                 /* slightly different from page bg */
-      width: 300px;
-      min-height: 140px;
-      padding: 20px;
-      border-radius: 8px;
-      border: 3px solid #ffffff;           /* strong visible outline (white) */
-      /* fallback high-contrast border if theme makes it hard to see */
-      outline: 2px solid rgba(0,0,0,0.12); 
-      box-shadow: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      transition: transform .18s ease, border-color .18s ease;
-    }
-
-    /* hover accent */
-    .info-box:hover {
-      transform: translateY(-6px);
-      border-color: #79c0ff;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-    }
-
-    .info-box h3 { margin: 0 0 8px; color: #fff; font-size: 1.15rem; }
-    .info-box p { margin: 0; color: #d0d6dd; font-size: .95rem; }
-
-    /* responsive smaller screens */
-    @media (max-width: 700px) {
-      .info-box { width: 100%; max-width: 420px; }
-    }
