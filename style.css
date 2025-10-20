@@ -1,4 +1,5 @@
 * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -78,22 +79,24 @@ body {
   color: #ff4d4d;
   text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 15px;
-  text-align: center; /* Center title */
+  text-align: center;
 }
 
-/* About Me List */
+/* About Me List - Centered Text */
 .about-list {
   list-style-type: disc;
-  padding-left: 30px; /* fixed bullet alignment */
+  padding-left: 0; /* remove left padding */
   color: #ffb3b3;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   max-width: 600px;
   line-height: 1.6;
-  text-align: left; /* text aligned with bullets */
+  text-align: center; /* center all text */
 }
 
 .about-list li {
   margin-bottom: 10px;
+  display: list-item;
+  text-align: center;
 }
 
 /* Responsive */
