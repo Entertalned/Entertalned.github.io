@@ -3,21 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Red-Themed Panel</title>
+  <title>Animated Red Panel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="content">
     <div class="info-box">
-      <!-- Tabs/buttons to switch pages -->
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-page="1">Page 1</button>
-        <button class="tab-btn" data-page="2">Page 2</button>
-        <button class="tab-btn" data-page="3">Page 3</button>
-      </div>
-
       <!-- Page content -->
-      <div class="tab-content">
+      <div class="pages-wrapper">
         <div class="page" id="page1">
           <h3>Page 1</h3>
           <p>Welcome to the first page of the red-themed panel!</p>
@@ -31,6 +24,13 @@
           <p>Here is the third page of the panel. Keep it interactive!</p>
         </div>
       </div>
+    </div>
+
+    <!-- Page buttons outside the box -->
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-page="1">Page 1</button>
+      <button class="tab-btn" data-page="2">Page 2</button>
+      <button class="tab-btn" data-page="3">Page 3</button>
     </div>
   </div>
 
