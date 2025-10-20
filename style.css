@@ -21,7 +21,7 @@ body::before {
   z-index: 0;
 }
 
-/* Top black bar with red outline */
+/* Top black bar overlaying boxes */
 .top-bar {
   position: fixed;
   top: 0;
@@ -30,17 +30,17 @@ body::before {
   height: 60px;
   background-color: rgba(0, 0, 0, 0.7);
   border-bottom: 3px solid #ff0000;
-  z-index: 1; /* stays below buttons but above boxes */
+  z-index: 1; /* below buttons but above boxes */
 }
 
 /* Social buttons top left */
 .social-top-left {
   position: fixed;
-  top: 10px; /* a bit lower to stay inside the bar */
+  top: 10px; /* vertical offset inside the bar */
   left: 20px;
   display: flex;
   gap: 10px;
-  z-index: 2; /* above the bar */
+  z-index: 2; /* above bar */
 }
 
 .top-button img {
@@ -60,13 +60,13 @@ body::before {
   border-color: #ff3333;
 }
 
-/* Box Styles */
+/* Boxes */
 .box {
   position: relative;
-  z-index: 0; /* below the top bar */
+  z-index: 0; /* below top bar */
   width: 50%;
   min-height: 250px;
-  margin: 50px auto 50px auto; /* top margin reduced to let bar overlay */
+  margin: 100px auto 50px auto; /* top margin ensures bar overlays */
   padding: 40px 30px;
   border: 3px solid #ff0000;
   border-radius: 15px;
@@ -105,7 +105,7 @@ body::before {
 @media (max-width: 768px) {
   .box {
     width: 85%;
-    margin: 50px auto 40px auto;
+    margin: 120px auto 40px auto;
   }
 
   .top-button img {
