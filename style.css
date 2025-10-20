@@ -1,11 +1,9 @@
-/* Reset defaults */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Background setup */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
@@ -14,25 +12,23 @@ body {
   overflow-x: hidden;
 }
 
-/* Dark overlay for readability */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
-/* Box layout */
 .box {
   position: relative;
   z-index: 1;
-  width: 50%;               /* smaller width */
-  min-height: 50px;        /* much smaller height */
-  margin: 200px auto;       /* centered + spaced */
+  width: 50%;
+  min-height: 250px;
+  margin: 200px auto;
   padding: 40px 30px;
   border: 3px solid #ff0000;
-  border-radius: 100px;
+  border-radius: 15px;
   background: rgba(0, 0, 0, 0.65);
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
   display: flex;
@@ -43,33 +39,48 @@ body::before {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover glow */
 .box:hover {
   transform: scale(1.04);
   box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
   border-color: #ff3333;
 }
 
-/* Text styles */
 .box h2 {
   font-size: 1.8rem;
   color: #ff4d4d;
   text-shadow: 0 0 20px rgba(255, 0, 0, 1);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .box p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #ffb3b3;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  max-width: 610px;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-/* Responsive tweak */
+/* GitHub link image */
+.github-link img {
+  width: 80px;
+  height: auto;
+  margin-top: 20px;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.github-link img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 1);
+  border-color: #ff3333;
+}
+
 @media (max-width: 768px) {
   .box {
     width: 85%;
-    min-height: 200px;
     margin: 150px auto;
   }
 }
