@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animated Red Panel</title>
+  <title>Red-Themed Sliding Panel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="content">
     <div class="info-box">
-      <!-- Page content -->
       <div class="pages-wrapper">
-        <div class="page" id="page1">
+        <div class="page active" id="page1">
           <h3>Page 1</h3>
           <p>Welcome to the first page of the red-themed panel!</p>
         </div>
@@ -26,11 +25,10 @@
       </div>
     </div>
 
-    <!-- Page buttons outside the box -->
-    <div class="tab-buttons">
-      <button class="tab-btn active" data-page="1">Page 1</button>
-      <button class="tab-btn" data-page="2">Page 2</button>
-      <button class="tab-btn" data-page="3">Page 3</button>
+    <!-- Arrows below the box -->
+    <div class="arrow-buttons">
+      <button id="prev">&lt;</button>
+      <button id="next">&gt;</button>
     </div>
   </div>
 
