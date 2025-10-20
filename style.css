@@ -1,4 +1,4 @@
-/* Global setup */
+/* Global reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,111 +6,76 @@
 }
 
 body {
-  height: 100vh;
   font-family: "Segoe UI", Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
   background-size: cover;
-  overflow: hidden;
   color: #fff;
+  overflow-x: hidden;
 }
 
-/* Dark overlay for readability */
+/* Subtle overlay for readability */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 0;
-}
-
-/* Center container */
-.container {
-  position: relative;
-  z-index: 1;
-  text-align: center;
 }
 
 /* Box styling */
 .box {
-  width: 70vw;
-  max-width: 800px;
-  height: 60vh;
-  border: 4px solid #ff0000;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.7);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-}
-
-/* Each page inside the box */
-.page {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+  z-index: 1;
+  width: 70%;               /* smaller width */
+  min-height: 60vh;         /* smaller height so you scroll more */
+  margin: 150px auto;       /* space between boxes */
+  padding: 50px 30px;
+  border: 3px solid #ff0000;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 0.6s ease;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.page.active {
-  left: 0;
-  opacity: 1;
+.box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.9);
+  border-color: #ff3333;
 }
 
-.page.exit-left {
-  left: -100%;
-  opacity: 0;
-}
-
-/* Text styling */
-.page h2 {
-  font-size: 2.5rem;
+/* Heading and paragraph styling */
+.box h2 {
+  font-size: 2.2rem;
   color: #ff4d4d;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 1);
-  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  margin-bottom: 15px;
 }
 
-.page p {
-  font-size: 1.3rem;
-  color: #ffcccc;
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-  max-width: 600px;
+.box p {
+  font-size: 1.1rem;
+  color: #ffb3b3;
+  max-width: 700px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-/* Buttons */
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
-}
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    min-height: 50vh;
+    margin: 100px auto;
+  }
 
-button {
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid #ff0000;
-  color: #ff4d4d;
-  font-size: 2rem;
-  padding: 10px 25px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
-}
+  .box h2 {
+    font-size: 1.8rem;
+  }
 
-button:hover {
-  background: #ff0000;
-  color: white;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+  .box p {
+    font-size: 1rem;
+  }
 }
