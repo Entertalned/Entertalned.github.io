@@ -10,7 +10,6 @@ body {
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
-  overflow-x: hidden;
 }
 
 body::before {
@@ -67,16 +66,16 @@ body::before {
 /* Boxes container */
 .boxes-container {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 20px;
-  margin: 100px 50px 50px 50px; /* top margin below top bar */
-  justify-content: flex-start; /* align boxes to left */
+  margin: 100px 20px 50px 20px; /* top margin below top bar */
+  flex-wrap: wrap;
 }
 
 /* Boxes */
 .box {
-  width: calc(33.33% - 20px); /* 3 boxes per row */
-  min-height: 250px;
+  flex: 1 1 calc(33.33% - 20px); /* 3 boxes per row */
+  min-width: 250px; /* won't shrink too much */
   padding: 30px 20px;
   border: 3px solid #ff0000;
   border-radius: 15px;
@@ -101,7 +100,6 @@ body::before {
   color: #ff4d4d;
   text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 15px;
-  text-align: center;
 }
 
 /* About Me list */
@@ -166,19 +164,12 @@ body::before {
 
 @media (max-width: 1200px) {
   .box {
-    width: calc(50% - 20px); /* 2 per row on medium screens */
+    flex: 1 1 calc(50% - 20px); /* 2 per row */
   }
 }
 
 @media (max-width: 768px) {
   .box {
-    width: 100%; /* 1 per row on small screens */
-    margin: 10px auto;
-  }
-
-  .project-buttons {
-    flex-direction: row;
-    gap: 10px;
+    flex: 1 1 100%; /* 1 per row */
   }
 }
-
