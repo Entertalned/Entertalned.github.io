@@ -9,4 +9,4 @@ function moveCarousel() {
 }
 
 // Auto slide every 3 seconds
-setInterval(moveCarousel, 5000);
+setInterval(moveCarousel, 3000);
