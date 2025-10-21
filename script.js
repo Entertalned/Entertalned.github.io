@@ -1,23 +1,12 @@
 const track = document.querySelector('.carousel-track');
 const items = Array.from(track.children);
+const itemWidth = items[0].getBoundingClientRect().width + 20; // item width + gap
 let index = 0;
-const itemsPerSlide = 3;
-const totalItems = items.length;
 
-// Initialize first slide
-for(let i=0; i<itemsPerSlide; i++) items[i].classList.add('active');
-
-function showNextSlide() {
-  // Remove active from all
-  items.forEach(item => item.classList.remove('active'));
-
-  // Add active to next 3 items
-  for(let i=0; i<itemsPerSlide; i++) {
-    let idx = (index + i) % totalItems;
-    items[idx].classList.add('active');
-  }
-
-  index = (index + 1) % totalItems;
+function moveCarousel() {
+  index++;
+  if (index > items.length - 3) index = 0; // loop for 3 items visible
+  track.style.transform = `translateX(-${index * itemWidth}px)`;
 }
 
-setInterval(showNextSlide, 3000);
+setInterval(moveCarousel, 3000); // every 3 seconds
