@@ -1,15 +1,12 @@
 const track = document.querySelector('.carousel-track');
-const items = Array.from(track.children);
-const totalItems = items.length;
-const itemsPerSlide = 3;
+const slides = Array.from(track.children);
 let index = 0;
 
-function showNextSlide() {
+function moveCarousel() {
   index++;
-  if(index > totalItems - itemsPerSlide) index = 0;
-  const offset = -(index * (100 / itemsPerSlide));
-  track.style.transform = `translateX(${offset}%)`;
+  if(index >= slides.length) index = 0;
+  track.style.transform = `translateX(-${index * 100}%)`;
 }
 
 // Auto slide every 3 seconds
-setInterval(showNextSlide, 3000);
+setInterval(moveCarousel, 5000);
