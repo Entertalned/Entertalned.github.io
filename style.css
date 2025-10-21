@@ -1,27 +1,79 @@
-/* Reset & base styles */
+/* Reset & Base */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:"Segoe UI", Arial, sans-serif; background:url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed; background-size:cover; color:#fff; overflow-x:hidden; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  overflow-x: hidden;
+}
 
 /* Top Bar */
-.top-bar { position:fixed; top:0; left:0; width:100%; height:60px; background:#000; border-bottom:3px solid red; display:flex; justify-content:space-between; align-items:center; padding:0 20px; z-index:1000; }
+.top-bar {
+  position: fixed;
+  top:0; left:0; width:100%; height:60px;
+  background-color:#000;
+  border-bottom:3px solid red;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+  z-index:1000;
+}
+
 .social-buttons { display:flex; gap:10px; }
-.social-link img { width:40px; height:40px; border:2px solid #ff0000; border-radius:50%; background:#000; box-shadow:0 0 10px rgba(255,0,0,0.6); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-.social-link img:hover { transform:scale(1.15); box-shadow:0 0 15px rgba(255,0,0,1); border-color:#ff3333; }
+
+.social-link img {
+  width: 40px; height:40px;
+  border:2px solid #ff0000; border-radius:50%;
+  background-color:#000;
+  box-shadow:0 0 10px rgba(255,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.social-link img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(255,0,0,1);
+  border-color:#ff3333;
+}
+
 .site-name { font-size:1.5rem; font-weight:bold; color:#ff4d4d; }
 
 /* Boxes */
-.box { position:relative; z-index:1; width:50%; min-height:250px; margin:120px auto 50px; padding:40px 30px; border:3px solid #ff0000; border-radius:15px; background:rgba(0,0,0,0.65); box-shadow:0 0 25px rgba(255,0,0,0.6); display:flex; flex-direction:column; justify-content:flex-start; align-items:center; text-align:center; transition:transform 0.3s ease, box-shadow 0.3s ease; }
-.box:hover { transform:scale(1.04); box-shadow:0 0 40px rgba(255,0,0,0.9); border-color:#ff3333; }
+.box {
+  position: relative; z-index:1;
+  width: 50%; min-height:250px;
+  margin: 120px auto 50px;
+  padding:40px 30px;
+  border:3px solid #ff0000;
+  border-radius:15px;
+  background: rgba(0,0,0,0.65);
+  box-shadow:0 0 25px rgba(255,0,0,0.6);
+  text-align:center;
+}
+
+.box:hover { box-shadow:0 0 40px rgba(255,0,0,0.9); border-color:#ff3333; }
+
 .box h2 { font-size:1.8rem; color:#ff4d4d; text-shadow:0 0 20px rgba(255,0,0,1); margin-bottom:20px; }
 
-/* Carousel */
-.carousel-container { overflow:hidden; width:100%; }
-.carousel-track { display:flex; gap:20px; transition:transform 1s ease; }
-.carousel-item { flex:0 0 calc(33.333% - 13.33px); text-align:center; }
-.carousel-item img { width:80%; max-width:150px; margin-bottom:10px; }
-.project-description { font-size:1.1rem; margin-bottom:10px; }
-.project-buttons { display:flex; justify-content:center; gap:10px; margin-top:10px; }
-.project-buttons img { width:40px; height:40px; border-radius:50%; border:2px solid #ff0000; box-shadow:0 0 10px rgba(255,0,0,0.6); transition: transform 0.3s ease; }
-.project-buttons img:hover { transform:scale(1.15); box-shadow:0 0 15px rgba(255,0,0,1); border-color:#ff3333; }
+.box p { color:#ffb3b3; text-shadow:0 0 10px rgba(255,0,0,0.5); margin-bottom:10px; }
 
-@media (max-width:768px) { .box { width:85%; margin:150px auto; } }
+/* Carousel */
+.carousel { overflow:hidden; width:100%; }
+.carousel-track { display:flex; transition: transform 0.5s ease-in-out; }
+.carousel-item { min-width:100%; text-align:center; }
+.carousel-item img { width:80%; max-width:300px; margin-bottom:10px; }
+.project-description { font-size:1.1rem; margin-bottom:10px; }
+
+/* GitHub Buttons under projects */
+.project-buttons { display:flex; justify-content:center; gap:10px; margin-top:10px; }
+.project-buttons img {
+  width: 40px;
+  height: 40px;
+  border-radius:50%;
+  border:2px solid #ff0000;
+  box-shadow:0 0 10px rgba(255,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-buttons img:hover { transform:scale(1.15); box-shadow:0 0 15px rgba(255,0,0,1); border-color:#ff3333; }
