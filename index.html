@@ -27,7 +27,7 @@
   <section class="box">
     <h2>About Me</h2>
     <p>I'm a dude</p>
-    <p>I have a high school diploma</p>
+    <p>I have a highschool diploma</p>
   </section>
 
   <!-- Projects Box -->
@@ -35,28 +35,28 @@
     <h2>Projects</h2>
 
     <div class="carousel-container">
-      <div class="carousel-item active">
+      <!-- Project 1 -->
+      <div class="carousel-item active" data-collaborators='[
+        {"url":"https://github.com/Entertalned","img":"https://github.com/Entertalned.png","alt":"Entertalned"},
+        {"url":"https://github.com/NAMERIO","img":"https://github.com/NAMERIO.png","alt":"NAMERIO"}
+      ]'>
         <h3>Customizer GUI</h3>
         <img src="https://i.imgur.com/f7xojsO.png" alt="Project 1">
         <p class="project-description">An Alternative to KSX Client</p>
       </div>
 
-      <div class="carousel-item">
+      <!-- Project 2 -->
+      <div class="carousel-item" data-collaborators='[
+        {"url":"https://github.com/Entertalned","img":"https://github.com/Entertalned.png","alt":"Entertalned"}
+      ]'>
         <h3>Slims Mod Bot</h3>
         <img src="https://i.imgur.com/T6Y2eNC.png" alt="Project 2">
-        <p class="project-description">My abandoned Discord bot project.</p>
+        <p class="project-description">My Abandoned discord bot project.</p>
       </div>
     </div>
 
-    <!-- Buttons always stay fixed at bottom-center -->
-    <div class="project-buttons" id="project-buttons">
-      <a href="https://github.com/Entertalned" target="_blank">
-        <img src="https://github.com/Entertalned.png" alt="Entertalned">
-      </a>
-      <a href="https://github.com/NAMERIO" target="_blank">
-        <img src="https://github.com/NAMERIO.png" alt="NAMERIO">
-      </a>
-    </div>
+    <!-- Buttons stay fixed at bottom center -->
+    <div class="project-buttons" id="project-buttons"></div>
   </section>
 
   <script src="script.js"></script>
