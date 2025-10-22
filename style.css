@@ -83,7 +83,7 @@ body {
 }
 
 .social-dropdown .dropdown-content img {
-  width: 220px; /* slightly bigger image */
+  width: 250px; /* slightly bigger image */
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(255,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
