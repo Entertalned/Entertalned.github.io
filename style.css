@@ -63,27 +63,29 @@ body {
 }
 
 .social-dropdown .dropdown-content {
-  display: none; /* Hidden by default */
+  display: none; 
   position: absolute;
-  top: 50px;
+  top: 55px; /* slightly lower */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0,0,0,0.85);
-  padding: 10px;
+  padding: 15px; /* bigger padding */
   border: 2px solid #ff0000;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255,0,0,0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
   z-index: 1001;
+  pointer-events: none;
 }
 
 .social-dropdown:hover .dropdown-content {
-  display: block; /* Show only while hovering */
+  display: block;
+  pointer-events: auto;
 }
 
 .social-dropdown .dropdown-content img {
-  width: 200px;
+  width: 220px; /* slightly bigger image */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,0,0,0.6);
+  box-shadow: 0 0 12px rgba(255,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -220,4 +222,3 @@ body {
     top: 60px;
   }
 }
-
