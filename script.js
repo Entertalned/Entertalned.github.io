@@ -7,4 +7,4 @@ function showNext() {
   items[current].classList.add('active');
 }
 
-setInterval(showNext, 3000); // change every 3 seconds
+setInterval(showNext, 5000); // change every 5 seconds
