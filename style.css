@@ -1,158 +1,111 @@
-/* Reset & base styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Basic layout */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #0e0e0e;
   color: #fff;
-  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Top bar */
 .top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #000;
-  border-bottom: 3px solid red;
   display: flex;
   justify-content: space-between;
+  width: 90%;
+  margin: 20px;
   align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
 }
 
-.social-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.social-link img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #ff0000;
-  border-radius: 50%;
-  background-color: #000;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.social-link img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
-  border-color: #ff3333;
+.social-buttons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
 }
 
 .site-name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ff4d4d;
 }
 
 /* Boxes */
 .box {
+  background: #1b1b1b;
+  border-radius: 12px;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 20px 0;
   position: relative;
-  z-index: 1;
-  width: 50%;
-  min-height: 450px;
-  margin: 120px auto 50px;
-  padding: 40px 30px;
-  border: 3px solid #ff0000;
-  border-radius: 15px;
-  background: rgba(0, 0, 0, 0.65);
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-.box:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
-  border-color: #ff3333;
-}
-
-.box h2 {
-  font-size: 1.8rem;
-  color: #ff4d4d;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 1);
-  margin-bottom: 20px;
-}
-
-/* Carousel */
+/* Carousel styling */
 .carousel-container {
   position: relative;
-  width: 100%;
-  height: 350px;
   overflow: hidden;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-item {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   opacity: 0;
-  transition: opacity 1s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  transition: opacity 0.6s ease-in-out;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
 }
 
 .carousel-item.active {
   opacity: 1;
+  z-index: 2;
 }
 
 .carousel-item img {
-  max-width: 200px;
-  margin: 10px 0;
+  width: 100%;
+  max-height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  pointer-events: none;
 }
 
+/* Project description */
 .project-description {
-  color: #ffb3b3;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ccc;
 }
 
-/* Buttons stay fixed at bottom of the box */
+/* Project buttons (avatars) */
 .project-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10; /* ensures clickable */
 }
 
-.project-buttons img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #ff0000;
+.project-buttons a img {
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-buttons img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
-  border-color: #ff3333;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .box {
-    width: 85%;
-    margin: 150px auto;
-  }
+.project-buttons a img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #fff;
 }
