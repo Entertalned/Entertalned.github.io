@@ -1,10 +1,10 @@
-const carouselItems = document.querySelectorAll('.carousel-item');
-let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+let current = 0;
 
 function showNext() {
-  carouselItems[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  carouselItems[currentIndex].classList.add('active');
+  items[current].classList.remove('active');
+  current = (current + 1) % items.length; // loop infinitely
+  items[current].classList.add('active');
 }
 
-setInterval(showNext, 3000);
+setInterval(showNext, 3000); // change every 3 seconds
