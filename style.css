@@ -193,4 +193,31 @@ body {
   height: 35px;
   border: 2px solid #ff0000;
   border-radius: 50%;
-  box-shadow: 0 
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-buttons img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  border-color: #ff3333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .social-dropdown .dropdown-content {
+    top: 60px;
+  }
+}
+
