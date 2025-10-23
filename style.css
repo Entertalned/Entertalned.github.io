@@ -9,7 +9,7 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  color: #ffb3b3; /* theme color applied to text */
   overflow-x: hidden;
 }
 
@@ -59,13 +59,14 @@ body {
 /* Dropdown (Discord presence) */
 .social-dropdown {
   position: relative;
+  margin-left: 20px; /* moved more to the right */
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   top: 60px;
-  left: 50%;
+  left: 70%; /* shifted right */
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.85);
   padding: 10px;
@@ -107,6 +108,10 @@ body {
   transform: scale(1.04);
   box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
   border-color: #ff3333;
+}
+
+.box h2, .box h3, .box p {
+  color: #ffb3b3;
 }
 
 .box h2 {
@@ -151,18 +156,18 @@ body {
 
 .project-description {
   color: #ffb3b3;
-  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-top: -10px; /* tightens spacing under title */
 }
 
 /* Fixed project images */
 .project-box .project-img {
   display: block;
   width: 100%;
-  max-height: 180px; /* prevents overlap with description */
+  max-height: 180px;
   object-fit: contain;
-  border: 2px solid #ff0000; /* themed red outline */
+  border: 2px solid #ff0000;
   border-radius: 10px;
-  margin-bottom: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -206,7 +211,7 @@ body {
 
   .box-row {
     flex-direction: column;
-    align-items: right;
+    align-items: center;
   }
 
   .dropdown-content img {
