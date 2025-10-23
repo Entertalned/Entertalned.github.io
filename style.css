@@ -20,7 +20,7 @@ body {
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #000;
+  background-color: #000; /* solid black */
   border-bottom: 3px solid red;
   display: flex;
   justify-content: space-between;
@@ -50,7 +50,13 @@ body {
   border-color: #ff3333;
 }
 
-/* Dropdown */
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d4d;
+}
+
+/* Dropdown (Discord presence) */
 .social-dropdown {
   position: relative;
 }
@@ -58,46 +64,33 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 10px;
   border: 2px solid #ff0000;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-  padding: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
   z-index: 1000;
+}
+
+.dropdown-content img {
+  width: 350px;
+  border-radius: 8px;
 }
 
 .social-dropdown:hover .dropdown-content {
   display: block;
 }
 
-.dropdown-content img {
-  width: 320px;
-  border-radius: 10px;
-}
-
-.site-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff4d4d;
-}
-
-/* Box Row */
-.box-row {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 120px;
-  flex-wrap: wrap;
-}
-
 /* Boxes */
 .box {
   position: relative;
+  z-index: 1;
   width: 30%;
   min-height: 450px;
+  margin: 120px 1% 50px;
   padding: 40px 30px;
   border: 3px solid #ff0000;
   border-radius: 15px;
@@ -123,33 +116,62 @@ body {
   margin-bottom: 20px;
 }
 
-/* Project Images - fixed size and glow */
-.carousel-item img {
-  width: 250px;
-  height: 140px;
-  object-fit: cover;
-  border: 3px solid #ff0000;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+/* Box Row */
+.box-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.carousel-item a img:hover {
-  transform: scale(1.05);
-  border-color: #ff4d4d;
-  box-shadow: 0 0 30px rgba(255, 77, 77, 1);
+/* Carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
 }
 
-/* Project description */
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
 .project-description {
   color: #ffb3b3;
   margin-top: 10px;
-  max-width: 80%;
-  text-align: center;
-  word-wrap: break-word;
 }
 
-/* Buttons */
+/* Fixed project images */
+.project-box .project-img {
+  display: block;
+  width: 100%;
+  max-height: 180px; /* prevents overlap with description */
+  object-fit: contain;
+  border: 2px solid #ff0000; /* themed red outline */
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-box .project-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #ff0000;
+}
+
+/* Collaborator buttons */
 .project-buttons {
   display: flex;
   justify-content: center;
@@ -175,23 +197,19 @@ body {
   border-color: #ff3333;
 }
 
-/* Box link for third box */
-.box-link {
-  color: #ff4d4d;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  margin-top: 5px;
-  display: inline-block;
-}
-
-.box-link:hover {
-  color: #ff9999;
-  text-shadow: 0 0 10px rgba(255, 77, 77, 0.7);
-}
-
+/* Responsive */
 @media (max-width: 768px) {
   .box {
     width: 85%;
+    margin: 150px auto;
+  }
+
+  .box-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-content img {
+    width: 280px;
   }
 }
