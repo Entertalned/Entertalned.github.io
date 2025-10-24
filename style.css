@@ -37,28 +37,30 @@ a:hover {
   border-bottom: 3px solid var(--theme-color);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 20px;
+  justify-content: space-between; /* distribute left/center/right */
+  padding: 0 30px;
   z-index: 1000;
 }
 
 /* Center social buttons */
 .social-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
 }
 
-/* Site name on the right */
+/* Right-aligned site name */
 .site-name {
-  position: absolute;
-  right: 25px;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--theme-color);
+  margin-left: auto; /* ensures it stays on the far right */
 }
+
 
 /* === Social Buttons === */
 .social-link img {
