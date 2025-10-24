@@ -1,15 +1,10 @@
-/* === Theme Variables === */
 :root {
   --theme-color: #ff4d4d;
   --theme-text: #ffb3b3;
 }
 
-/* === Reset & base styles === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* === Base Reset === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -19,22 +14,19 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, li, .site-name {
-  color: var(--theme-text);
-}
+h1, h2, h3, h4, h5, h6, p, a, span, li, .site-name { color: var(--theme-text); }
 
 a {
   text-decoration: none;
   color: var(--theme-color);
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
 a:hover {
   color: #fff;
   text-shadow: 0 0 10px var(--theme-color);
 }
 
-/* === Top bar === */
+/* === Top Bar === */
 .top-bar {
   position: fixed;
   top: 0;
@@ -44,18 +36,31 @@ a:hover {
   background-color: #000;
   border-bottom: 3px solid var(--theme-color);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 0 20px;
   z-index: 1000;
 }
 
+/* Center social buttons */
 .social-buttons {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
 }
 
+/* Site name on the right */
+.site-name {
+  position: absolute;
+  right: 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--theme-color);
+}
+
+/* === Social Buttons === */
 .social-link img {
   width: 40px;
   height: 40px;
@@ -72,22 +77,14 @@ a:hover {
   border-color: #ff3333;
 }
 
-.site-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--theme-color);
-}
-
-/* === Dropdown === */
-.social-dropdown {
-  position: relative;
-}
+/* === Dropdowns === */
+.social-dropdown { position: relative; }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 60px;
-  left: 80%;
+  top: 55px;
+  left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.85);
   padding: 10px;
@@ -102,16 +99,13 @@ a:hover {
   border-radius: 8px;
 }
 
-.social-dropdown:hover .dropdown-content {
-  display: block;
-}
+.social-dropdown:hover .dropdown-content { display: block; }
 
 /* === Boxes === */
 .box {
   position: relative;
-  z-index: 1;
   width: 30%;
-  min-height: 500px; /* uniform box height */
+  min-height: 500px;
   margin: 120px 1% 50px;
   padding: 40px 30px;
   border: 3px solid var(--theme-color);
@@ -125,7 +119,6 @@ a:hover {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .box:hover {
   transform: scale(1.04);
   box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
@@ -168,21 +161,16 @@ a:hover {
   align-items: center;
   pointer-events: none;
 }
-
 .carousel-item.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* === Project descriptions === */
-.project-description {
-  color: var(--theme-text);
-  margin-top: 10px;
-}
+/* === Project Descriptions === */
+.project-description { color: var(--theme-text); margin-top: 10px; }
 
-/* === Fixed project images === */
+/* === Project Images === */
 .project-box .project-img {
-  display: block;
   width: 100%;
   max-height: 180px;
   object-fit: contain;
@@ -191,13 +179,12 @@ a:hover {
   margin-bottom: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .project-box .project-img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 10px var(--theme-color);
 }
 
-/* === Collaborator buttons === */
+/* === Collaborator Buttons === */
 .project-buttons {
   display: flex;
   justify-content: center;
@@ -207,7 +194,6 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .project-buttons img {
   width: 40px;
   height: 40px;
@@ -217,8 +203,6 @@ a:hover {
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
-/* ✅ Restored Hover Glow + Outline */
 .project-buttons img:hover {
   transform: scale(1.2);
   border-color: #fff;
@@ -227,17 +211,7 @@ a:hover {
 
 /* === Responsive === */
 @media (max-width: 768px) {
-  .box {
-    width: 85%;
-    margin: 150px auto;
-  }
-
-  .box-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dropdown-content img {
-    width: 280px;
-  }
+  .box { width: 85%; margin: 150px auto; }
+  .box-row { flex-direction: column; align-items: center; }
+  .dropdown-content img { width: 280px; }
 }
