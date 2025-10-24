@@ -1,7 +1,7 @@
 /* === Theme Variables === */
 :root {
-  --theme-color: #ff4d4d; /* Main accent red */
-  --theme-text: #ffb3b3;  /* Softer red for text */
+  --theme-color: #ff4d4d;
+  --theme-text: #ffb3b3;
 }
 
 /* === Reset & base styles === */
@@ -19,7 +19,6 @@ body {
   overflow-x: hidden;
 }
 
-/* === Global text theming === */
 h1, h2, h3, h4, h5, h6, p, a, span, li, .site-name {
   color: var(--theme-text);
 }
@@ -78,7 +77,7 @@ a:hover {
   color: var(--theme-color);
 }
 
-/* === Dropdown (Discord presence) === */
+/* === Dropdown === */
 .social-dropdown {
   position: relative;
 }
@@ -87,7 +86,7 @@ a:hover {
   display: none;
   position: absolute;
   top: 60px;
-  left: 80%; /* shifted slightly right */
+  left: 80%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.85);
   padding: 10px;
@@ -111,7 +110,7 @@ a:hover {
   position: relative;
   z-index: 1;
   width: 30%;
-  min-height: 450px;
+  min-height: 500px; /* uniform box height */
   margin: 120px 1% 50px;
   padding: 40px 30px;
   border: 3px solid var(--theme-color);
@@ -121,6 +120,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -165,10 +165,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  pointer-events: none;
 }
 
 .carousel-item.active {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* === Project descriptions === */
@@ -208,31 +210,3 @@ a:hover {
 .project-buttons img {
   width: 40px;
   height: 40px;
-  border: 2px solid var(--theme-color);
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-buttons img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
-  border-color: #ff3333;
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .box {
-    width: 85%;
-    margin: 150px auto;
-  }
-
-  .box-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dropdown-content img {
-    width: 280px;
-  }
-}
