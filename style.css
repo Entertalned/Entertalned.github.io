@@ -1,4 +1,10 @@
-/* Reset & base styles */
+/* === Theme Variables === */
+:root {
+  --theme-color: #ff4d4d; /* Main accent red */
+  --theme-text: #ffb3b3;  /* Softer red for text */
+}
+
+/* === Reset & base styles === */
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +15,35 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: url('https://gifdb.com/images/high/red-aesthetic-scenery-6hubzuosy2274ta2.gif') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  color: var(--theme-text);
   overflow-x: hidden;
 }
 
-/* Top bar */
+/* === Global text theming === */
+h1, h2, h3, h4, h5, h6, p, a, span, li, .site-name {
+  color: var(--theme-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--theme-color);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--theme-color);
+}
+
+/* === Top bar === */
 .top-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #000; /* solid black */
-  border-bottom: 3px solid red;
+  background-color: #000;
+  border-bottom: 3px solid var(--theme-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +59,7 @@ body {
 .social-link img {
   width: 40px;
   height: 40px;
-  border: 2px solid #ff0000;
+  border: 2px solid var(--theme-color);
   border-radius: 50%;
   background-color: #000;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
@@ -53,10 +75,10 @@ body {
 .site-name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ff4d4d;
+  color: var(--theme-color);
 }
 
-/* Dropdown (Discord presence) */
+/* === Dropdown (Discord presence) === */
 .social-dropdown {
   position: relative;
 }
@@ -65,11 +87,11 @@ body {
   display: none;
   position: absolute;
   top: 60px;
-  left: 50%;
+  left: 80%; /* shifted slightly right */
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.85);
   padding: 10px;
-  border: 2px solid #ff0000;
+  border: 2px solid var(--theme-color);
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
   z-index: 1000;
@@ -84,7 +106,7 @@ body {
   display: block;
 }
 
-/* Boxes */
+/* === Boxes === */
 .box {
   position: relative;
   z-index: 1;
@@ -92,7 +114,7 @@ body {
   min-height: 450px;
   margin: 120px 1% 50px;
   padding: 40px 30px;
-  border: 3px solid #ff0000;
+  border: 3px solid var(--theme-color);
   border-radius: 15px;
   background: rgba(0, 0, 0, 0.65);
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
@@ -111,12 +133,12 @@ body {
 
 .box h2 {
   font-size: 1.8rem;
-  color: #ff4d4d;
+  color: var(--theme-color);
   text-shadow: 0 0 20px rgba(255, 0, 0, 1);
   margin-bottom: 20px;
 }
 
-/* Box Row */
+/* === Box Row === */
 .box-row {
   display: flex;
   justify-content: center;
@@ -125,7 +147,7 @@ body {
   gap: 20px;
 }
 
-/* Carousel */
+/* === Carousel === */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -149,18 +171,19 @@ body {
   opacity: 1;
 }
 
+/* === Project descriptions === */
 .project-description {
-  color: #ffb3b3;
+  color: var(--theme-text);
   margin-top: 10px;
 }
 
-/* Fixed project images */
+/* === Fixed project images === */
 .project-box .project-img {
   display: block;
   width: 100%;
-  max-height: 180px; /* prevents overlap with description */
+  max-height: 180px;
   object-fit: contain;
-  border: 2px solid #ff0000; /* themed red outline */
+  border: 2px solid var(--theme-color);
   border-radius: 10px;
   margin-bottom: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -168,10 +191,10 @@ body {
 
 .project-box .project-img:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 10px #ff0000;
+  box-shadow: 0 0 10px var(--theme-color);
 }
 
-/* Collaborator buttons */
+/* === Collaborator buttons === */
 .project-buttons {
   display: flex;
   justify-content: center;
@@ -185,7 +208,7 @@ body {
 .project-buttons img {
   width: 40px;
   height: 40px;
-  border: 2px solid #ff0000;
+  border: 2px solid var(--theme-color);
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -197,7 +220,7 @@ body {
   border-color: #ff3333;
 }
 
-/* Responsive */
+/* === Responsive === */
 @media (max-width: 768px) {
   .box {
     width: 85%;
