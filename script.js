@@ -2,7 +2,7 @@ const items = document.querySelectorAll('.carousel-item');
 const buttonContainer = document.getElementById('project-buttons');
 let current = 0;
 
-// Function to update collaborator buttons dynamically
+// Update collaborator buttons dynamically
 function updateButtons() {
   const collaborators = JSON.parse(items[current].dataset.collaborators);
   buttonContainer.innerHTML = collaborators
@@ -23,6 +23,14 @@ function showNext() {
   updateButtons();
 }
 
-// Initial setup
+// Fix image link bug
+items.forEach(item => {
+  const link = item.dataset.link;
+  const image = item.querySelector('.project-img');
+  image.onclick = () => {
+    window.open(link, '_blank');
+  };
+});
+
 updateButtons();
 setInterval(showNext, 5000);
