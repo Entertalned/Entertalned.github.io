@@ -180,6 +180,17 @@ body {
   box-shadow: 0 0 10px var(--theme-color);
 }
 
+/* === Project title as clickable link === */
+.project-title a {
+  color: inherit;          /* Keep same color as <h3> */
+  text-decoration: none;   /* Remove underline */
+}
+
+.project-title a:hover {
+  color: inherit;          /* Keep same color on hover */
+  text-decoration: none;   /* No underline */
+}
+
 /* === Collaborator buttons === */
 .project-buttons {
   display: flex;
@@ -206,6 +217,7 @@ body {
   border-color: #ff3333;
 }
 
+/* === Responsive === */
 @media (max-width: 768px) {
   .box {
     width: 85%;
