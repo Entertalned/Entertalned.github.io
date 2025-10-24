@@ -1,3 +1,4 @@
+// ===== Carousel Setup =====
 const items = document.querySelectorAll('.carousel-item');
 const buttonContainer = document.getElementById('project-buttons');
 let current = 0;
@@ -23,14 +24,20 @@ function showNext() {
   updateButtons();
 }
 
-// Fix image link bug
-items.forEach(item => {
-  const link = item.dataset.link;
-  const image = item.querySelector('.project-img');
-  image.onclick = () => {
-    window.open(link, '_blank');
-  };
-});
+// Initialize carousel and buttons
+function initCarousel() {
+  items.forEach(item => {
+    // Ensure each image opens its correct link
+    const img = item.querySelector('.project-img');
+    const link = item.dataset.link;
+    img.addEventListener('click', () => {
+      window.open(link, '_blank');
+    });
+  });
 
-updateButtons();
-setInterval(showNext, 5000);
+  updateButtons();
+  setInterval(showNext, 5000); // auto-slide every 5 seconds
+}
+
+// Start everything after DOM is loaded
+document.addEventListener('DOMContentLoaded', initCarousel);
