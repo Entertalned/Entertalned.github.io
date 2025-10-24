@@ -210,3 +210,33 @@ a:hover {
 .project-buttons img {
   width: 40px;
   height: 40px;
+  border: 2px solid var(--theme-color);
+  border-radius: 50%;
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* ✅ Restored Hover Glow + Outline */
+.project-buttons img:hover {
+  transform: scale(1.2);
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 10px #fff;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .box {
+    width: 85%;
+    margin: 150px auto;
+  }
+
+  .box-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-content img {
+    width: 280px;
+  }
+}
