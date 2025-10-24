@@ -3,8 +3,11 @@
   --theme-text: #ffb3b3;
 }
 
-/* === Base Reset === */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -14,19 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, li, .site-name { color: var(--theme-text); }
-
-a {
-  text-decoration: none;
-  color: var(--theme-color);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px var(--theme-color);
-}
-
-/* === Top Bar === */
+/* ===== TOP BAR ===== */
 .top-bar {
   position: fixed;
   top: 0;
@@ -37,32 +28,59 @@ a:hover {
   border-bottom: 3px solid var(--theme-color);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* distribute left/center/right */
-  padding: 0 30px;
+  justify-content: space-between;
+  padding: 0 25px;
   z-index: 1000;
 }
 
-/* Center social buttons */
+/* Centered social buttons */
 .social-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
-/* Right-aligned site name */
+/* Site name (right side) */
 .site-name {
+  margin-left: auto;
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--theme-color);
-  margin-left: auto; /* ensures it stays on the far right */
+  text-shadow: 0 0 10px var(--theme-color);
 }
 
+/* === Dropdown styling === */
+.social-dropdown {
+  position: relative;
+}
 
-/* === Social Buttons === */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 10px;
+  border: 2px solid var(--theme-color);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.dropdown-content img {
+  width: 350px;
+  border-radius: 8px;
+}
+
+.social-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* === Social button icons === */
 .social-link img {
   width: 40px;
   height: 40px;
@@ -79,35 +97,12 @@ a:hover {
   border-color: #ff3333;
 }
 
-/* === Dropdowns === */
-.social-dropdown { position: relative; }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 55px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 10px;
-  border: 2px solid var(--theme-color);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-  z-index: 1000;
-}
-
-.dropdown-content img {
-  width: 350px;
-  border-radius: 8px;
-}
-
-.social-dropdown:hover .dropdown-content { display: block; }
-
-/* === Boxes === */
+/* ===== BOXES ===== */
 .box {
   position: relative;
+  z-index: 1;
   width: 30%;
-  min-height: 500px;
+  min-height: 450px;
   margin: 120px 1% 50px;
   padding: 40px 30px;
   border: 3px solid var(--theme-color);
@@ -117,10 +112,10 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .box:hover {
   transform: scale(1.04);
   box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
@@ -134,11 +129,11 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* === Box Row === */
+/* Make all boxes same height */
 .box-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -161,18 +156,15 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  pointer-events: none;
 }
+
 .carousel-item.active {
   opacity: 1;
-  pointer-events: auto;
 }
 
-/* === Project Descriptions === */
-.project-description { color: var(--theme-text); margin-top: 10px; }
-
-/* === Project Images === */
-.project-box .project-img {
+/* === Project images === */
+.project-img {
+  display: block;
   width: 100%;
   max-height: 180px;
   object-fit: contain;
@@ -181,12 +173,13 @@ a:hover {
   margin-bottom: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.project-box .project-img:hover {
+
+.project-img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 10px var(--theme-color);
 }
 
-/* === Collaborator Buttons === */
+/* === Collaborator buttons === */
 .project-buttons {
   display: flex;
   justify-content: center;
@@ -196,24 +189,34 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .project-buttons img {
   width: 40px;
   height: 40px;
   border: 2px solid var(--theme-color);
   border-radius: 50%;
-  background-color: #000;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-.project-buttons img:hover {
-  transform: scale(1.2);
-  border-color: #fff;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 10px #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* === Responsive === */
+.project-buttons img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+  border-color: #ff3333;
+}
+
 @media (max-width: 768px) {
-  .box { width: 85%; margin: 150px auto; }
-  .box-row { flex-direction: column; align-items: center; }
-  .dropdown-content img { width: 280px; }
+  .box {
+    width: 85%;
+    margin: 150px auto;
+  }
+
+  .box-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-content img {
+    width: 280px;
+  }
 }
