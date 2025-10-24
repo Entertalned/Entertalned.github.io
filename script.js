@@ -24,17 +24,8 @@ function showNext() {
   updateButtons();
 }
 
-// Initialize carousel and buttons
+// Initialize carousel
 function initCarousel() {
-  items.forEach(item => {
-    // Ensure each image opens its correct link
-    const img = item.querySelector('.project-img');
-    const link = item.dataset.link;
-    img.addEventListener('click', () => {
-      window.open(link, '_blank');
-    });
-  });
-
   updateButtons();
   setInterval(showNext, 5000); // auto-slide every 5 seconds
 }
