@@ -17,10 +17,10 @@ function updateCarousel() {
     )
     .join('');
 
-  // Update project image link dynamically
+  // Update project image link to correct GitHub repo
   const projectLink = item.querySelector('.project-link');
   if (projectLink) {
-    projectLink.href = item.dataset.link;
+    projectLink.href = item.dataset.link; // links image to correct GitHub repo
   }
 }
 
@@ -40,3 +40,4 @@ function initCarousel() {
 
 // Start after DOM is loaded
 document.addEventListener('DOMContentLoaded', initCarousel);
+
