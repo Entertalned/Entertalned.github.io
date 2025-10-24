@@ -7,7 +7,7 @@ function updateButtons() {
   const collaborators = JSON.parse(items[current].dataset.collaborators);
   buttonContainer.innerHTML = collaborators
     .map(
-      (c) => `
+      c => `
       <a href="${c.url}" target="_blank">
         <img src="${c.img}" alt="${c.alt}">
       </a>`
