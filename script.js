@@ -1,11 +1,13 @@
-// ===== Carousel Setup =====
 const items = document.querySelectorAll('.carousel-item');
 const buttonContainer = document.getElementById('project-buttons');
 let current = 0;
 
-// Update collaborator buttons dynamically
-function updateButtons() {
-  const collaborators = JSON.parse(items[current].dataset.collaborators);
+// Update carousel display
+function updateCarousel() {
+  const item = items[current];
+
+  // Update collaborator buttons
+  const collaborators = JSON.parse(item.dataset.collaborators);
   buttonContainer.innerHTML = collaborators
     .map(
       c => `
@@ -14,6 +16,12 @@ function updateButtons() {
       </a>`
     )
     .join('');
+
+  // Update project image link dynamically
+  const projectLink = item.querySelector('.project-link');
+  if (projectLink) {
+    projectLink.href = item.dataset.link;
+  }
 }
 
 // Show next carousel item
@@ -21,14 +29,14 @@ function showNext() {
   items[current].classList.remove('active');
   current = (current + 1) % items.length;
   items[current].classList.add('active');
-  updateButtons();
+  updateCarousel();
 }
 
 // Initialize carousel
 function initCarousel() {
-  updateButtons();
+  updateCarousel();
   setInterval(showNext, 5000); // auto-slide every 5 seconds
 }
 
-// Start everything after DOM is loaded
+// Start after DOM is loaded
 document.addEventListener('DOMContentLoaded', initCarousel);
