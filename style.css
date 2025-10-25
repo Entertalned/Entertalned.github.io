@@ -167,17 +167,18 @@ body {
 
 /* === Project images === */
 .project-img {
-  display: inline-block;
+  display: inline-block;             /* shrink-wraps to the image’s true size */
+  height: auto;
   width: auto;
   max-width: 100%;
-  height: auto;
   max-height: 180px;
-  object-fit: contain;
-  border: 2px solid var(--theme-color);
+  object-fit: contain;               /* keeps the full image visible */
+  border: 2px solid var(--theme-color); /* outline now hugs image itself */
   border-radius: 10px;
   margin-bottom: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
+  vertical-align: middle;
 }
 
 .project-img:hover {
@@ -185,27 +186,6 @@ body {
   box-shadow: 0 0 10px var(--theme-color);
 }
 
-
-
-/* === Project images === */
-.project-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  max-height: 180px;
-  margin-bottom: 8px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
-  outline: 2px solid var(--theme-color);
-  outline-offset: -2px;
-  background-color: #000;
-}
-.project-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 10px var(--theme-color);
-  outline-offset: 0;
-}
 
 
 /* === Collaborator buttons === */
