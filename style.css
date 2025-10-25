@@ -187,23 +187,26 @@ body {
 
 
 
-/* === GitHub Button === */
-.project-button {
-  display: inline-block;
-  background-color: var(--theme-color);
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 8px;
-  margin-top: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, box-shadow 0.3s;
+/* === Project images === */
+.project-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  outline: 2px solid var(--theme-color);
+  outline-offset: -2px;
+  background-color: #000;
+}
+.project-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px var(--theme-color);
+  outline-offset: 0;
 }
 
-.project-button:hover {
-  background-color: #ff3333;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-}
 
 /* === Collaborator buttons === */
 .project-buttons {
