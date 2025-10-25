@@ -166,19 +166,20 @@ body {
 }
 
 /* === Project images === */
-/* === Project images === */
 .project-img {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   max-height: 180px;
   object-fit: contain;
   border: 2px solid var(--theme-color);
   border-radius: 10px;
   margin-bottom: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  
-  background-color: #000; /* prevents transparent padding effect */
-  box-sizing: border-box; /* ensures border is included in size */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
+
 .project-img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 10px var(--theme-color);
