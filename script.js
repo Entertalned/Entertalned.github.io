@@ -26,4 +26,3 @@ function initCarousel() {
 
 // Start everything after DOM is loaded
 document.addEventListener('DOMContentLoaded', initCarousel);
-
