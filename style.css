@@ -34,6 +34,7 @@ body {
 }
 
 .top-left-images {
+  position: fixed;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -41,6 +42,7 @@ body {
 
 /* Reuse the SAME styling as social icons */
 .top-left-images img {
+  position: fixed; 
   width: 60px;
   height: 55px;
   border: 2px solid var(--theme-color);
