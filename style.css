@@ -33,29 +33,23 @@ body {
   z-index: 1000;
 }
 
-.top-left-images {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Reuse the SAME styling as social icons */
+/* Top-left certification images */
 .top-left-images img {
-  position: fixed; 
-  width: 60px;
-  height: 55px;
+  width: 40px;       /* match social icons */
+  height: 40px;      /* match social icons */
   border: 2px solid var(--theme-color);
-  border-radius: 0%;
+  border-radius: 50%; /* match social icons */
   background-color: #000;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative; /* remove fixed */
 }
 
 .top-left-images img:hover {
   transform: scale(1.15);
   box-shadow: 0 0 15px rgba(255, 0, 0, 1);
   border-color: #ff3333;
+
 }
 /* Centered social buttons */
 .social-buttons {
