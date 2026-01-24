@@ -229,6 +229,20 @@ body {
   transform: scale(1.05);
 }
 
+.top-left-images .social-dropdown {
+  position: relative;
+}
+
+/* Bigger preview size for certs only */
+.top-left-images .dropdown-content img {
+  width: 95px;
+  height: 95px;
+}
+
+/* Slight offset so it doesn’t overlap the bar */
+.top-left-images .dropdown-content {
+  top: 70px;
+}
 
 
 /* === Collaborator buttons === */
