@@ -16,7 +16,7 @@ permissions:
 env:
   # Replace with your own SteamID64 (a long numeric ID — look yours up at
   # https://steamid.io if you only know your custom profile URL/vanity name).
-  STEAM_ID: "76561198929782130"
+  STEAM_ID: "76561198000000000"
 
 jobs:
   sync:
@@ -27,11 +27,18 @@ jobs:
       - name: Fetch owned games from Steam's public XML feed
         run: |
           mkdir -p data
-          curl -s "https://steamcommunity.com/profiles/${STEAM_ID}/games?tab=all&xml=1" -o /tmp/steam-raw.xml
+          curl -sL \
+            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" \
+            "https://steamcommunity.com/profiles/${STEAM_ID}/games/?tab=all&xml=1" \
+            -o /tmp/steam-raw.xml
 
           if ! grep -q "<gamesList>" /tmp/steam-raw.xml; then
             echo "Could not read a games list. Most likely cause: your Steam profile's"
             echo "'Game details' privacy setting isn't Public, or STEAM_ID is wrong."
+            echo "----- first 500 characters of the actual response, for debugging -----"
+            head -c 500 /tmp/steam-raw.xml
+            echo ""
+            echo "-------------------------------------------------------------------"
             echo "Leaving the existing data/steam-games.json untouched."
             exit 0
           fi
