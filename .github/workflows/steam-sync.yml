@@ -16,7 +16,7 @@ permissions:
 env:
   # Replace with your own SteamID64 (a long numeric ID — look yours up at
   # https://steamid.io if you only know your custom profile URL/vanity name).
-  STEAM_ID: "76561198000000000"
+  STEAM_ID: "76561198929782130"
 
 jobs:
   sync:
