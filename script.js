@@ -1,7 +1,4 @@
-/* =========================================================
-   CONFIG — this is the only part you should need to edit.
-   Fill in your own info, then commit + push to GitHub Pages.
-   ========================================================= */
+
 const CONFIG = {
   // Your display name — shown in the nav bar and the big hero heading.
   name: "Entertained",
@@ -41,8 +38,8 @@ const CONFIG = {
     { key: "Accessories",  value: "I don't even fucking know." }
   ],
 
-  // icon options below: "steam", "discord", "anime", "github", "twitter", "twitch", "link"
-socials: [
+  // icon options below: "steam", "discord", "anime", "github", "spotify", "twitter", "twitch", "link"
+  socials: [
     { label: "Steam",   handle: "Super",     url: "https://steamcommunity.com/id/SuperLovesUnturned/", icon: "steam" },
     { label: "Discord", handle: "entertalned",        url: "https://discord.com/users/1238225742802849823",         icon: "discord" },
     { label: "myanimelist", handle: "Entertained",     url: "https://myanimelist.net/profile/Entertained",        icon: "anime" },
@@ -73,7 +70,8 @@ const ICONS = {
   github: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.99 1.03-2.68-.1-.26-.45-1.28.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.65.64.69 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>`,
   twitter: `<svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.6L3.3 21h2.3l6.1-6.9 4.9 6.9H21l-7.8-10.1L20 3h-2.3l-5.7 6.4L7.4 3H3Z"/></svg>`,
   twitch: `<svg viewBox="0 0 24 24"><path d="M4 2 2.5 5.7v13.6H7V22l3.2-2.7H13l6-5V2H4Zm14 11.4-3.4 3.4h-3.4l-2.8 2.4v-2.4H4.9V4h13.1v9.4ZM14.6 6.9h1.7v5.2h-1.7V6.9Zm-4.5 0h1.7v5.2h-1.7V6.9Z"/></svg>`,
-  link: `<svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3-3a1 1 0 1 1 1.4 1.4l-3 3a1 1 0 0 1-1.4 0Zm-3.2 3.2a3 3 0 0 1 0-4.2l2-2a1 1 0 1 1 1.4 1.4l-2 2a1 1 0 0 0 0 1.4 1 1 0 0 0 1.4 0l2-2a1 1 0 1 1 1.4 1.4l-2 2a3 3 0 0 1-4.2 0Zm9.2-9.2a3 3 0 0 1 0 4.2l-2 2a1 1 0 1 1-1.4-1.4l2-2a1 1 0 0 0 0-1.4 1 1 0 0 0-1.4 0l-2 2a1 1 0 1 1-1.4-1.4l2-2a3 3 0 0 1 4.2 0Z"/></svg>`
+  link: `<svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3-3a1 1 0 1 1 1.4 1.4l-3 3a1 1 0 0 1-1.4 0Zm-3.2 3.2a3 3 0 0 1 0-4.2l2-2a1 1 0 1 1 1.4 1.4l-2 2a1 1 0 0 0 0 1.4 1 1 0 0 0 1.4 0l2-2a1 1 0 1 1 1.4 1.4l-2 2a3 3 0 0 1-4.2 0Zm9.2-9.2a3 3 0 0 1 0 4.2l-2 2a1 1 0 1 1-1.4-1.4l2-2a1 1 0 0 0 0-1.4 1 1 0 0 0-1.4 0l-2 2a1 1 0 1 1-1.4-1.4l2-2a3 3 0 0 1 4.2 0Z"/></svg>`,
+  spotify: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.4 14.5a.7.7 0 0 1-.96.24c-2.6-1.6-5.9-1.96-9.8-1.07a.7.7 0 1 1-.3-1.36c4.26-.97 7.9-.56 10.83 1.24.34.2.44.63.23.95Zm1.24-2.75a.86.86 0 0 1-1.19.28c-2.98-1.83-7.52-2.36-11.04-1.29a.86.86 0 1 1-.5-1.64c4.02-1.22 9.02-.63 12.45 1.47.4.25.53.78.28 1.18Zm.1-2.86C14.6 8.7 9.2 8.5 6.02 9.48a1.03 1.03 0 1 1-.6-1.97c3.66-1.11 9.7-.9 13.53 1.39a1.03 1.03 0 1 1-1.06 1.77c-.05-.03-.07-.05-.05-.03Z"/></svg>`
 };
 
 /* =========================================================
@@ -136,6 +134,7 @@ function renderSocials() {
         </a>
         ${s.icon === "steam" ? steamPopoverMarkup() : ""}
         ${s.icon === "discord" ? discordPopoverMarkup() : ""}
+        ${s.icon === "github" ? githubPopoverMarkup() : ""}
       </div>`)
     .join("");
 
@@ -164,6 +163,37 @@ function discordPopoverMarkup() {
         </div>
       </div>
     </div>`;
+}
+
+function githubPopoverMarkup() {
+  return `
+    <div class="connect-popover github-popover">
+      <img
+        class="github-stats-img"
+        src="${githubStatsImageUrl()}"
+        alt="GitHub top languages for ${CONFIG.githubUsername}"
+        loading="lazy"
+        onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+      >
+      <p class="popover-status" hidden>stats service unavailable right now</p>
+    </div>`;
+}
+
+// Colors/bg overridden here (rather than the shadow_green preset) so the
+// card blends into the popover panel instead of clashing with the site's
+// red/black theme. Full customization options: github-readme-stats.shion.dev
+function githubStatsImageUrl() {
+  const params = new URLSearchParams({
+    username: CONFIG.githubUsername,
+    layout: "compact",
+    hide_border: "true",
+    include_all_commits: "true",
+    count_private: "true",
+    bg_color: "00000000",   // transparent, so the popover's own panel shows through
+    title_color: "e0273f",  // matches --red
+    text_color: "e9e6e2"    // matches --text
+  });
+  return `https://github-readme-stats.shion.dev/api/top-langs/?${params.toString()}`;
 }
 
 /* =========================================================
@@ -202,7 +232,7 @@ function initSteamPopover() {
       statusEl.hidden = true;
     } catch {
       statusEl.hidden = false;
-      statusEl.textContent = "library not synced yet BECAUSE STEAM API IS A BUNCH OF BULLSHIT!";
+      statusEl.textContent = "library not synced yet — see README (steam-sync workflow)";
     }
     return games;
   }
@@ -428,6 +458,39 @@ function escapeHtml(str) {
 }
 
 /* =========================================================
+   CURSOR GLOW — soft red light that follows the pointer.
+   Skipped entirely on touch devices (no hover/mouse to track).
+   ========================================================= */
+function initCursorGlow() {
+  const glow = document.getElementById("cursor-glow");
+  if (!glow) return;
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+  let rafPending = false;
+  let x = window.innerWidth / 2;
+  let y = window.innerHeight / 2;
+
+  function applyPosition() {
+    document.documentElement.style.setProperty("--glow-x", `${x}px`);
+    document.documentElement.style.setProperty("--glow-y", `${y}px`);
+    rafPending = false;
+  }
+
+  window.addEventListener("mousemove", e => {
+    x = e.clientX;
+    y = e.clientY;
+    glow.classList.add("is-active");
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(applyPosition);
+    }
+  });
+
+  document.addEventListener("mouseleave", () => glow.classList.remove("is-active"));
+  document.addEventListener("mouseenter", () => glow.classList.add("is-active"));
+}
+
+/* =========================================================
    INIT
    ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
@@ -437,6 +500,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSpecs();
   renderSocials();
   fetchRepos();
+  initCursorGlow();
 
   document.getElementById("carousel-prev").addEventListener("click", () => goToSlide(carouselState.index - 1));
   document.getElementById("carousel-next").addEventListener("click", () => goToSlide(carouselState.index + 1));
