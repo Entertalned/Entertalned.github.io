@@ -27,7 +27,7 @@ const CONFIG = {
   about: [
     "Hey, I'm <strong>Enter</strong> — You probably know me off of roblox or discord.",
     "I like to code, play video games, and do a lot of other stuff in my free time. Currently looking for a job because I just graduated HS!",
-    "I'm also a dude, and I own my dads 2003 RAM 1500"
+    "I'm also a dude, and I would like to become a suicide hotline operator."
   ],
 
   specs: [
