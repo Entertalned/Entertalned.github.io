@@ -1,10 +1,8 @@
 name: Sync Steam library
 
-# No API key needed. This reads the public XML feed that Steam's own
-# community pages use (https://steamcommunity.com/profiles/<id>/games?tab=all&xml=1),
-# which requires no key at all — only that your profile's "Game details"
-# privacy setting is Public. Runs server-side on GitHub's infrastructure
-# on a schedule, and commits the result to data/steam-games.json.
+# Runs server-side on GitHub's infrastructure, not in the visitor's browser —
+# this is the only place your Steam API key is ever used, read from a repo
+# secret and never written into any file GitHub Pages actually serves.
 on:
   schedule:
     - cron: "0 */6 * * *"   # every 6 hours
@@ -13,62 +11,49 @@ on:
 permissions:
   contents: write
 
-env:
-  # Replace with your own SteamID64 (a long numeric ID — look yours up at
-  # https://steamid.io if you only know your custom profile URL/vanity name).
-  STEAM_ID: "76561198929782130"
-
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch owned games from Steam's public XML feed
+      - name: Fetch owned games from the Steam Web API
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          STEAM_ID: ${{ secrets.STEAM_ID }}
         run: |
           mkdir -p data
-          curl -sL \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" \
-            "https://steamcommunity.com/profiles/${STEAM_ID}/games/?tab=all&xml=1" \
-            -o /tmp/steam-raw.xml
+          curl -s "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true&include_played_free_games=true" \
+            -o /tmp/steam-raw.json
 
-          if ! grep -q "<gamesList>" /tmp/steam-raw.xml; then
-            echo "Could not read a games list. Most likely cause: your Steam profile's"
-            echo "'Game details' privacy setting isn't Public, or STEAM_ID is wrong."
-            echo "----- first 500 characters of the actual response, for debugging -----"
-            head -c 500 /tmp/steam-raw.xml
+          if ! grep -q '"response"' /tmp/steam-raw.json; then
+            echo "Unexpected response from the Steam API. First 500 characters, for debugging:"
+            head -c 500 /tmp/steam-raw.json
             echo ""
-            echo "-------------------------------------------------------------------"
-            echo "Leaving the existing data/steam-games.json untouched."
-            exit 0
+            exit 1
           fi
 
           node -e '
             const fs = require("fs");
-            const xml = fs.readFileSync("/tmp/steam-raw.xml", "utf8");
+            const raw = JSON.parse(fs.readFileSync("/tmp/steam-raw.json", "utf8"));
 
-            const getTag = (block, tag) => {
-              const m = block.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`));
-              if (!m) return null;
-              return m[1].replace(/<!\[CDATA\[/, "").replace(/\]\]>/, "").trim();
-            };
+            if (!raw.response || Object.keys(raw.response).length === 0) {
+              console.log("Steam returned an empty response object.");
+              console.log("Most likely cause: the profile Game details privacy is not");
+              console.log("set to Public, or STEAM_ID / STEAM_API_KEY is wrong.");
+              console.log("Leaving the existing data/steam-games.json untouched.");
+              process.exit(0);
+            }
 
-            const blocks = xml.match(/<game>[\s\S]*?<\/game>/g) || [];
-
-            const games = blocks
-              .map(block => ({
-                appid: getTag(block, "appID"),
-                name: getTag(block, "name"),
-                hoursRaw: getTag(block, "hoursOnRecord")
-              }))
-              .filter(g => g.appid && g.name && g.hoursRaw)
+            const games = (raw.response.games || [])
+              .filter(g => g.playtime_forever > 0)
+              .sort((a, b) => b.playtime_forever - a.playtime_forever)
               .map(g => ({
-                appid: Number(g.appid),
+                appid: g.appid,
                 name: g.name,
-                hours: parseFloat(g.hoursRaw.replace(/,/g, "")),
+                hours: Math.round((g.playtime_forever / 60) * 10) / 10,
                 header: `https://cdn.cloudflare.steamstatic.com/steam/apps/${g.appid}/header.jpg`
-              }))
-              .sort((a, b) => b.hours - a.hours);
+              }));
 
             fs.writeFileSync("data/steam-games.json", JSON.stringify(games, null, 2) + "\n");
             console.log(`wrote ${games.length} games to data/steam-games.json`);
