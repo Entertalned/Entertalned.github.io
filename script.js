@@ -201,7 +201,7 @@ function initSteamPopover() {
       statusEl.hidden = true;
     } catch {
       statusEl.hidden = false;
-      statusEl.textContent = "library not synced yet — see README (steam-sync workflow)";
+      statusEl.textContent = "library not synced yet BECAUSE STEAM API IS A BUNCH OF BULLSHIT!";
     }
     return games;
   }
