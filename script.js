@@ -27,7 +27,7 @@ const CONFIG = {
   about: [
     "Hey, I'm <strong>Enter</strong> — You probably know me off of roblox or discord.",
     "I like to code, play video games, and do a lot of other stuff in my free time. Currently looking for a job because I just graduated HS!",
-    "I'm also a dude, and I own my dads 2003 RAM 1500"
+    "I'm also a dude, and I would like to become a suicide hotline operator."
   ],
 
   specs: [
@@ -42,12 +42,22 @@ const CONFIG = {
   ],
 
   // icon options below: "steam", "discord", "anime", "github", "twitter", "twitch", "link"
-  socials: [
+socials: [
     { label: "Steam",   handle: "Super",     url: "https://steamcommunity.com/id/SuperLovesUnturned/", icon: "steam" },
     { label: "Discord", handle: "entertalned",        url: "https://discord.com/users/1238225742802849823",         icon: "discord" },
     { label: "myanimelist", handle: "Entertained",     url: "https://myanimelist.net/profile/Entertained",        icon: "anime" },
     { label: "GitHub",  handle: "@" + "Entertalned", url: "https://github.com/Entertalned", icon: "github" }
-  ]
+  ],
+
+  // Your Discord user ID (right-click your name in Discord → Copy User ID,
+  // requires Developer Mode on). Powers the presence popover via Lanyard —
+  // Lanyard only has data for you if you're a member of its Discord server
+  // (discord.gg/lanyard) or another server the Lanyard bot is in.
+  discordUserId: "1238225742802849823",
+
+  // Path to the JSON file the steam-sync GitHub Action writes to.
+  // Don't point this at Steam's API directly — see README.md for why.
+  steamDataUrl: "data/steam-games.json"
 };
 
 /* =========================================================
@@ -117,12 +127,193 @@ function renderSocials() {
   const el = document.getElementById("connect-grid");
   el.innerHTML = CONFIG.socials
     .map(s => `
-      <a class="connect-card" href="${s.url}" target="_blank" rel="noopener noreferrer">
-        ${ICONS[s.icon] || ICONS.link}
-        <span class="connect-label">${s.label}</span>
-        <span class="connect-handle">${s.handle}</span>
-      </a>`)
+      <div class="connect-item" data-social="${s.icon}">
+        <a class="connect-card" href="${s.url}" target="_blank" rel="noopener noreferrer">
+          ${ICONS[s.icon] || ICONS.link}
+          <span class="connect-label">${s.label}</span>
+          <span class="connect-handle">${s.handle}</span>
+        </a>
+        ${s.icon === "steam" ? steamPopoverMarkup() : ""}
+        ${s.icon === "discord" ? discordPopoverMarkup() : ""}
+      </div>`)
     .join("");
+
+  initSteamPopover();
+  initDiscordPopover();
+}
+
+function steamPopoverMarkup() {
+  return `
+    <div class="connect-popover steam-popover">
+      <p class="popover-status" data-role="steam-status">hover to load library…</p>
+      <div class="steam-wheel" data-role="steam-wheel"></div>
+    </div>`;
+}
+
+function discordPopoverMarkup() {
+  return `
+    <div class="connect-popover discord-popover">
+      <p class="popover-status" data-role="discord-status">hover to load presence…</p>
+      <div class="discord-presence" data-role="discord-presence" hidden>
+        <img class="discord-avatar" data-role="discord-avatar" alt="">
+        <span class="discord-status-dot" data-role="discord-status-dot"></span>
+        <div class="discord-info">
+          <p class="discord-name" data-role="discord-name"></p>
+          <p class="discord-activity" data-role="discord-activity"></p>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* =========================================================
+   STEAM POPOVER — auto-scrolling "wheel" carousel
+   Reads data/steam-games.json, which the steam-sync GitHub
+   Action keeps up to date (see README.md — this can't be
+   fetched from Steam's API directly in the browser).
+   ========================================================= */
+function initSteamPopover() {
+  const item = document.querySelector('.connect-item[data-social="steam"]');
+  if (!item) return;
+
+  const statusEl = item.querySelector('[data-role="steam-status"]');
+  const wheelEl = item.querySelector('[data-role="steam-wheel"]');
+
+  let games = null;
+  let index = 0;
+  let timer = null;
+
+  async function loadGames() {
+    if (games) return games;
+    try {
+      const res = await fetch(CONFIG.steamDataUrl);
+      if (!res.ok) throw new Error("not found");
+      const data = await res.json();
+      if (!data.length) throw new Error("empty");
+
+      games = data;
+      wheelEl.innerHTML = games.map(g => `
+        <div class="steam-slide">
+          <img src="${g.header}" alt="${escapeHtml(g.name)}" loading="lazy">
+          <p class="steam-slide-name">${escapeHtml(g.name)}</p>
+          <p class="steam-slide-hours">${g.hours} hrs</p>
+        </div>
+      `).join("");
+      statusEl.hidden = true;
+    } catch {
+      statusEl.hidden = false;
+      statusEl.textContent = "library not synced yet — see README (steam-sync workflow)";
+    }
+    return games;
+  }
+
+  function positionSlides() {
+    const slides = wheelEl.querySelectorAll(".steam-slide");
+    const n = slides.length;
+    slides.forEach((slide, i) => {
+      let offset = i - index;
+      if (offset > n / 2) offset -= n;
+      if (offset < -n / 2) offset += n;
+
+      slide.classList.remove("is-center", "is-side", "is-hidden");
+      if (offset === 0) {
+        slide.classList.add("is-center");
+        slide.style.transform = "translate(-50%, -50%) translateX(0) scale(1)";
+        slide.style.opacity = "1";
+        slide.style.zIndex = "3";
+      } else if (offset === 1 || offset === -1) {
+        slide.classList.add("is-side");
+        slide.style.transform = `translate(-50%, -50%) translateX(${offset * 108}px) scale(0.72)`;
+        slide.style.opacity = "0.32";
+        slide.style.zIndex = "2";
+      } else {
+        slide.classList.add("is-hidden");
+        slide.style.transform = `translate(-50%, -50%) translateX(${(offset > 0 ? 1 : -1) * 200}px) scale(0.6)`;
+        slide.style.opacity = "0";
+        slide.style.zIndex = "1";
+      }
+    });
+  }
+
+  function startWheel() {
+    if (!games) return;
+    positionSlides();
+    if (games.length < 2) return;
+    clearInterval(timer);
+    timer = setInterval(() => {
+      index = (index + 1) % games.length;
+      positionSlides();
+    }, 2000);
+  }
+
+  function stopWheel() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  item.addEventListener("mouseenter", async () => { await loadGames(); startWheel(); });
+  item.addEventListener("mouseleave", stopWheel);
+  item.addEventListener("focusin", async () => { await loadGames(); startWheel(); });
+  item.addEventListener("focusout", stopWheel);
+}
+
+/* =========================================================
+   DISCORD POPOVER — live presence via Lanyard (public, CORS-friendly)
+   ========================================================= */
+const ACTIVITY_VERBS = { 0: "Playing", 1: "Streaming", 2: "Listening to", 3: "Watching", 5: "Competing in" };
+
+function initDiscordPopover() {
+  const item = document.querySelector('.connect-item[data-social="discord"]');
+  if (!item) return;
+
+  const statusEl = item.querySelector('[data-role="discord-status"]');
+  const presenceEl = item.querySelector('[data-role="discord-presence"]');
+  const avatarEl = item.querySelector('[data-role="discord-avatar"]');
+  const nameEl = item.querySelector('[data-role="discord-name"]');
+  const activityEl = item.querySelector('[data-role="discord-activity"]');
+  const dotEl = item.querySelector('[data-role="discord-status-dot"]');
+
+  async function loadPresence() {
+    statusEl.hidden = false;
+    statusEl.textContent = "loading presence…";
+    presenceEl.hidden = true;
+
+    try {
+      const res = await fetch(`https://api.lanyard.rest/v1/users/${CONFIG.discordUserId}`);
+      const json = await res.json();
+      if (!json.success) throw new Error("no data");
+
+      const d = json.data;
+      const user = d.discord_user;
+
+      avatarEl.src = user.avatar
+        ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=80`
+        : `https://cdn.discordapp.com/embed/avatars/0.png`;
+      avatarEl.alt = user.username;
+      nameEl.textContent = user.global_name || user.username;
+
+      const gameActivity = (d.activities || []).find(a => a.type !== 4);
+      const customStatus = (d.activities || []).find(a => a.type === 4);
+
+      if (gameActivity) {
+        activityEl.textContent = `${ACTIVITY_VERBS[gameActivity.type] || "Playing"} ${gameActivity.name}`;
+      } else if (customStatus && customStatus.state) {
+        activityEl.textContent = customStatus.state;
+      } else {
+        activityEl.textContent = "not doing much right now";
+      }
+
+      dotEl.className = "discord-status-dot status-" + d.discord_status;
+      statusEl.hidden = true;
+      presenceEl.hidden = false;
+    } catch {
+      statusEl.hidden = false;
+      statusEl.textContent = "presence unavailable — is Lanyard tracking this account?";
+      presenceEl.hidden = true;
+    }
+  }
+
+  item.addEventListener("mouseenter", loadPresence);
+  item.addEventListener("focusin", loadPresence);
 }
 
 /* =========================================================
