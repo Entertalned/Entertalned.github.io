@@ -46,7 +46,8 @@ socials: [
     { label: "Steam",   handle: "Super",     url: "https://steamcommunity.com/id/SuperLovesUnturned/", icon: "steam" },
     { label: "Discord", handle: "entertalned",        url: "https://discord.com/users/1238225742802849823",         icon: "discord" },
     { label: "myanimelist", handle: "Entertained",     url: "https://myanimelist.net/profile/Entertained",        icon: "anime" },
-    { label: "GitHub",  handle: "@" + "Entertalned", url: "https://github.com/Entertalned", icon: "github" }
+    { label: "GitHub",  handle: "" + "Entertalned", url: "https://github.com/Entertalned", icon: "github" },
+    { label: "Spotify",  handle: "" + "Slim Shawty", url: "https://open.spotify.com/user/r9osb2ioqnlw8kpui185y33wx?si=f1783f748bfb4e17", icon: "Spotify" }
   ],
 
   // Your Discord user ID (right-click your name in Discord → Copy User ID,
