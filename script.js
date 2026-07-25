@@ -8,7 +8,7 @@ const CONFIG = {
 
   // Your GitHub username — used to pull repos + contributors live from the API,
   // and to build the language-stats card shown on hover over the GitHub link.
-  githubUsername: "Entertalned",
+  githubUsername: "entertalned",
 
   // Two small achievement badges shown top-left, next to your name in the nav.
   // Drop your own badge images in an /assets folder and point "img" at them
