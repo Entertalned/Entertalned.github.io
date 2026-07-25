@@ -8,52 +8,50 @@ const CONFIG = {
 
   // Your GitHub username — used to pull repos + contributors live from the API,
   // and to build the language-stats card shown on hover over the GitHub link.
-  githubUsername: "entertalned",
+  githubUsername: "Entertalned",
 
   // Two small achievement badges shown top-left, next to your name in the nav.
   // Drop your own badge images in an /assets folder and point "img" at them
   // (e.g. GitHub profile achievement icons — save them locally, since GitHub
   // doesn't expose them through a public API). Leave "img" empty for a blank slot.
   achievements: [
-    { img: "", alt: "Achievement badge 1" },
-    { img: "", alt: "Achievement badge 2" }
+    { img: "https://raw.githubusercontent.com/Entertalned/Entertalned.github.io/refs/heads/main/assets/autodesk-revit-architecture-certified-user(1).png", alt: "Achievement badge 1" },
+    { img: "https://raw.githubusercontent.com/Entertalned/Entertalned.github.io/refs/heads/main/assets/autodesk-autocad-certified-user(1).png", alt: "Achievement badge 2" }
   ],
 
-  // Optional: hand-pick which repos show in the carousel, in this order.
+   // Optional: hand-pick which repos show in the carousel, in this order.
   // Leave as an empty array to auto-pull your most recently updated public repos instead.
-  pinnedRepos: [], // e.g. ["my-cool-project", "another-repo"]
+  pinnedRepos: ["Survev.io-CSS-Script", "GUI-Project", "RobloxNotetaking", "Entertalned.github.io"], // e.g. ["my-cool-project", "another-repo"]
 
   // How many repos to show if pinnedRepos is empty.
   repoCount: 8,
 
-  tagline: "developer · gamer · anime enjoyer",
+  tagline: "Python Coder · Beatboxer",
 
   about: [
-    "Hey, I'm <strong>Your Name</strong> — replace this whole block in script.js (CONFIG.about) with your actual bio.",
-    "Talk about what you do, what you're into, what you're building. A couple of short paragraphs works better than a wall of text.",
-    "This section pulls straight from the CONFIG.about array below, one string per paragraph, so you can add or remove lines freely."
+    "Hey, I'm <strong>Enter</strong> — You probably know me off of roblox or discord.",
+    "I like to code, play video games, and do a lot of other stuff in my free time. Currently looking for a job because I just graduated HS!",
+    "I'm also a dude, and I would like to become a suicide hotline operator."
   ],
 
   specs: [
-    { key: "cpu",     value: "AMD Ryzen 7 7800X3D" },
-    { key: "gpu",     value: "NVIDIA RTX 4070 Ti Super" },
-    { key: "ram",     value: "32GB DDR5 6000MHz" },
-    { key: "storage", value: "2TB NVMe SSD" },
-    { key: "os",      value: "Windows 11 / Arch Linux dual-boot" },
-    { key: "monitor", value: "27\" 1440p 165Hz" },
-    { key: "periph",  value: "mechanical keyboard, wireless mouse" }
+    { key: "CPU",     value: "Intel(R) Core(TM) i3-10105F CPU" },
+    { key: "GPU",     value: "NVIDIA Geforce GTX 1650" },
+    { key: "RAM",     value: "16 GB DDR4" },
+    { key: "Storage", value: "500 GB CARDBOARD BOX" },
+    { key: "OS",      value: "Windows 11" },
+    { key: "Monitor", value: " 75Hz Piece of Shit"  },
+    { key: "Microphone",  value: "Hyper X Mic(With Steel Series Sonar AI tech)" },
+    { key: "Accessories",  value: "I don't even fucking know." }
   ],
 
   // icon options below: "steam", "discord", "anime", "github", "spotify", "twitter", "twitch", "link"
   socials: [
-    { label: "Steam",   handle: "yourhandle",     url: "https://steamcommunity.com/id/yourhandle", icon: "steam" },
-    { label: "Discord", handle: "yourname",        url: "https://discord.com/users/yourid",         icon: "discord" },
-    { label: "MyAnimeList", handle: "Entertained", url: "https://myanimelist.net/animelist/Entertained?status=2", icon: "anime" },
-    { label: "GitHub",  handle: "@entertalned", url: "https://github.com/entertalned", icon: "github" },
-    // Spotify: just a plain link card, no hover popover. Building "now playing"
-    // needs a one-time OAuth login + a stored refresh token (same kind of
-    // secret-handling as the Steam sync) — say the word if you want that later.
-    { label: "Spotify", handle: "yourhandle",      url: "https://open.spotify.com/user/yourhandle",  icon: "spotify" }
+    { label: "Steam",   handle: "Super",     url: "https://steamcommunity.com/id/SuperLovesUnturned/", icon: "steam" },
+    { label: "Discord", handle: "entertalned",        url: "https://discord.com/users/1238225742802849823",         icon: "discord" },
+    { label: "myanimelist", handle: "Entertained",     url: "https://myanimelist.net/profile/Entertained",        icon: "anime" },
+    { label: "GitHub",  handle: "" + "Entertalned", url: "https://github.com/Entertalned", icon: "github" },
+    { label: "Spotify",  handle: "" + "Slim Shawty", url: "https://open.spotify.com/user/r9osb2ioqnlw8kpui185y33wx?si=f1783f748bfb4e17", icon: "Spotify" }
   ],
 
   // Your MyAnimeList username — used only by the mal-sync GitHub Action.
