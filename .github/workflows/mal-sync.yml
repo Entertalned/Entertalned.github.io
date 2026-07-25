@@ -1,12 +1,12 @@
 name: Sync MyAnimeList completed list
 
-# Uses the free, key-free Jikan API (a MyAnimeList mirror). No secrets
-# needed — a MAL username isn't sensitive, it's already public in your
-# profile URL. Jikan's connection to MAL is documented as intermittently
-# flaky (occasional 504s that succeed again moments later), so this
-# retries a few times with a delay before giving up — if a scheduled run
-# does fail, the previous data/mal-list.json is simply left untouched
-# rather than wiped, and the next scheduled run tries again.
+# Fetches directly from MyAnimeList's own list-loading endpoint (the same
+# one myanimelist.net's own pages use, and the same one Jikan calls under
+# the hood) rather than going through Jikan. Jikan has had a documented,
+# sustained run of 504 errors across many of its endpoints as of mid-2026,
+# so this cuts that unreliable middle layer out entirely. No key needed —
+# this is an unauthenticated, publicly-readable endpoint, same as the
+# community profile pages themselves.
 on:
   schedule:
     - cron: "0 */6 * * *"   # every 6 hours
@@ -25,16 +25,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch completed anime list from Jikan (with retries)
+      - name: Fetch completed anime list directly from MyAnimeList
         run: |
           mkdir -p data
           success=false
 
+          # status=2 is MAL's own internal code for "Completed" (visible in
+          # the original list URL: myanimelist.net/animelist/USER?status=2).
           for i in 1 2 3 4 5; do
-            status=$(curl -s -o /tmp/mal-raw.json -w "%{http_code}" \
-              "https://api.jikan.moe/v4/users/${MAL_USERNAME}/animelist/completed")
+            status=$(curl -sL \
+              -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" \
+              -H "Accept: application/json" \
+              -o /tmp/mal-raw.json -w "%{http_code}" \
+              "https://myanimelist.net/animelist/${MAL_USERNAME}/load.json?status=2&offset=0")
 
-            if [ "$status" = "200" ] && grep -q '"data"' /tmp/mal-raw.json; then
+            if [ "$status" = "200" ] && head -c 1 /tmp/mal-raw.json | grep -q "\["; then
               success=true
               break
             fi
@@ -44,30 +49,27 @@ jobs:
           done
 
           if [ "$success" != "true" ]; then
-            echo "Could not get a good response from Jikan after 5 attempts."
+            echo "Could not get a valid response from MyAnimeList after 5 attempts."
+            echo "----- first 500 characters of the actual response, for debugging -----"
+            head -c 500 /tmp/mal-raw.json
+            echo ""
+            echo "-----------------------------------------------------------------------"
             echo "Leaving the existing data/mal-list.json untouched."
             exit 0
           fi
 
           node -e '
             const fs = require("fs");
-            const json = JSON.parse(fs.readFileSync("/tmp/mal-raw.json", "utf8"));
-            const raw = json.data || [];
+            const raw = JSON.parse(fs.readFileSync("/tmp/mal-raw.json", "utf8"));
 
-            // Read defensively — Jikans exact response shape has shifted
-            // between versions, so this handles either the flattened form
-            // or the official-MAL-mirroring node/list_status form.
+            // MALs own load.json field names, read defensively in case of
+            // minor naming variance across list styles/versions.
             const entries = raw
-              .map(entry => {
-                const anime = entry.anime || entry.node || {};
-                const title = anime.title || anime.title_english || "Untitled";
-                const image =
-                  (anime.images && anime.images.jpg && (anime.images.jpg.large_image_url || anime.images.jpg.image_url)) ||
-                  (anime.main_picture && (anime.main_picture.large || anime.main_picture.medium)) ||
-                  "";
-                const score = entry.score ?? (entry.list_status && entry.list_status.score) ?? 0;
-                return { title, image, score };
-              })
+              .map(item => ({
+                title: item.anime_title || item.anime_title_eng || "Untitled",
+                image: item.anime_image_path || "",
+                score: item.score || 0
+              }))
               .filter(e => e.image)
               .sort((a, b) => b.score - a.score);
 
