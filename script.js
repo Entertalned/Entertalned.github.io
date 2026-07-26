@@ -138,17 +138,15 @@ function renderSpecs() {
 }
 
 /* =========================================================
-   RENDER: connect
+   RENDER: hero social icons (Discord, GitHub, Spotify)
    ========================================================= */
 function renderSocials() {
-  const el = document.getElementById("connect-grid");
+  const el = document.getElementById("hero-socials");
   el.innerHTML = CONFIG.socials
     .map(s => `
-      <div class="connect-item" data-social="${s.icon}">
-        <a class="connect-card" href="${s.url}" target="_blank" rel="noopener noreferrer">
+      <div class="hero-social-item" data-social="${s.icon}">
+        <a class="hero-social-link" href="${s.url}" target="_blank" rel="noopener noreferrer" aria-label="${s.label}">
           ${ICONS[s.icon] || ICONS.link}
-          <span class="connect-label">${s.label}</span>
-          <span class="connect-handle">${s.handle}</span>
         </a>
         ${s.icon === "discord" ? discordPopoverMarkup() : ""}
         ${s.icon === "github" ? githubPopoverMarkup() : ""}
@@ -205,63 +203,63 @@ function githubStatsImageUrl() {
 }
 
 /* =========================================================
-   COVERFLOW WHEEL — used by the Steam and Anime sections.
-   Center card sharp and on top; neighbors smaller and faded;
-   everything else invisible. Autoplays continuously, but pauses
-   immediately on any manual interaction (touch swipe, mouse drag,
-   trackpad/wheel scroll, or arrow keys) and quietly resumes a few
-   seconds after the interaction stops. No buttons — scroll/swipe/
-   drag only, unlike the Projects carousel below.
+   COVERFLOW SCROLLER — used by the Steam and Anime sections.
+   Uses real native horizontal scrolling (the browser handles
+   trackpad, click-drag via pointer events, touch, and the
+   mobile-only arrow buttons) rather than hand-rolled drag
+   tracking — far more reliable across devices. A scroll listener
+   just reads the current scroll position to fade/scale each card
+   by distance from center, for the coverflow look. Autoplays
+   continuously, pausing immediately on any interaction and
+   quietly resuming a few seconds after it stops.
    ========================================================= */
-function createCoverWheel({ container, track, cardSelector, autoplayMs }) {
-  let index = 0;
+function createCoverflowScroller({ container, track, cardSelector, autoplayMs, prevBtn, nextBtn }) {
   let cardCount = 0;
   let autoplayTimer = null;
   let resumeTimer = null;
+  let rafPending = false;
 
-  function position() {
-    const slides = track.querySelectorAll(cardSelector);
-    const n = slides.length;
-    if (!n) return;
-    const cardWidth = slides[0].getBoundingClientRect().width;
+  function cardStep() {
+    const cards = track.querySelectorAll(cardSelector);
+    if (!cards.length) return 0;
+    const trackGap = parseFloat(getComputedStyle(track).gap || "0") || 0;
+    return cards[0].getBoundingClientRect().width + trackGap;
+  }
 
-    slides.forEach((slide, i) => {
-      let offset = i - index;
-      if (offset > n / 2) offset -= n;
-      if (offset < -n / 2) offset += n;
-
-      slide.classList.remove("is-center", "is-side", "is-hidden");
-      if (offset === 0) {
-        slide.classList.add("is-center");
-        slide.style.transform = "translate(-50%, -50%) translateX(0) scale(1)";
-        slide.style.opacity = "1";
-        slide.style.zIndex = "3";
-      } else if (offset === 1 || offset === -1) {
-        slide.classList.add("is-side");
-        slide.style.transform = `translate(-50%, -50%) translateX(${offset * cardWidth * 1.05}px) scale(0.75)`;
-        slide.style.opacity = "0.35";
-        slide.style.zIndex = "2";
-      } else {
-        slide.classList.add("is-hidden");
-        slide.style.transform = `translate(-50%, -50%) translateX(${(offset > 0 ? 1 : -1) * cardWidth * 2}px) scale(0.55)`;
-        slide.style.opacity = "0";
-        slide.style.zIndex = "1";
-      }
+  function updateVisuals() {
+    rafPending = false;
+    const cards = track.querySelectorAll(cardSelector);
+    if (!cards.length) return;
+    const centerX = container.scrollLeft + container.clientWidth / 2;
+    cards.forEach(card => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const dist = Math.abs(cardCenter - centerX);
+      const norm = Math.min(dist / (card.offsetWidth * 1.15), 1);
+      card.style.transform = `scale(${(1 - norm * 0.32).toFixed(3)})`;
+      card.style.opacity = (1 - norm * 0.85).toFixed(2);
     });
   }
 
-  function goTo(i) {
-    if (cardCount === 0) return;
-    index = ((i % cardCount) + cardCount) % cardCount;
-    position();
+  function scheduleUpdate() {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(updateVisuals);
   }
-  function next() { goTo(index + 1); }
-  function prev() { goTo(index - 1); }
+
+  function scrollByCards(dir) {
+    const step = cardStep();
+    if (!step) return;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    let target = container.scrollLeft + dir * step;
+    if (target < -1) target = maxScroll;      // loop to the end
+    if (target > maxScroll + 1) target = 0;   // loop to the start
+    container.scrollTo({ left: target, behavior: "smooth" });
+  }
 
   function startAutoplay() {
     stopAutoplay();
     if (!autoplayMs || cardCount < 2) return;
-    autoplayTimer = setInterval(next, autoplayMs);
+    autoplayTimer = setInterval(() => scrollByCards(1), autoplayMs);
   }
   function stopAutoplay() {
     clearInterval(autoplayTimer);
@@ -273,58 +271,56 @@ function createCoverWheel({ container, track, cardSelector, autoplayMs }) {
     resumeTimer = setTimeout(startAutoplay, 4000);
   }
 
-  // touch swipe
-  let touchStartX = null;
-  container.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; stopAutoplay(); }, { passive: true });
-  container.addEventListener("touchend", e => {
-    if (touchStartX === null) return;
-    const delta = e.changedTouches[0].clientX - touchStartX;
-    if (delta > 40) prev();
-    if (delta < -40) next();
-    touchStartX = null;
-    pauseThenResume();
-  });
+  container.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
 
-  // mouse drag (desktop)
-  let dragStartX = null;
+  // Click-and-drag for mouse users — native overflow-scroll containers
+  // don't support this out of the box for a plain mouse (unlike touch/
+  // trackpad, which scroll natively), so this maps drag distance directly
+  // onto scrollLeft. Touch/pen are left alone entirely to use the
+  // browser's own native touch-scrolling, which is more reliable than
+  // anything hand-rolled here.
   let dragging = false;
-  container.addEventListener("mousedown", e => { dragStartX = e.clientX; dragging = true; stopAutoplay(); });
-  window.addEventListener("mouseup", e => {
-    if (!dragging) return;
+  let dragStartX = 0;
+  let dragStartScroll = 0;
+  container.addEventListener("pointerdown", e => {
+    stopAutoplay();
+    if (e.pointerType !== "mouse") return;
+    dragging = true;
+    dragStartX = e.clientX;
+    dragStartScroll = container.scrollLeft;
+    container.setPointerCapture(e.pointerId);
+  });
+  container.addEventListener("pointermove", e => {
+    if (!dragging || e.pointerType !== "mouse") return;
+    container.scrollLeft = dragStartScroll - (e.clientX - dragStartX);
+  });
+  container.addEventListener("pointerup", e => {
     dragging = false;
-    const delta = e.clientX - dragStartX;
-    if (delta > 40) prev();
-    if (delta < -40) next();
     pauseThenResume();
   });
-
-  // trackpad horizontal scroll only — a plain vertical mouse-wheel scroll
-  // (deltaY dominant) is deliberately ignored and left alone so visitors
-  // can still scroll past this section normally with a mouse wheel.
-  container.addEventListener("wheel", e => {
-    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // vertical scroll — let the page scroll
-    if (Math.abs(e.deltaX) < 15) return;
-    e.preventDefault();
-    if (e.deltaX > 0) next(); else prev();
-    pauseThenResume();
-  }, { passive: false });
+  container.addEventListener("pointercancel", () => { dragging = false; });
 
   container.addEventListener("keydown", e => {
-    if (e.key === "ArrowLeft") { prev(); pauseThenResume(); }
-    if (e.key === "ArrowRight") { next(); pauseThenResume(); }
+    if (e.key === "ArrowLeft") { scrollByCards(-1); pauseThenResume(); }
+    if (e.key === "ArrowRight") { scrollByCards(1); pauseThenResume(); }
   });
 
   container.addEventListener("mouseenter", stopAutoplay);
   container.addEventListener("mouseleave", startAutoplay);
-  window.addEventListener("resize", position);
+
+  if (prevBtn) prevBtn.addEventListener("click", () => { scrollByCards(-1); pauseThenResume(); });
+  if (nextBtn) nextBtn.addEventListener("click", () => { scrollByCards(1); pauseThenResume(); });
 
   return {
     setCards(html, count) {
       track.innerHTML = html;
       cardCount = count;
-      index = 0;
-      position();
-      startAutoplay();
+      requestAnimationFrame(() => {
+        container.scrollLeft = 0;
+        updateVisuals();
+        startAutoplay();
+      });
     }
   };
 }
@@ -336,11 +332,13 @@ function createCoverWheel({ container, track, cardSelector, autoplayMs }) {
    ========================================================= */
 async function initSteamSection() {
   const statusEl = document.getElementById("steam-carousel-status");
-  const wheel = createCoverWheel({
+  const scroller = createCoverflowScroller({
     container: document.getElementById("steam-carousel"),
     track: document.getElementById("steam-carousel-track"),
     cardSelector: ".wheel-card",
-    autoplayMs: 2200
+    autoplayMs: 2200,
+    prevBtn: document.getElementById("steam-carousel-prev"),
+    nextBtn: document.getElementById("steam-carousel-next")
   });
 
   try {
@@ -350,9 +348,9 @@ async function initSteamSection() {
     if (!games.length) throw new Error("empty");
 
     statusEl.hidden = true;
-    wheel.setCards(games.map(g => `
+    scroller.setCards(games.map(g => `
       <div class="wheel-card">
-        <img src="${g.header}" alt="${escapeHtml(g.name)}" loading="lazy">
+        <img src="${g.header}" alt="${escapeHtml(g.name)}" loading="lazy" draggable="false">
         <p class="wheel-card-name">${escapeHtml(g.name)}</p>
         <p class="wheel-card-stat">${g.hours} hrs</p>
       </div>
@@ -369,11 +367,13 @@ async function initSteamSection() {
    ========================================================= */
 async function initMalSection() {
   const statusEl = document.getElementById("mal-carousel-status");
-  const wheel = createCoverWheel({
+  const scroller = createCoverflowScroller({
     container: document.getElementById("mal-carousel"),
     track: document.getElementById("mal-carousel-track"),
     cardSelector: ".wheel-card",
-    autoplayMs: 2200
+    autoplayMs: 2200,
+    prevBtn: document.getElementById("mal-carousel-prev"),
+    nextBtn: document.getElementById("mal-carousel-next")
   });
 
   try {
@@ -383,9 +383,9 @@ async function initMalSection() {
     if (!entries.length) throw new Error("empty");
 
     statusEl.hidden = true;
-    wheel.setCards(entries.map(e => `
+    scroller.setCards(entries.map(e => `
       <div class="wheel-card wheel-card--portrait">
-        <img src="${e.image}" alt="${escapeHtml(e.title)}" loading="lazy">
+        <img src="${e.image}" alt="${escapeHtml(e.title)}" loading="lazy" draggable="false">
         <p class="wheel-card-name">${escapeHtml(e.title)}</p>
         <p class="wheel-card-stat">${e.score ? "★ " + e.score + "/10" : "no score"}</p>
       </div>
@@ -397,12 +397,59 @@ async function initMalSection() {
 }
 
 /* =========================================================
+   MUSIC TOGGLE — one button, driving the native <audio> element
+   (id="bg-music") that loops the self-hosted track. Icon swaps via
+   the .is-playing class instead of using two separate buttons.
+   ========================================================= */
+function initMusicPlayer() {
+  const toggleBtn = document.getElementById("music-toggle");
+  const audio = document.getElementById("bg-music");
+  if (!toggleBtn || !audio) return;
+
+  toggleBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play().catch(() => {}); // ignore — browser may block until a user gesture, which this click is
+    } else {
+      audio.pause();
+    }
+  });
+
+  audio.addEventListener("play", () => {
+    toggleBtn.classList.add("is-playing");
+    toggleBtn.setAttribute("aria-pressed", "true");
+    toggleBtn.setAttribute("aria-label", "Pause background music");
+  });
+  audio.addEventListener("pause", () => {
+    toggleBtn.classList.remove("is-playing");
+    toggleBtn.setAttribute("aria-pressed", "false");
+    toggleBtn.setAttribute("aria-label", "Play background music");
+  });
+
+  // Try to start it the instant the page loads. Browsers block audio
+  // with sound until the visitor has interacted with the page at least
+  // once — that's a browser policy, not something a site can fully
+  // override — so if this gets blocked, fall back to starting on the
+  // very first click/tap/keypress anywhere on the page instead.
+  audio.play().catch(() => {
+    const startOnFirstInteraction = () => {
+      audio.play().catch(() => {});
+      ["pointerdown", "keydown", "touchstart"].forEach(evt =>
+        window.removeEventListener(evt, startOnFirstInteraction)
+      );
+    };
+    ["pointerdown", "keydown", "touchstart"].forEach(evt =>
+      window.addEventListener(evt, startOnFirstInteraction, { once: true })
+    );
+  });
+}
+
+/* =========================================================
    DISCORD POPOVER — live presence via Lanyard (public, CORS-friendly)
    ========================================================= */
 const ACTIVITY_VERBS = { 0: "Playing", 1: "Streaming", 2: "Listening to", 3: "Watching", 5: "Competing in" };
 
 function initDiscordPopover() {
-  const item = document.querySelector('.connect-item[data-social="discord"]');
+  const item = document.querySelector('.hero-social-item[data-social="discord"]');
   if (!item) return;
 
   const statusEl = item.querySelector('[data-role="discord-status"]');
@@ -614,6 +661,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("steam-profile-link").href = CONFIG.steamProfileUrl;
   document.getElementById("mal-profile-link").href = CONFIG.malProfileUrl;
   initCursorGlow();
+  initMusicPlayer();
 
   document.getElementById("carousel-prev").addEventListener("click", () => goToSlide(carouselState.index - 1));
   document.getElementById("carousel-next").addEventListener("click", () => goToSlide(carouselState.index + 1));

@@ -106,6 +106,37 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =========================================================
+   MUSIC TOGGLE — sits inline in the nav (vertically centered with
+   everything else there for free, via nav-left's flex layout). No
+   border/background of its own, so only the icon reads on top of
+   the nav's existing backdrop — icon swaps via .is-playing instead
+   of using two separate buttons.
+   ========================================================= */
+.music-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+.music-toggle:hover { color: var(--red); }
+.music-toggle svg { width: 16px; height: 16px; fill: currentColor; }
+.music-toggle .icon-pause { display: none; }
+.music-toggle.is-playing .icon-play { display: none; }
+.music-toggle.is-playing .icon-pause { display: block; }
+
+/* Playback itself is handled by the native <audio> element in the
+   markup (id="bg-music") — no extra styling needed, browsers keep
+   elements without "controls" invisible by default. */
+
+/* =========================================================
    SHARED LABELS
    ========================================================= */
 .idx {
@@ -326,28 +357,30 @@ a { color: inherit; text-decoration: none; }
   margin: 1.6rem 0 0;
 }
 
-.hero-scroll {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
+.hero-socials {
+  display: flex;
+  gap: 1.1rem;
+  justify-content: center;
   margin-top: 4rem;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  color: var(--text-faint);
-  text-transform: uppercase;
 }
-.hero-scroll-line {
-  width: 1px;
-  height: 34px;
-  background: linear-gradient(to bottom, var(--red), transparent);
-  animation: scroll-pulse 1.6s ease-in-out infinite;
+.hero-social-item { position: relative; }
+
+.hero-social-link {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-dim);
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
-@keyframes scroll-pulse {
-  0% { opacity: 0.2; transform: scaleY(0.6); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-  100% { opacity: 0.2; transform: scaleY(0.6); transform-origin: top; }
+.hero-social-link svg { width: 18px; height: 18px; fill: currentColor; }
+.hero-social-link:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-3px);
 }
 
 /* =========================================================
@@ -431,72 +464,12 @@ a { color: inherit; text-decoration: none; }
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* =========================================================
-   CONNECT
-   ========================================================= */
-.connect-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1rem;
-}
-
-.connect-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-  padding: 1.8rem 1rem;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
-}
-.connect-card:hover {
-  border-color: var(--red-dim);
-  background: var(--panel-2);
-  transform: translateY(-3px);
-}
-.connect-card::before,
-.connect-card::after {
-  content: "";
-  position: absolute;
-  width: 10px; height: 10px;
-  border: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-.connect-card::before { top: 6px; left: 6px; border-top-color: var(--border); border-left-color: var(--border); }
-.connect-card::after { bottom: 6px; right: 6px; border-bottom-color: var(--border); border-right-color: var(--border); }
-.connect-card:hover::before { border-top-color: var(--red); border-left-color: var(--red); }
-.connect-card:hover::after { border-bottom-color: var(--red); border-right-color: var(--red); }
-
-.connect-card svg {
-  width: 30px; height: 30px;
-  fill: var(--text-dim);
-  transition: fill 0.2s ease;
-}
-.connect-card:hover svg { fill: var(--red); }
-
-.connect-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-.connect-handle {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-faint);
-}
-
-/* ---- hover popovers (steam wheel / discord presence) ---- */
-.connect-item { position: relative; }
-
+/* ---- hover popovers (discord presence / github stats) ---- */
 .connect-popover {
   position: absolute;
   left: 50%;
-  top: calc(100% + 10px);
-  transform: translateX(-50%) translateY(6px);
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(-6px);
   width: 260px;
   max-width: 80vw;
   background: var(--panel-2);
@@ -509,8 +482,8 @@ a { color: inherit; text-decoration: none; }
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 150;
 }
-.connect-item:hover .connect-popover,
-.connect-item:focus-within .connect-popover {
+.hero-social-item:hover .connect-popover,
+.hero-social-item:focus-within .connect-popover {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -525,43 +498,85 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 
-/* wheel-style coverflow — used by the Steam and Anime sections.
-   Center card sharp and on top; immediate neighbors smaller and
-   faded; everything else invisible. Navigated by scroll/swipe/drag
-   only (no buttons) — see createCoverWheel in script.js. */
+/* dual carousel layout — Steam and Anime side by side */
+.dual-carousel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+}
+@media (max-width: 780px) {
+  .dual-carousel-grid { grid-template-columns: minmax(0, 1fr); gap: 4rem; }
+}
+
+.dual-carousel-col {
+  /* without this, the wheel-stage's scrollable content forces this grid
+     column to grow to fit ALL cards instead of respecting its column
+     width — a classic CSS grid gotcha ("grid blowout") that was pushing
+     the Anime column off-screen to the right. */
+  min-width: 0;
+}
+
+/* coverflow carousel — used by the Steam and Anime sections.
+   Real native horizontal scrolling (trackpad, click-drag, touch,
+   or the mobile-only arrows below) — the browser handles the
+   actual scrolling, so it's reliable across devices. A scroll
+   listener in script.js just reads position to fade/scale cards
+   for the coverflow look; center card sharp and on top, neighbors
+   smaller and faded the further they are from center. */
 .wheel-stage {
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   cursor: grab;
   user-select: none;
-  max-width: 640px;
-  margin: 0 auto;
 }
+.wheel-stage::-webkit-scrollbar { display: none; }
 .wheel-stage:active { cursor: grabbing; }
-.wheel-stage--steam { height: 210px; }
-.wheel-stage--mal { height: 400px; }
+.wheel-stage--steam { height: 210px; padding: 0 calc(50% - 95px); }
+/* Anime cards are now narrower (130px vs Steam's 190px) so a portrait
+   cover ends up close to the same overall size as a landscape box-art
+   card instead of towering over it — see .wheel-card--portrait below. */
+.wheel-stage--mal { height: 260px; padding: 0 calc(50% - 65px); }
 
-.wheel-track { position: relative; width: 100%; height: 100%; }
+.wheel-track {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
 
 .wheel-card {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  width: 190px;
+  flex: 0 0 190px;
+  /* Flex items default to min-width: auto, which stops them shrinking
+     below their content's natural/intrinsic size — even with
+     flex-shrink: 0. MAL cover art is much larger than Steam's header
+     images, so it was blowing the card way past its 190px flex-basis
+     (same category of bug already fixed on .dual-carousel-col above,
+     just the flexbox flavor instead of the grid one). */
+  min-width: 0;
+  overflow: hidden;
+  scroll-snap-align: center;
   text-align: center;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
+/* Anime posters are portrait and Steam art is landscape, so they can
+   never be pixel-identical — this narrows the poster card so its
+   height (130 * 1.5 = 195px) lands close to the box-art card's height
+   (190 / 1.5 = ~127px + label), instead of the poster dwarfing it. */
+.wheel-card--portrait { flex-basis: 130px; }
 .wheel-card img {
   width: 100%;
-  aspect-ratio: 16 / 7.5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   border: 1px solid var(--border);
   display: block;
   background: var(--bg);
   pointer-events: none;
+  -webkit-user-drag: none;
 }
 .wheel-card--portrait img { aspect-ratio: 2 / 3; }
-.wheel-card--portrait { top: 40%; }
 
 .wheel-card-name {
   margin: 0.6rem 0 0.15rem;
@@ -650,6 +665,14 @@ a { color: inherit; text-decoration: none; }
    CAROUSELS — shared by Projects, Steam, and Anime sections
    ========================================================= */
 .carousel-controls { display: flex; gap: 0.5rem; }
+.carousel-controls--center { justify-content: center; margin-top: 1.5rem; }
+
+/* Steam/Anime arrows are a mobile-only fallback — desktop navigates by
+   scrolling/dragging the carousel itself, no visible buttons needed. */
+.carousel-controls--mobile-only { display: none; }
+@media (hover: none), (pointer: coarse) {
+  .carousel-controls--mobile-only { display: flex; }
+}
 
 .carousel-btn {
   width: 38px; height: 38px;
@@ -790,13 +813,15 @@ a { color: inherit; text-decoration: none; }
     padding: 0 0.5rem;
   }
 
-  .hero-scroll { margin-top: 3rem; }
+  .hero-socials { margin-top: 3rem; }
 
   /* smaller wheel cards on narrow screens so the side-peek doesn't
-     get pushed almost fully off-screen */
-  .wheel-card { width: 140px; }
-  .wheel-stage--steam { height: 175px; }
-  .wheel-stage--mal { height: 320px; }
+     get pushed almost fully off-screen. Padding keeps first/last
+     cards reachable to true-center (half of each card's width). */
+  .wheel-card { flex-basis: 140px; }
+  .wheel-card--portrait { flex-basis: 100px; }
+  .wheel-stage--steam { height: 165px; padding: 0 calc(50% - 70px); }
+  .wheel-stage--mal { height: 210px; padding: 0 calc(50% - 50px); }
 
   /* fixed 130px key column got tight once the value line wraps —
      stack key above value instead of side-by-side. */

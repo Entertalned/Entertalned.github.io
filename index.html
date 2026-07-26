@@ -16,10 +16,19 @@
 <div class="noise" aria-hidden="true"></div>
 <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
+<!-- Background music — single toggle button, icon swaps between play/pause.
+     Actual playback happens through Spotify's own embed player (kept off-screen
+     below); this button just drives it. See CONFIG.musicTrackUri in script.js. -->
+<audio id="bg-music" src="assets/background-music.mp3" loop preload="none"></audio>
+
 <!-- ===================== NAV ===================== -->
 <header class="nav">
   <div class="nav-inner">
     <div class="nav-left">
+      <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
       <div class="nav-badges" id="nav-badges" aria-label="Achievements">
         <!-- populated by script.js from CONFIG.achievements (2 slots) -->
       </div>
@@ -30,10 +39,9 @@
     <nav class="nav-links">
       <a href="#about"><span class="idx">01</span>ABOUT</a>
       <a href="#specs"><span class="idx">02</span>SPECS</a>
-      <a href="#connect"><span class="idx">03</span>CONNECT</a>
-      <a href="#projects"><span class="idx">04</span>PROJECTS</a>
-      <a href="#steam"><span class="idx">05</span>STEAM</a>
-      <a href="#anime"><span class="idx">06</span>ANIME</a>
+      <a href="#projects"><span class="idx">03</span>PROJECTS</a>
+      <a href="#steam"><span class="idx">04</span>STEAM</a>
+      <a href="#anime"><span class="idx">05</span>ANIME</a>
     </nav>
   </div>
 </header>
@@ -46,11 +54,10 @@
     <div class="hero-content">
       <p class="hero-eyebrow">// SYSTEM PROFILE — STATUS: <span class="status-dot"></span>ONLINE</p>
       <h1 class="hero-name" id="hero-name" data-text="USER">USER</h1>
-      <p class="hero-tagline" id="hero-tagline">Are you entertained?</p>
-      <a href="#about" class="hero-scroll">
-        <span>scroll</span>
-        <span class="hero-scroll-line"></span>
-      </a>
+      <p class="hero-tagline" id="hero-tagline">edit this tagline in script.js — CONFIG.tagline</p>
+      <div class="hero-socials" id="hero-socials">
+        <!-- populated by script.js from CONFIG.socials -->
+      </div>
     </div>
   </section>
 
@@ -82,21 +89,11 @@
     </div>
   </section>
 
-  <!-- ===================== CONNECT ===================== -->
-  <section id="connect" class="section">
-    <div class="section-inner">
-      <h2 class="section-title"><span class="idx">03</span>Connect</h2>
-      <div class="connect-grid" id="connect-grid">
-        <!-- populated by script.js from CONFIG.socials -->
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== PROJECTS ===================== -->
   <section id="projects" class="section section-alt">
     <div class="section-inner">
       <div class="section-title-row">
-        <h2 class="section-title"><span class="idx">04</span>Projects</h2>
+        <h2 class="section-title"><span class="idx">03</span>Projects</h2>
         <div class="carousel-controls">
           <button class="carousel-btn" id="carousel-prev" aria-label="Previous project">&larr;</button>
           <button class="carousel-btn" id="carousel-next" aria-label="Next project">&rarr;</button>
@@ -113,37 +110,42 @@
     </div>
   </section>
 
-  <!-- ===================== STEAM ===================== -->
-  <section id="steam" class="section">
+  <!-- ===================== STEAM + ANIME (side by side) ===================== -->
+  <section class="section">
     <div class="section-inner">
-      <h2 class="section-title section-title--center"><span class="idx">05</span>Steam Library</h2>
+      <div class="dual-carousel-grid">
 
-      <p class="carousel-status" id="steam-carousel-status">loading library…</p>
-
-      <div class="carousel wheel-stage wheel-stage--steam" id="steam-carousel" tabindex="0" aria-label="Steam library — scroll or swipe to browse">
-        <div class="carousel-track wheel-track" id="steam-carousel-track">
-          <!-- populated by script.js from data/steam-games.json -->
+        <div class="dual-carousel-col" id="steam">
+          <h2 class="section-title section-title--center"><span class="idx">04</span>Steam Library</h2>
+          <p class="carousel-status" id="steam-carousel-status">loading library…</p>
+          <div class="carousel wheel-stage wheel-stage--steam" id="steam-carousel" tabindex="0" aria-label="Steam library — scroll or swipe to browse">
+            <div class="carousel-track wheel-track" id="steam-carousel-track">
+              <!-- populated by script.js from data/steam-games.json -->
+            </div>
+          </div>
+          <div class="carousel-controls carousel-controls--center carousel-controls--mobile-only">
+            <button class="carousel-btn" id="steam-carousel-prev" aria-label="Previous game">&larr;</button>
+            <button class="carousel-btn" id="steam-carousel-next" aria-label="Next game">&rarr;</button>
+          </div>
+          <a class="profile-link" id="steam-profile-link" href="#" target="_blank" rel="noopener noreferrer">See profile →</a>
         </div>
-      </div>
 
-      <a class="profile-link" id="steam-profile-link" href="#" target="_blank" rel="noopener noreferrer">See profile →</a>
-    </div>
-  </section>
-
-  <!-- ===================== ANIME ===================== -->
-  <section id="anime" class="section section-alt">
-    <div class="section-inner">
-      <h2 class="section-title section-title--center"><span class="idx">06</span>Completed Anime</h2>
-
-      <p class="carousel-status" id="mal-carousel-status">loading list…</p>
-
-      <div class="carousel wheel-stage wheel-stage--mal" id="mal-carousel" tabindex="0" aria-label="MyAnimeList completed list — scroll or swipe to browse">
-        <div class="carousel-track wheel-track" id="mal-carousel-track">
-          <!-- populated by script.js from data/mal-list.json -->
+        <div class="dual-carousel-col" id="anime">
+          <h2 class="section-title section-title--center"><span class="idx">05</span>Completed Anime</h2>
+          <p class="carousel-status" id="mal-carousel-status">loading list…</p>
+          <div class="carousel wheel-stage wheel-stage--mal" id="mal-carousel" tabindex="0" aria-label="MyAnimeList completed list — scroll or swipe to browse">
+            <div class="carousel-track wheel-track" id="mal-carousel-track">
+              <!-- populated by script.js from data/mal-list.json -->
+            </div>
+          </div>
+          <div class="carousel-controls carousel-controls--center carousel-controls--mobile-only">
+            <button class="carousel-btn" id="mal-carousel-prev" aria-label="Previous anime">&larr;</button>
+            <button class="carousel-btn" id="mal-carousel-next" aria-label="Next anime">&rarr;</button>
+          </div>
+          <a class="profile-link" id="mal-profile-link" href="#" target="_blank" rel="noopener noreferrer">See profile →</a>
         </div>
-      </div>
 
-      <a class="profile-link" id="mal-profile-link" href="#" target="_blank" rel="noopener noreferrer">See profile →</a>
+      </div>
     </div>
   </section>
 
