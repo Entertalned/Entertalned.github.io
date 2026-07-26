@@ -8,7 +8,7 @@ const CONFIG = {
 
   // Your GitHub username — used to pull repos + contributors live from the API,
   // and to build the language-stats card shown on hover over the GitHub link.
-  githubUsername: "Entertalned",
+  githubUsername: "entertalned",
 
   // Two small achievement badges shown top-left, next to your name in the nav.
   // Drop your own badge images in an /assets folder and point "img" at them
@@ -47,9 +47,7 @@ const CONFIG = {
 
   // icon options below: "steam", "discord", "anime", "github", "spotify", "twitter", "twitch", "link"
   socials: [
-    { label: "Steam",   handle: "Super",     url: "https://steamcommunity.com/id/SuperLovesUnturned/", icon: "steam" },
     { label: "Discord", handle: "entertalned",        url: "https://discord.com/users/1238225742802849823",         icon: "discord" },
-    { label: "myanimelist", handle: "Entertained",     url: "https://myanimelist.net/profile/Entertained",        icon: "anime" },
     { label: "GitHub",  handle: "" + "Entertalned", url: "https://github.com/Entertalned", icon: "github" },
     { label: "Spotify",  handle: "" + "Slim Shawty", url: "https://open.spotify.com/user/r9osb2ioqnlw8kpui185y33wx?si=f1783f748bfb4e17", icon: "Spotify" }
   ],
@@ -59,6 +57,13 @@ const CONFIG = {
 
   // Path to the JSON file the mal-sync GitHub Action writes to.
   malDataUrl: "data/mal-list.json",
+
+    // Profile links shown as "See profile" under the Steam/Anime carousels
+  // (Steam and MyAnimeList used to also be Connect cards — removed since
+  // they now have their own full sections, this is their new home).
+  steamProfileUrl: "https://steamcommunity.com/id/SuperLovesUnturned/",
+  malProfileUrl: "https://myanimelist.net/animelist/Entertained?status=2",
+
 
   // Your Discord user ID (right-click your name in Discord → Copy User ID,
   // requires Developer Mode on). Powers the presence popover via Lanyard —
@@ -145,24 +150,12 @@ function renderSocials() {
           <span class="connect-label">${s.label}</span>
           <span class="connect-handle">${s.handle}</span>
         </a>
-        ${s.icon === "steam" ? steamPopoverMarkup() : ""}
         ${s.icon === "discord" ? discordPopoverMarkup() : ""}
         ${s.icon === "github" ? githubPopoverMarkup() : ""}
-        ${s.icon === "anime" ? malPopoverMarkup() : ""}
       </div>`)
     .join("");
 
-  initSteamPopover();
   initDiscordPopover();
-  initMalPopover();
-}
-
-function steamPopoverMarkup() {
-  return `
-    <div class="connect-popover steam-popover">
-      <p class="popover-status" data-role="steam-status">hover to load library…</p>
-      <div class="wheel" data-role="steam-wheel"></div>
-    </div>`;
 }
 
 function discordPopoverMarkup() {
@@ -211,26 +204,27 @@ function githubStatsImageUrl() {
   return `https://github-readme-stats.shion.dev/api/top-langs/?${params.toString()}`;
 }
 
-function malPopoverMarkup() {
-  return `
-    <div class="connect-popover mal-popover">
-      <p class="popover-status" data-role="mal-status">hover to load list…</p>
-      <div class="wheel" data-role="mal-wheel"></div>
-    </div>`;
-}
-
 /* =========================================================
-   SHARED WHEEL CONTROLLER — the auto-rotating "coverflow" carousel
-   used by both the Steam and MyAnimeList popovers. Slides use a
-   generic .wheel-slide class so both can share the same CSS.
+   COVERFLOW WHEEL — used by the Steam and Anime sections.
+   Center card sharp and on top; neighbors smaller and faded;
+   everything else invisible. Autoplays continuously, but pauses
+   immediately on any manual interaction (touch swipe, mouse drag,
+   trackpad/wheel scroll, or arrow keys) and quietly resumes a few
+   seconds after the interaction stops. No buttons — scroll/swipe/
+   drag only, unlike the Projects carousel below.
    ========================================================= */
-function createWheelController(wheelEl) {
+function createCoverWheel({ container, track, cardSelector, autoplayMs }) {
   let index = 0;
-  let timer = null;
+  let cardCount = 0;
+  let autoplayTimer = null;
+  let resumeTimer = null;
 
-  function positionSlides() {
-    const slides = wheelEl.querySelectorAll(".wheel-slide");
+  function position() {
+    const slides = track.querySelectorAll(cardSelector);
     const n = slides.length;
+    if (!n) return;
+    const cardWidth = slides[0].getBoundingClientRect().width;
+
     slides.forEach((slide, i) => {
       let offset = i - index;
       if (offset > n / 2) offset -= n;
@@ -244,133 +238,162 @@ function createWheelController(wheelEl) {
         slide.style.zIndex = "3";
       } else if (offset === 1 || offset === -1) {
         slide.classList.add("is-side");
-        slide.style.transform = `translate(-50%, -50%) translateX(${offset * 108}px) scale(0.72)`;
-        slide.style.opacity = "0.32";
+        slide.style.transform = `translate(-50%, -50%) translateX(${offset * cardWidth * 1.05}px) scale(0.75)`;
+        slide.style.opacity = "0.35";
         slide.style.zIndex = "2";
       } else {
         slide.classList.add("is-hidden");
-        slide.style.transform = `translate(-50%, -50%) translateX(${(offset > 0 ? 1 : -1) * 200}px) scale(0.6)`;
+        slide.style.transform = `translate(-50%, -50%) translateX(${(offset > 0 ? 1 : -1) * cardWidth * 2}px) scale(0.55)`;
         slide.style.opacity = "0";
         slide.style.zIndex = "1";
       }
     });
   }
 
+  function goTo(i) {
+    if (cardCount === 0) return;
+    index = ((i % cardCount) + cardCount) % cardCount;
+    position();
+  }
+  function next() { goTo(index + 1); }
+  function prev() { goTo(index - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (!autoplayMs || cardCount < 2) return;
+    autoplayTimer = setInterval(next, autoplayMs);
+  }
+  function stopAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+  function pauseThenResume() {
+    stopAutoplay();
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(startAutoplay, 4000);
+  }
+
+  // touch swipe
+  let touchStartX = null;
+  container.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; stopAutoplay(); }, { passive: true });
+  container.addEventListener("touchend", e => {
+    if (touchStartX === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX;
+    if (delta > 40) prev();
+    if (delta < -40) next();
+    touchStartX = null;
+    pauseThenResume();
+  });
+
+  // mouse drag (desktop)
+  let dragStartX = null;
+  let dragging = false;
+  container.addEventListener("mousedown", e => { dragStartX = e.clientX; dragging = true; stopAutoplay(); });
+  window.addEventListener("mouseup", e => {
+    if (!dragging) return;
+    dragging = false;
+    const delta = e.clientX - dragStartX;
+    if (delta > 40) prev();
+    if (delta < -40) next();
+    pauseThenResume();
+  });
+
+  // trackpad horizontal scroll only — a plain vertical mouse-wheel scroll
+  // (deltaY dominant) is deliberately ignored and left alone so visitors
+  // can still scroll past this section normally with a mouse wheel.
+  container.addEventListener("wheel", e => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // vertical scroll — let the page scroll
+    if (Math.abs(e.deltaX) < 15) return;
+    e.preventDefault();
+    if (e.deltaX > 0) next(); else prev();
+    pauseThenResume();
+  }, { passive: false });
+
+  container.addEventListener("keydown", e => {
+    if (e.key === "ArrowLeft") { prev(); pauseThenResume(); }
+    if (e.key === "ArrowRight") { next(); pauseThenResume(); }
+  });
+
+  container.addEventListener("mouseenter", stopAutoplay);
+  container.addEventListener("mouseleave", startAutoplay);
+  window.addEventListener("resize", position);
+
   return {
-    setSlides(html) {
-      wheelEl.innerHTML = html;
+    setCards(html, count) {
+      track.innerHTML = html;
+      cardCount = count;
       index = 0;
-    },
-    start() {
-      positionSlides();
-      clearInterval(timer);
-      const n = wheelEl.querySelectorAll(".wheel-slide").length;
-      if (n < 2) return;
-      timer = setInterval(() => {
-        index = (index + 1) % n;
-        positionSlides();
-      }, 2000);
-    },
-    stop() {
-      clearInterval(timer);
-      timer = null;
+      position();
+      startAutoplay();
     }
   };
 }
 
 /* =========================================================
-   STEAM POPOVER — auto-scrolling "wheel" carousel
-   Reads data/steam-games.json, which the steam-sync GitHub
-   Action keeps up to date (see README.md — this can't be
-   fetched from Steam's API directly in the browser).
+   STEAM SECTION — reads data/steam-games.json, which the
+   steam-sync GitHub Action keeps up to date (see README.md —
+   this can't be fetched from Steam's API directly in the browser).
    ========================================================= */
-function initSteamPopover() {
-  const item = document.querySelector('.connect-item[data-social="steam"]');
-  if (!item) return;
+async function initSteamSection() {
+  const statusEl = document.getElementById("steam-carousel-status");
+  const wheel = createCoverWheel({
+    container: document.getElementById("steam-carousel"),
+    track: document.getElementById("steam-carousel-track"),
+    cardSelector: ".wheel-card",
+    autoplayMs: 2200
+  });
 
-  const statusEl = item.querySelector('[data-role="steam-status"]');
-  const wheelEl = item.querySelector('[data-role="steam-wheel"]');
-  const wheel = createWheelController(wheelEl);
+  try {
+    const res = await fetch(CONFIG.steamDataUrl);
+    if (!res.ok) throw new Error("not found");
+    const games = await res.json();
+    if (!games.length) throw new Error("empty");
 
-  let games = null;
-
-  async function loadGames() {
-    if (games) return games;
-    try {
-      const res = await fetch(CONFIG.steamDataUrl);
-      if (!res.ok) throw new Error("not found");
-      const data = await res.json();
-      if (!data.length) throw new Error("empty");
-
-      games = data;
-      wheel.setSlides(games.map(g => `
-        <div class="wheel-slide">
-          <img src="${g.header}" alt="${escapeHtml(g.name)}" loading="lazy">
-          <p class="wheel-slide-name">${escapeHtml(g.name)}</p>
-          <p class="wheel-slide-stat">${g.hours} hrs</p>
-        </div>
-      `).join(""));
-      statusEl.hidden = true;
-    } catch {
-      statusEl.hidden = false;
-      statusEl.textContent = "library not synced yet — see README (steam-sync workflow)";
-    }
-    return games;
+    statusEl.hidden = true;
+    wheel.setCards(games.map(g => `
+      <div class="wheel-card">
+        <img src="${g.header}" alt="${escapeHtml(g.name)}" loading="lazy">
+        <p class="wheel-card-name">${escapeHtml(g.name)}</p>
+        <p class="wheel-card-stat">${g.hours} hrs</p>
+      </div>
+    `).join(""), games.length);
+  } catch {
+    statusEl.hidden = false;
+    statusEl.textContent = "library not synced yet — see README (steam-sync workflow)";
   }
-
-  item.addEventListener("mouseenter", async () => { await loadGames(); if (games) wheel.start(); });
-  item.addEventListener("mouseleave", () => wheel.stop());
-  item.addEventListener("focusin", async () => { await loadGames(); if (games) wheel.start(); });
-  item.addEventListener("focusout", () => wheel.stop());
 }
 
 /* =========================================================
-   MYANIMELIST POPOVER — same wheel as Steam, reading
-   data/mal-list.json, which the mal-sync GitHub Action keeps
-   up to date. (An earlier version called Jikan live from the
-   browser — that hit intermittent 504s from Jikan's own flaky
-   connection to MAL, so this moved to the same sync-to-JSON
-   pattern as Steam for reliability. See README.md.)
+   ANIME SECTION — reads data/mal-list.json, which the
+   mal-sync GitHub Action keeps up to date. See README.md.
    ========================================================= */
-function initMalPopover() {
-  const item = document.querySelector('.connect-item[data-social="anime"]');
-  if (!item) return;
+async function initMalSection() {
+  const statusEl = document.getElementById("mal-carousel-status");
+  const wheel = createCoverWheel({
+    container: document.getElementById("mal-carousel"),
+    track: document.getElementById("mal-carousel-track"),
+    cardSelector: ".wheel-card",
+    autoplayMs: 2200
+  });
 
-  const statusEl = item.querySelector('[data-role="mal-status"]');
-  const wheelEl = item.querySelector('[data-role="mal-wheel"]');
-  const wheel = createWheelController(wheelEl);
+  try {
+    const res = await fetch(CONFIG.malDataUrl);
+    if (!res.ok) throw new Error("not found");
+    const entries = await res.json();
+    if (!entries.length) throw new Error("empty");
 
-  let entries = null;
-
-  async function loadList() {
-    if (entries) return entries;
-    try {
-      const res = await fetch(CONFIG.malDataUrl);
-      if (!res.ok) throw new Error("not found");
-      const data = await res.json();
-      if (!data.length) throw new Error("empty");
-
-      entries = data;
-      wheel.setSlides(entries.map(e => `
-        <div class="wheel-slide">
-          <img src="${e.image}" alt="${escapeHtml(e.title)}" loading="lazy">
-          <p class="wheel-slide-name">${escapeHtml(e.title)}</p>
-          <p class="wheel-slide-stat">${e.score ? "★ " + e.score + "/10" : "no score"}</p>
-        </div>
-      `).join(""));
-      statusEl.hidden = true;
-    } catch (err) {
-      console.error("MAL popover error:", err);
-      statusEl.hidden = false;
-      statusEl.textContent = "list not synced yet — see README (mal-sync workflow)";
-    }
-    return entries;
+    statusEl.hidden = true;
+    wheel.setCards(entries.map(e => `
+      <div class="wheel-card wheel-card--portrait">
+        <img src="${e.image}" alt="${escapeHtml(e.title)}" loading="lazy">
+        <p class="wheel-card-name">${escapeHtml(e.title)}</p>
+        <p class="wheel-card-stat">${e.score ? "★ " + e.score + "/10" : "no score"}</p>
+      </div>
+    `).join(""), entries.length);
+  } catch {
+    statusEl.hidden = false;
+    statusEl.textContent = "list not synced yet — see README (mal-sync workflow)";
   }
-
-  item.addEventListener("mouseenter", async () => { await loadList(); if (entries) wheel.start(); });
-  item.addEventListener("mouseleave", () => wheel.stop());
-  item.addEventListener("focusin", async () => { await loadList(); if (entries) wheel.start(); });
-  item.addEventListener("focusout", () => wheel.stop());
 }
 
 /* =========================================================
@@ -586,6 +609,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSpecs();
   renderSocials();
   fetchRepos();
+  initSteamSection();
+  initMalSection();
+  document.getElementById("steam-profile-link").href = CONFIG.steamProfileUrl;
+  document.getElementById("mal-profile-link").href = CONFIG.malProfileUrl;
   initCursorGlow();
 
   document.getElementById("carousel-prev").addEventListener("click", () => goToSlide(carouselState.index - 1));

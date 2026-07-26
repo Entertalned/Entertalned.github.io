@@ -32,6 +32,8 @@
       <a href="#specs"><span class="idx">02</span>SPECS</a>
       <a href="#connect"><span class="idx">03</span>CONNECT</a>
       <a href="#projects"><span class="idx">04</span>PROJECTS</a>
+      <a href="#steam"><span class="idx">05</span>STEAM</a>
+      <a href="#anime"><span class="idx">06</span>ANIME</a>
     </nav>
   </div>
 </header>
@@ -108,6 +110,40 @@
           <!-- populated by script.js via GitHub API -->
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== STEAM ===================== -->
+  <section id="steam" class="section">
+    <div class="section-inner">
+      <h2 class="section-title section-title--center"><span class="idx">05</span>Steam Library</h2>
+
+      <p class="carousel-status" id="steam-carousel-status">loading library…</p>
+
+      <div class="carousel wheel-stage wheel-stage--steam" id="steam-carousel" tabindex="0" aria-label="Steam library — scroll or swipe to browse">
+        <div class="carousel-track wheel-track" id="steam-carousel-track">
+          <!-- populated by script.js from data/steam-games.json -->
+        </div>
+      </div>
+
+      <a class="profile-link" id="steam-profile-link" href="#" target="_blank" rel="noopener noreferrer">See profile →</a>
+    </div>
+  </section>
+
+  <!-- ===================== ANIME ===================== -->
+  <section id="anime" class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title section-title--center"><span class="idx">06</span>Completed Anime</h2>
+
+      <p class="carousel-status" id="mal-carousel-status">loading list…</p>
+
+      <div class="carousel wheel-stage wheel-stage--mal" id="mal-carousel" tabindex="0" aria-label="MyAnimeList completed list — scroll or swipe to browse">
+        <div class="carousel-track wheel-track" id="mal-carousel-track">
+          <!-- populated by script.js from data/mal-list.json -->
+        </div>
+      </div>
+
+      <a class="profile-link" id="mal-profile-link" href="#" target="_blank" rel="noopener noreferrer">See profile →</a>
     </div>
   </section>
 
