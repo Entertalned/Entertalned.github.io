@@ -3,7 +3,15 @@
     "appid": 304930,
     "name": "Unturned",
     "hours": 8316,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/304930/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/304930/header.jpg",
+    "achievements": {
+      "total": 49,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/94686819d20ed6b8b324f937fd97d8f3281db387.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/d46690f0f3c3c78f4d325ef8890ae7e8554f1f0b.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/a7e74f48853ba5e6369adcacd169264c8bfbfe3f.jpg"
+      ]
+    }
   },
   {
     "appid": 1966720,
@@ -15,31 +23,69 @@
     "appid": 444640,
     "name": "Bloons TD Battles",
     "hours": 34.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/444640/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/444640/header.jpg",
+    "achievements": {
+      "total": 12,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/444640/58d008c562d9e96ce871e2c741b9943a4f3c6b47.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/444640/fe64f673e1389942f8fcb84fecf0d4d0fd973698.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/444640/186d5e4e1f9aeea66552e1c3f12b74766d9f5cae.jpg"
+      ]
+    }
   },
   {
     "appid": 2524890,
     "name": "Pixel Gun 3D: PC Edition",
     "hours": 27.9,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2524890/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2524890/header.jpg",
+    "achievements": {
+      "total": 1,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2524890/1a850cf286984d333dabc7c2310cb9bd4ec76831.jpg"
+      ]
+    }
   },
   {
     "appid": 246620,
     "name": "Plague Inc: Evolved",
     "hours": 19.1,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/246620/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/246620/header.jpg",
+    "achievements": {
+      "total": 54,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/add34a5d580508190d14df94d8cae54c4d76df10.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/356cc2376535b39baaa1f121634e1d262e615229.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/8449d19d57ef0c2f79e15e94eca03579ce1f3ec5.jpg"
+      ]
+    }
   },
   {
     "appid": 242760,
     "name": "The Forest",
     "hours": 10.8,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg",
+    "achievements": {
+      "total": 14,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/519b16b82a539478198db74007f55801a3d669ab.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/765a83fa484c44da37e2009e21946fcb6250f38e.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/42d8a71cb24b2ae56471fc78743f772dfcd858f5.jpg"
+      ]
+    }
   },
   {
     "appid": 49520,
     "name": "Borderlands 2",
     "hours": 9,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/49520/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/49520/header.jpg",
+    "achievements": {
+      "total": 10,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/46fd68f506f2ee8c3f8019ca49c6bc735a7f3f7a.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/0c8bb0bb9caa4c0a6391d2e1163d3cf6d29dbffd.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/eef2ce58e116ea0cd1e5b9d6a82968ebd22b843d.jpg"
+      ]
+    }
   },
   {
     "appid": 2881650,
@@ -51,7 +97,14 @@
     "appid": 739630,
     "name": "Phasmophobia",
     "hours": 3.6,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/739630/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/739630/header.jpg",
+    "achievements": {
+      "total": 2,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/739630/74b25aa3b137110bbbb4d9f76a6520a048ef36f2.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/739630/ed2d08f4f65a4c66d9af48a925c1b2a0be04e3b7.jpg"
+      ]
+    }
   },
   {
     "appid": 230290,
@@ -63,37 +116,81 @@
     "appid": 3527290,
     "name": "PEAK",
     "hours": 2.5,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
+    "achievements": {
+      "total": 7,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/5401aa59d9da99722a2b440cedf2bbe39baef566.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/7687e0907862bf82f0d64161bfbd9fa548482e32.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/97cb4ca98da4fccf015d3dd893937b3a9172f62e.jpg"
+      ]
+    }
   },
   {
     "appid": 433340,
     "name": "Slime Rancher",
     "hours": 2.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
+    "achievements": {
+      "total": 6,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg"
+      ]
+    }
   },
   {
     "appid": 1326470,
     "name": "Sons Of The Forest",
     "hours": 2.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
+    "achievements": {
+      "total": 1,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
+      ]
+    }
   },
   {
     "appid": 588650,
     "name": "Dead Cells",
     "hours": 1.4,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
+    "achievements": {
+      "total": 9,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/6340544ea022c62372f0a889bc0ec5abe46bd94d.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/225a7c1f80f893166b28d820c18aefd92c91a7b2.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/64d0624a5f0d5eef000376524da46aae816c63f6.jpg"
+      ]
+    }
   },
   {
     "appid": 2448970,
     "name": "Dungeonborne",
     "hours": 1.4,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2448970/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2448970/header.jpg",
+    "achievements": {
+      "total": 1,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2448970/e9e8df6c8e54fc45ea94e3832199afb7d518cb6d.jpg"
+      ]
+    }
   },
   {
     "appid": 704270,
     "name": "Generation Zero®",
     "hours": 1.1,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg"
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
+    "achievements": {
+      "total": 5,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/428059cc5add2d69a35170fc72caec94cc3a3a2b.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f92aa443b3205dda9f9efac51ae0113367fb3b8.jpg"
+      ]
+    }
   },
   {
     "appid": 782670,
