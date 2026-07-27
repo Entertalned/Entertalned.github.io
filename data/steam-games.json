@@ -78,6 +78,12 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg"
   },
   {
+    "appid": 588650,
+    "name": "Dead Cells",
+    "hours": 1.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg"
+  },
+  {
     "appid": 2448970,
     "name": "Dungeonborne",
     "hours": 1.4,
