@@ -600,16 +600,19 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   gap: 0.3rem;
   margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
 }
-.wheel-card-ach-icon {
+.wheel-card-achievements .wheel-card-ach-icon {
   width: 20px;
   height: 20px;
+  aspect-ratio: 1 / 1;
   border: 1px solid var(--border);
   object-fit: cover;
   background: var(--bg);
   flex-shrink: 0;
 }
-.wheel-card-ach-more {
+.wheel-card-achievements .wheel-card-ach-more {
   font-family: var(--font-mono);
   font-size: 0.6rem;
   color: var(--text-dim);

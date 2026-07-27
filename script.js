@@ -8,62 +8,60 @@ const CONFIG = {
 
   // Your GitHub username — used to pull repos + contributors live from the API,
   // and to build the language-stats card shown on hover over the GitHub link.
-  githubUsername: "entertalned",
+  githubUsername: "Entertalned",
 
   // Two small achievement badges shown top-left, next to your name in the nav.
   // Drop your own badge images in an /assets folder and point "img" at them
   // (e.g. GitHub profile achievement icons — save them locally, since GitHub
   // doesn't expose them through a public API). Leave "img" empty for a blank slot.
   achievements: [
-    { img: "", alt: "Achievement badge 1" },
-    { img: "", alt: "Achievement badge 2" }
+{ img: "https://raw.githubusercontent.com/Entertalned/Entertalned.github.io/refs/heads/main/assets/autodesk-revit-architecture-certified-user(1).png", alt: "Achievement badge 1" },
+{ img: "https://raw.githubusercontent.com/Entertalned/Entertalned.github.io/refs/heads/main/assets/autodesk-autocad-certified-user(1).png", alt: "Achievement badge 2" }
   ],
 
   // Optional: hand-pick which repos show in the carousel, in this order.
   // Leave as an empty array to auto-pull your most recently updated public repos instead.
-  pinnedRepos: [], // e.g. ["my-cool-project", "another-repo"]
+  pinnedRepos: ["Survev.io-CSS-Script", "GUI-Project", "RobloxNotetaking", "Entertalned.github.io"], // e.g. ["my-cool-project", "another-repo"]
 
   // How many repos to show if pinnedRepos is empty.
-  repoCount: 8,
+  repoCount: 0,
 
-  tagline: "developer · gamer · anime enjoyer",
+  tagline: "Python Coder · Beatboxer",
 
   about: [
-    "Hey, I'm <strong>Your Name</strong> — replace this whole block in script.js (CONFIG.about) with your actual bio.",
-    "Talk about what you do, what you're into, what you're building. A couple of short paragraphs works better than a wall of text.",
-    "This section pulls straight from the CONFIG.about array below, one string per paragraph, so you can add or remove lines freely."
+    "Hey, I'm <strong>Enter</strong> — You probably know me off of roblox or discord.",
+    "I like to code, play video games, and do a lot of other stuff in my free time. Currently looking for a job because I just graduated HS!",
+    "I'm also a dude, and I would like to become a suicide hotline operator."
   ],
 
   specs: [
-    { key: "cpu",     value: "AMD Ryzen 7 7800X3D" },
-    { key: "gpu",     value: "NVIDIA RTX 4070 Ti Super" },
-    { key: "ram",     value: "32GB DDR5 6000MHz" },
-    { key: "storage", value: "2TB NVMe SSD" },
-    { key: "os",      value: "Windows 11 / Arch Linux dual-boot" },
-    { key: "monitor", value: "27\" 1440p 165Hz" },
-    { key: "periph",  value: "mechanical keyboard, wireless mouse" }
+    { key: "CPU",     value: "Intel(R) Core(TM) i3-10105F CPU" },
+    { key: "GPU",     value: "NVIDIA Geforce GTX 1650" },
+    { key: "RAM",     value: "16 GB DDR4" },
+    { key: "Storage", value: "500 GB CARDBOARD BOX" },
+    { key: "OS",      value: "Windows 11" },
+    { key: "Monitor", value: " 75Hz Piece of Shit"  },
+    { key: "Microphone",  value: "Hyper X Mic(With Steel Series Sonar AI tech)" },
+    { key: "Accessories",  value: "I don't even fucking know." }
   ],
 
   // icon options below: "steam", "discord", "anime", "github", "spotify", "twitter", "twitch", "link"
   socials: [
-    { label: "Discord", handle: "yourname",        url: "https://discord.com/users/yourid",         icon: "discord" },
-    { label: "GitHub",  handle: "@entertalned", url: "https://github.com/entertalned", icon: "github" },
-    // Spotify: just a plain link card, no hover popover. Building "now playing"
-    // needs a one-time OAuth login + a stored refresh token (same kind of
-    // secret-handling as the Steam sync) — say the word if you want that later.
-    { label: "Spotify", handle: "yourhandle",      url: "https://open.spotify.com/user/yourhandle",  icon: "spotify" }
+    { label: "Discord", handle: "entertalned",        url: "https://discord.com/users/1238225742802849823",         icon: "discord" },
+    { label: "GitHub",  handle: "" + "Entertalned", url: "https://github.com/Entertalned", icon: "github" },
+    { label: "Spotify",  handle: "" + "Slim Shawty", url: "https://open.spotify.com/user/r9osb2ioqnlw8kpui185y33wx?si=f1783f748bfb4e17", icon: "Spotify" }
   ],
 
   // Profile links shown as "See profile" under the Steam/Anime carousels
   // (Steam and MyAnimeList used to also be Connect cards — removed since
   // they now have their own full sections, this is their new home).
-  steamProfileUrl: "https://steamcommunity.com/id/yourhandle",
+  steamProfileUrl: "https://steamcommunity.com/id/SuperLovesUnturned/",
   malProfileUrl: "https://myanimelist.net/animelist/Entertained?status=2",
 
   // Not used directly by script.js — kept here for reference. The actual
   // MAL username lives in .github/workflows/mal-sync.yml (MAL_USERNAME),
   // since that Action runs separately from this file.
-  malUsername: "Entertained",
+  malUsername: "Entertalned",
 
   // Path to the JSON file the mal-sync GitHub Action writes to.
   malDataUrl: "data/mal-list.json",
@@ -376,7 +374,7 @@ function renderAchievementRow(achievements) {
   const shown = achievements.icons.slice(0, 3);
   const total = achievements.total ?? shown.length;
   const remaining = Math.max(total - shown.length, 0);
-  const icons = shown.map(src => `<img class="wheel-card-ach-icon" src="${src}" alt="" loading="lazy" draggable="false">`).join("");
+  const icons = shown.map(src => `<img class="wheel-card-ach-icon" style="width:20px;height:20px;object-fit:cover;" src="${src}" alt="" loading="lazy" draggable="false">`).join("");
   const more = remaining > 0 ? `<span class="wheel-card-ach-more">+${remaining}</span>` : "";
   return `<div class="wheel-card-achievements" aria-hidden="true">${icons}${more}</div>`;
 }
@@ -574,7 +572,7 @@ async function fetchRepos() {
 
     renderCarousel(withContributors);
   } catch (err) {
-    statusEl.textContent = `couldn't load projects (${err.message}). Set CONFIG.githubUsername in script.js to your GitHub username.`;
+    statusEl.textContent = `couldn't load projects (${err.message}). (Most likely API ERROR)`;
   }
 }
 
