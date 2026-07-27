@@ -1,5 +1,3 @@
-name: Sync Steam library
-
 # Runs server-side on GitHub's infrastructure, not in the visitor's browser —
 # this is the only place your Steam API key is ever used, read from a repo
 # secret and never written into any file GitHub Pages actually serves.
@@ -7,15 +5,17 @@ on:
   schedule:
     - cron: "0 */6 * * *"   # every 6 hours
   workflow_dispatch:         # lets you trigger it manually from the Actions tab
-
 permissions:
   contents: write
-
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"   # guarantees global fetch() is available below
 
       - name: Fetch owned games from the Steam Web API
         env:
@@ -25,18 +25,15 @@ jobs:
           mkdir -p data
           curl -s "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&format=json&include_appinfo=true&include_played_free_games=true" \
             -o /tmp/steam-raw.json
-
           if ! grep -q '"response"' /tmp/steam-raw.json; then
             echo "Unexpected response from the Steam API. First 500 characters, for debugging:"
             head -c 500 /tmp/steam-raw.json
             echo ""
             exit 1
           fi
-
           node -e '
             const fs = require("fs");
             const raw = JSON.parse(fs.readFileSync("/tmp/steam-raw.json", "utf8"));
-
             if (!raw.response || Object.keys(raw.response).length === 0) {
               console.log("Steam returned an empty response object.");
               console.log("Most likely cause: the profile Game details privacy is not");
@@ -44,7 +41,6 @@ jobs:
               console.log("Leaving the existing data/steam-games.json untouched.");
               process.exit(0);
             }
-
             const games = (raw.response.games || [])
               .filter(g => g.playtime_forever > 0)
               .sort((a, b) => b.playtime_forever - a.playtime_forever)
@@ -54,9 +50,73 @@ jobs:
                 hours: Math.round((g.playtime_forever / 60) * 10) / 10,
                 header: `https://cdn.cloudflare.steamstatic.com/steam/apps/${g.appid}/header.jpg`
               }));
-
             fs.writeFileSync("data/steam-games.json", JSON.stringify(games, null, 2) + "\n");
             console.log(`wrote ${games.length} games to data/steam-games.json`);
+          '
+
+      - name: Fetch achievement highlights for each game
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          STEAM_ID: ${{ secrets.STEAM_ID }}
+        run: |
+          node -e '
+            const fs = require("fs");
+
+            // Adds g.achievements = { total, icons } to each game, where
+            // "total" is how many achievements are unlocked for that game
+            // and "icons" is up to 3 icon URLs for the most recently
+            // unlocked ones (what the site shows below each card, with a
+            // "+N" for the rest). Games with achievements disabled/hidden,
+            // or with zero unlocked, are simply left without the field —
+            // the site already handles that case by showing no row.
+            async function main() {
+              const games = JSON.parse(fs.readFileSync("data/steam-games.json", "utf8"));
+              const key = process.env.STEAM_API_KEY;
+              const steamid = process.env.STEAM_ID;
+
+              for (const g of games) {
+                try {
+                  const achRes = await fetch(`https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?appid=${g.appid}&key=${key}&steamid=${steamid}`);
+                  if (!achRes.ok) continue;
+                  const achData = await achRes.json();
+                  const stats = achData.playerstats;
+                  if (!stats || !stats.success || !stats.achievements) continue;
+
+                  const unlocked = stats.achievements
+                    .filter(a => a.achieved === 1)
+                    .sort((a, b) => (b.unlocktime || 0) - (a.unlocktime || 0));
+                  if (unlocked.length === 0) continue;
+
+                  const schemaRes = await fetch(`https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${key}&appid=${g.appid}`);
+                  if (!schemaRes.ok) continue;
+                  const schemaData = await schemaRes.json();
+                  const defs = schemaData.game &&
+                    schemaData.game.availableGameStats &&
+                    schemaData.game.availableGameStats.achievements;
+                  if (!defs) continue;
+
+                  const iconByName = {};
+                  for (const d of defs) iconByName[d.name] = d.icon;
+
+                  const icons = unlocked
+                    .slice(0, 3)
+                    .map(a => iconByName[a.apiname])
+                    .filter(Boolean);
+                  if (icons.length === 0) continue;
+
+                  g.achievements = { total: unlocked.length, icons };
+                } catch {
+                  // one game failing (e.g. stats disabled for that app)
+                  // should not block the rest of the library
+                }
+                await new Promise(r => setTimeout(r, 150)); // stay polite to the API
+              }
+
+              fs.writeFileSync("data/steam-games.json", JSON.stringify(games, null, 2) + "\n");
+              console.log("done adding achievement highlights");
+            }
+
+            main();
           '
 
       - name: Commit updated data

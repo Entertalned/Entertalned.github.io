@@ -535,7 +535,7 @@ a { color: inherit; text-decoration: none; }
 }
 .wheel-stage::-webkit-scrollbar { display: none; }
 .wheel-stage:active { cursor: grabbing; }
-.wheel-stage--steam { height: 210px; padding: 0 calc(50% - 95px); }
+.wheel-stage--steam { height: 240px; padding: 0 calc(50% - 95px); }
 /* Anime cards are now narrower (130px vs Steam's 190px) so a portrait
    cover ends up close to the same overall size as a landscape box-art
    card instead of towering over it — see .wheel-card--portrait below. */
@@ -592,6 +592,34 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-mono);
   font-size: 0.64rem;
   color: var(--red);
+}
+
+.wheel-card-achievements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+.wheel-card-ach-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.wheel-card-ach-more {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .profile-link {
@@ -820,7 +848,7 @@ a { color: inherit; text-decoration: none; }
      cards reachable to true-center (half of each card's width). */
   .wheel-card { flex-basis: 140px; }
   .wheel-card--portrait { flex-basis: 100px; }
-  .wheel-stage--steam { height: 165px; padding: 0 calc(50% - 70px); }
+  .wheel-stage--steam { height: 190px; padding: 0 calc(50% - 70px); }
   .wheel-stage--mal { height: 210px; padding: 0 calc(50% - 50px); }
 
   /* fixed 130px key column got tight once the value line wraps —
