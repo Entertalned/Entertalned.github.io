@@ -100,5 +100,11 @@
     "name": "Project Zomboid",
     "hours": 0.6,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
+  },
+  {
+    "appid": 588650,
+    "name": "Dead Cells",
+    "hours": 0.1,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg"
   }
 ]
