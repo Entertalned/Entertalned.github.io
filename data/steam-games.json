@@ -88,6 +88,20 @@
     }
   },
   {
+    "appid": 588650,
+    "name": "Dead Cells",
+    "hours": 5.5,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
+    "achievements": {
+      "total": 20,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/fd22f6fb9405725b020d7b7d206cd7b96989610c.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/a29a4bec0f27a7de2ac488064c45922608f4de75.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/e3d4dad3a4ca36e10c610676158519e3fa65b7b0.jpg"
+      ]
+    }
+  },
+  {
     "appid": 2881650,
     "name": "Content Warning",
     "hours": 4.8,
@@ -149,20 +163,6 @@
       "total": 1,
       "icons": [
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 588650,
-    "name": "Dead Cells",
-    "hours": 1.4,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
-    "achievements": {
-      "total": 9,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/6340544ea022c62372f0a889bc0ec5abe46bd94d.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/225a7c1f80f893166b28d820c18aefd92c91a7b2.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/64d0624a5f0d5eef000376524da46aae816c63f6.jpg"
       ]
     }
   },
