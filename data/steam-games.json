@@ -93,11 +93,11 @@
     "hours": 5.8,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
     "achievements": {
-      "total": 20,
+      "total": 21,
       "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/d83a5abc11563ffdf1c637ba17db372720d4a497.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/fd22f6fb9405725b020d7b7d206cd7b96989610c.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/a29a4bec0f27a7de2ac488064c45922608f4de75.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/e3d4dad3a4ca36e10c610676158519e3fa65b7b0.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/a29a4bec0f27a7de2ac488064c45922608f4de75.jpg"
       ]
     }
   },
