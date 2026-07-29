@@ -74,6 +74,20 @@
     }
   },
   {
+    "appid": 588650,
+    "name": "Dead Cells",
+    "hours": 10.6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
+    "achievements": {
+      "total": 37,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/5ff4a5f487f57aed679949f05c10372729b0b54a.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/cd2b15c477b90c8463f31584b383bbae1049777e.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/d58c580c15b9aa8aa9f02c18c76e408bef46dea1.jpg"
+      ]
+    }
+  },
+  {
     "appid": 49520,
     "name": "Borderlands 2",
     "hours": 9,
@@ -84,20 +98,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/46fd68f506f2ee8c3f8019ca49c6bc735a7f3f7a.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/0c8bb0bb9caa4c0a6391d2e1163d3cf6d29dbffd.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/eef2ce58e116ea0cd1e5b9d6a82968ebd22b843d.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 588650,
-    "name": "Dead Cells",
-    "hours": 8.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
-    "achievements": {
-      "total": 32,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/41baff6d953900352da041c6db439de2e434210a.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/217d776600011a0c2d29fea974f43df0b362ec78.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/1c9a2666a9da0fbf94f2a58359f89d427a185dc9.jpg"
       ]
     }
   },
