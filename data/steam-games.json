@@ -46,6 +46,20 @@
     }
   },
   {
+    "appid": 588650,
+    "name": "Dead Cells",
+    "hours": 20.5,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
+    "achievements": {
+      "total": 48,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/a36d80e10e1335d0f933ab3f550c03c71dd40e11.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/81df33c2b65fba0aa3dedf7a02d015245b0050db.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/b8fa7241d6e2f1f319cb1d7d82db4794756e125c.jpg"
+      ]
+    }
+  },
+  {
     "appid": 246620,
     "name": "Plague Inc: Evolved",
     "hours": 19.1,
@@ -56,20 +70,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/add34a5d580508190d14df94d8cae54c4d76df10.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/356cc2376535b39baaa1f121634e1d262e615229.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/8449d19d57ef0c2f79e15e94eca03579ce1f3ec5.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 588650,
-    "name": "Dead Cells",
-    "hours": 16.5,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
-    "achievements": {
-      "total": 44,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/812814d2ce0e6bcca5114c37e7a0e73a8f56e1fb.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/6f945ffdf202073fc045683ebeeb244679b5338a.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/5bb55f0688e2abaf96eb6b6a738c3347b8c9daa7.jpg"
       ]
     }
   },
