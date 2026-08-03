@@ -48,14 +48,14 @@
   {
     "appid": 588650,
     "name": "Dead Cells",
-    "hours": 25.6,
+    "hours": 27.2,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
     "achievements": {
-      "total": 51,
+      "total": 56,
       "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/c3157c20bed26fe798ec26ae35c13e4b4aa2c27c.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/b3db962f5d72d6c4eab9a0b0a754462509ea5e87.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/1aec079643aa1358a797645b946607ca73bbbea1.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/04bc30c324be50a31afe33ad0a5bfe7b389588ff.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/58a8e13072225ea2321362055f3059fbf6e57a2e.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/f7a72350ff0c8262f9d00ab75d6aa10b5a653ef4.jpg"
       ]
     }
   },
