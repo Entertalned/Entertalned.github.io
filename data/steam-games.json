@@ -179,6 +179,12 @@
     }
   },
   {
+    "appid": 108600,
+    "name": "Project Zomboid",
+    "hours": 1.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
+  },
+  {
     "appid": 704270,
     "name": "Generation Zero®",
     "hours": 1.1,
@@ -197,11 +203,5 @@
     "name": "Battle Tanks: World War II",
     "hours": 0.9,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/782670/header.jpg"
-  },
-  {
-    "appid": 108600,
-    "name": "Project Zomboid",
-    "hours": 0.8,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
   }
 ]
