@@ -167,6 +167,12 @@
     }
   },
   {
+    "appid": 108600,
+    "name": "Project Zomboid",
+    "hours": 1.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
+  },
+  {
     "appid": 2448970,
     "name": "Dungeonborne",
     "hours": 1.4,
@@ -177,12 +183,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2448970/e9e8df6c8e54fc45ea94e3832199afb7d518cb6d.jpg"
       ]
     }
-  },
-  {
-    "appid": 108600,
-    "name": "Project Zomboid",
-    "hours": 1.4,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
   },
   {
     "appid": 704270,
