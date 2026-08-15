@@ -62,7 +62,7 @@
   {
     "appid": 246620,
     "name": "Plague Inc: Evolved",
-    "hours": 19.1,
+    "hours": 19.4,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/246620/header.jpg",
     "achievements": {
       "total": 54,
@@ -141,6 +141,12 @@
     }
   },
   {
+    "appid": 108600,
+    "name": "Project Zomboid",
+    "hours": 2.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
+  },
+  {
     "appid": 433340,
     "name": "Slime Rancher",
     "hours": 2.3,
@@ -165,12 +171,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
       ]
     }
-  },
-  {
-    "appid": 108600,
-    "name": "Project Zomboid",
-    "hours": 1.7,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
   },
   {
     "appid": 2448970,
