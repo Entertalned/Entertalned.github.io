@@ -76,13 +76,13 @@
   {
     "appid": 433340,
     "name": "Slime Rancher",
-    "hours": 12.9,
+    "hours": 16.5,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
     "achievements": {
-      "total": 32,
+      "total": 47,
       "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg"
       ]
     }
