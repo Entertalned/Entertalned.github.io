@@ -74,6 +74,20 @@
     }
   },
   {
+    "appid": 433340,
+    "name": "Slime Rancher",
+    "hours": 12.9,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
+    "achievements": {
+      "total": 32,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg"
+      ]
+    }
+  },
+  {
     "appid": 242760,
     "name": "The Forest",
     "hours": 10.8,
@@ -98,20 +112,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/46fd68f506f2ee8c3f8019ca49c6bc735a7f3f7a.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/0c8bb0bb9caa4c0a6391d2e1163d3cf6d29dbffd.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/eef2ce58e116ea0cd1e5b9d6a82968ebd22b843d.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 433340,
-    "name": "Slime Rancher",
-    "hours": 7.7,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
-    "achievements": {
-      "total": 25,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg"
       ]
     }
   },
