@@ -127,6 +127,20 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/230290/header.jpg"
   },
   {
+    "appid": 433340,
+    "name": "Slime Rancher",
+    "hours": 2.8,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
+    "achievements": {
+      "total": 6,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg"
+      ]
+    }
+  },
+  {
     "appid": 3527290,
     "name": "PEAK",
     "hours": 2.5,
@@ -145,20 +159,6 @@
     "name": "Project Zomboid",
     "hours": 2.4,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
-  },
-  {
-    "appid": 433340,
-    "name": "Slime Rancher",
-    "hours": 2.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
-    "achievements": {
-      "total": 6,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg"
-      ]
-    }
   },
   {
     "appid": 1326470,
