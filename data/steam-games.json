@@ -60,6 +60,20 @@
     }
   },
   {
+    "appid": 433340,
+    "name": "Slime Rancher",
+    "hours": 19.6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
+    "achievements": {
+      "total": 51,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg"
+      ]
+    }
+  },
+  {
     "appid": 246620,
     "name": "Plague Inc: Evolved",
     "hours": 19.4,
@@ -70,20 +84,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/add34a5d580508190d14df94d8cae54c4d76df10.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/356cc2376535b39baaa1f121634e1d262e615229.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/8449d19d57ef0c2f79e15e94eca03579ce1f3ec5.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 433340,
-    "name": "Slime Rancher",
-    "hours": 16.5,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
-    "achievements": {
-      "total": 47,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg"
       ]
     }
   },
