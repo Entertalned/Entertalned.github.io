@@ -34,6 +34,20 @@
     }
   },
   {
+    "appid": 433340,
+    "name": "Slime Rancher",
+    "hours": 28.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
+    "achievements": {
+      "total": 55,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg"
+      ]
+    }
+  },
+  {
     "appid": 2524890,
     "name": "Pixel Gun 3D: PC Edition",
     "hours": 27.9,
@@ -56,20 +70,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/04bc30c324be50a31afe33ad0a5bfe7b389588ff.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/58a8e13072225ea2321362055f3059fbf6e57a2e.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/f7a72350ff0c8262f9d00ab75d6aa10b5a653ef4.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 433340,
-    "name": "Slime Rancher",
-    "hours": 26.4,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
-    "achievements": {
-      "total": 53,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg"
       ]
     }
   },
@@ -173,6 +173,20 @@
     }
   },
   {
+    "appid": 704270,
+    "name": "Generation Zero®",
+    "hours": 1.5,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
+    "achievements": {
+      "total": 5,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/428059cc5add2d69a35170fc72caec94cc3a3a2b.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f92aa443b3205dda9f9efac51ae0113367fb3b8.jpg"
+      ]
+    }
+  },
+  {
     "appid": 2448970,
     "name": "Dungeonborne",
     "hours": 1.4,
@@ -181,20 +195,6 @@
       "total": 1,
       "icons": [
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2448970/e9e8df6c8e54fc45ea94e3832199afb7d518cb6d.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 704270,
-    "name": "Generation Zero®",
-    "hours": 1.1,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
-    "achievements": {
-      "total": 5,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/428059cc5add2d69a35170fc72caec94cc3a3a2b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f92aa443b3205dda9f9efac51ae0113367fb3b8.jpg"
       ]
     }
   },
