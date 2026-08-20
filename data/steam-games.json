@@ -203,5 +203,18 @@
     "name": "Battle Tanks: World War II",
     "hours": 0.9,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/782670/header.jpg"
+  },
+  {
+    "appid": 960090,
+    "name": "Bloons TD 6",
+    "hours": 0.3,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/960090/header.jpg",
+    "achievements": {
+      "total": 2,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/960090/a387c0b4943507c7c9ac73e8a16ac17cc6989956.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/960090/14a6294547ba08c15201a962fa48d006dabba61f.jpg"
+      ]
+    }
   }
 ]
