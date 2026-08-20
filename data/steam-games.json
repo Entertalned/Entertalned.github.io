@@ -141,6 +141,20 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/230290/header.jpg"
   },
   {
+    "appid": 704270,
+    "name": "Generation Zero®",
+    "hours": 2.6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
+    "achievements": {
+      "total": 8,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/2e9f45c723385aeb11cc4f5bf50aa89b39d58d6b.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/f7e9dd32981e27d7f0b4bc216bd2b9dba807fbcd.jpg"
+      ]
+    }
+  },
+  {
     "appid": 3527290,
     "name": "PEAK",
     "hours": 2.5,
@@ -169,20 +183,6 @@
       "total": 1,
       "icons": [
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 704270,
-    "name": "Generation Zero®",
-    "hours": 1.5,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
-    "achievements": {
-      "total": 5,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/428059cc5add2d69a35170fc72caec94cc3a3a2b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f92aa443b3205dda9f9efac51ae0113367fb3b8.jpg"
       ]
     }
   },
