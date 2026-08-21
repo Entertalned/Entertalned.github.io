@@ -122,6 +122,20 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2881650/header.jpg"
   },
   {
+    "appid": 704270,
+    "name": "Generation Zero®",
+    "hours": 4.6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
+    "achievements": {
+      "total": 13,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/f8caf4c38ea1569174dd3ee9e48fdc9f99646d98.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg"
+      ]
+    }
+  },
+  {
     "appid": 739630,
     "name": "Phasmophobia",
     "hours": 3.6,
@@ -139,20 +153,6 @@
     "name": "Universe Sandbox",
     "hours": 3.2,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/230290/header.jpg"
-  },
-  {
-    "appid": 704270,
-    "name": "Generation Zero®",
-    "hours": 2.6,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
-    "achievements": {
-      "total": 8,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/2e9f45c723385aeb11cc4f5bf50aa89b39d58d6b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/f7e9dd32981e27d7f0b4bc216bd2b9dba807fbcd.jpg"
-      ]
-    }
   },
   {
     "appid": 3527290,
