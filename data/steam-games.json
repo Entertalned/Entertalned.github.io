@@ -36,14 +36,14 @@
   {
     "appid": 433340,
     "name": "Slime Rancher",
-    "hours": 29.9,
+    "hours": 31.7,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/433340/header.jpg",
     "achievements": {
-      "total": 56,
+      "total": 57,
       "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/951dbacc175f0bc66db9380741eb84c3757dff71.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg"
       ]
     }
   },
@@ -90,14 +90,14 @@
   {
     "appid": 704270,
     "name": "Generation Zero®",
-    "hours": 11.7,
+    "hours": 14.2,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
     "achievements": {
-      "total": 18,
+      "total": 19,
       "icons": [
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/66680d4fa495a6f13cf1ee3c3d7284de4e9e046d.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f88e791badf1cbf773d37d5d293016729b29b9e.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1a290759e13a5529151413efe852ea5ce71cc950.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/66680d4fa495a6f13cf1ee3c3d7284de4e9e046d.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f88e791badf1cbf773d37d5d293016729b29b9e.jpg"
       ]
     }
   },
