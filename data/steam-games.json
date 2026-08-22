@@ -22,7 +22,7 @@
   {
     "appid": 444640,
     "name": "Bloons TD Battles",
-    "hours": 34.3,
+    "hours": 34.4,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/444640/header.jpg",
     "achievements": {
       "total": 12,
@@ -90,14 +90,14 @@
   {
     "appid": 704270,
     "name": "Generation Zero®",
-    "hours": 14.2,
+    "hours": 16.7,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
     "achievements": {
-      "total": 19,
+      "total": 22,
       "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/66680d4fa495a6f13cf1ee3c3d7284de4e9e046d.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/66680d4fa495a6f13cf1ee3c3d7284de4e9e046d.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f88e791badf1cbf773d37d5d293016729b29b9e.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/39e86ed5b69f6d6b1f086602146419334c062b7b.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f88e791badf1cbf773d37d5d293016729b29b9e.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg"
       ]
     }
   },
