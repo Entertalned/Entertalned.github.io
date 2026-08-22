@@ -74,6 +74,20 @@
     }
   },
   {
+    "appid": 704270,
+    "name": "Generation Zero®",
+    "hours": 19.8,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
+    "achievements": {
+      "total": 25,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/66680d4fa495a6f13cf1ee3c3d7284de4e9e046d.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/f8caf4c38ea1569174dd3ee9e48fdc9f99646d98.jpg"
+      ]
+    }
+  },
+  {
     "appid": 246620,
     "name": "Plague Inc: Evolved",
     "hours": 19.4,
@@ -84,20 +98,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/add34a5d580508190d14df94d8cae54c4d76df10.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/356cc2376535b39baaa1f121634e1d262e615229.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/8449d19d57ef0c2f79e15e94eca03579ce1f3ec5.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 704270,
-    "name": "Generation Zero®",
-    "hours": 16.7,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
-    "achievements": {
-      "total": 22,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/39e86ed5b69f6d6b1f086602146419334c062b7b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f88e791badf1cbf773d37d5d293016729b29b9e.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg"
       ]
     }
   },
