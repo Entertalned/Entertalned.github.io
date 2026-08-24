@@ -2,7 +2,7 @@
   {
     "appid": 304930,
     "name": "Unturned",
-    "hours": 8316,
+    "hours": 8316.5,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/304930/header.jpg",
     "achievements": {
       "total": 49,
@@ -22,14 +22,14 @@
   {
     "appid": 704270,
     "name": "Generation Zero®",
-    "hours": 36.2,
+    "hours": 42,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
     "achievements": {
-      "total": 32,
+      "total": 33,
       "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f88e791badf1cbf773d37d5d293016729b29b9e.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/39e86ed5b69f6d6b1f086602146419334c062b7b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/f7e9dd32981e27d7f0b4bc216bd2b9dba807fbcd.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/ae276302afff4afc890d6dbf1da5b47d833d410f.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/f7e9dd32981e27d7f0b4bc216bd2b9dba807fbcd.jpg"
       ]
     }
   },
