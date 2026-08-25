@@ -22,14 +22,14 @@
   {
     "appid": 704270,
     "name": "Generation Zero®",
-    "hours": 42.5,
+    "hours": 49,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
     "achievements": {
-      "total": 33,
+      "total": 34,
       "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/66680d4fa495a6f13cf1ee3c3d7284de4e9e046d.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/1f88e791badf1cbf773d37d5d293016729b29b9e.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/39e86ed5b69f6d6b1f086602146419334c062b7b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/f7e9dd32981e27d7f0b4bc216bd2b9dba807fbcd.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/39e86ed5b69f6d6b1f086602146419334c062b7b.jpg"
       ]
     }
   },
