@@ -2,7 +2,7 @@
   {
     "appid": 304930,
     "name": "Unturned",
-    "hours": 8318.5,
+    "hours": 8320.3,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/304930/header.jpg",
     "achievements": {
       "total": 49,
@@ -14,15 +14,9 @@
     }
   },
   {
-    "appid": 1966720,
-    "name": "Lethal Company",
-    "hours": 71,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1966720/header.jpg"
-  },
-  {
     "appid": 704270,
     "name": "Generation Zero®",
-    "hours": 70.6,
+    "hours": 72.7,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
     "achievements": {
       "total": 36,
@@ -32,6 +26,12 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/704270/66680d4fa495a6f13cf1ee3c3d7284de4e9e046d.jpg"
       ]
     }
+  },
+  {
+    "appid": 1966720,
+    "name": "Lethal Company",
+    "hours": 71,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1966720/header.jpg"
   },
   {
     "appid": 444640,
@@ -90,14 +90,14 @@
   {
     "appid": 246620,
     "name": "Plague Inc: Evolved",
-    "hours": 19.4,
+    "hours": 21.1,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/246620/header.jpg",
     "achievements": {
-      "total": 54,
+      "total": 56,
       "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/add34a5d580508190d14df94d8cae54c4d76df10.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/356cc2376535b39baaa1f121634e1d262e615229.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/8449d19d57ef0c2f79e15e94eca03579ce1f3ec5.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/ef9f027b34b1514a13c13a06884dc2497b60a837.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/54892da76aed7ce33ec199b61c726bccf148ee58.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/add34a5d580508190d14df94d8cae54c4d76df10.jpg"
       ]
     }
   },
