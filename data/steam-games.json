@@ -16,7 +16,7 @@
   {
     "appid": 704270,
     "name": "Generation Zero®",
-    "hours": 73.1,
+    "hours": 74.5,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/704270/header.jpg",
     "achievements": {
       "total": 36,
@@ -185,6 +185,12 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
       ]
     }
+  },
+  {
+    "appid": 1419170,
+    "name": "My Singing Monsters",
+    "hours": 1.8,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1419170/header.jpg"
   },
   {
     "appid": 2448970,
