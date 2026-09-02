@@ -2,14 +2,14 @@
   {
     "appid": 304930,
     "name": "Unturned",
-    "hours": 8321.5,
+    "hours": 8321.6,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/304930/header.jpg",
     "achievements": {
-      "total": 49,
+      "total": 54,
       "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/94686819d20ed6b8b324f937fd97d8f3281db387.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/d46690f0f3c3c78f4d325ef8890ae7e8554f1f0b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/a7e74f48853ba5e6369adcacd169264c8bfbfe3f.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/6e569026395550159568db9895516800ae31fc95.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/5bd2df07143869ea444c4f2ae0d917c355b760c7.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/304930/83186a22c318da23f1ee9d2f255f658b59848f2d.jpg"
       ]
     }
   },
