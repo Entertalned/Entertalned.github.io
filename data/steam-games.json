@@ -130,6 +130,18 @@
     }
   },
   {
+    "appid": 1326470,
+    "name": "Sons Of The Forest",
+    "hours": 5.8,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
+    "achievements": {
+      "total": 1,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
+      ]
+    }
+  },
+  {
     "appid": 2881650,
     "name": "Content Warning",
     "hours": 4.8,
@@ -175,21 +187,9 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
   },
   {
-    "appid": 1326470,
-    "name": "Sons Of The Forest",
-    "hours": 2.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
-    "achievements": {
-      "total": 1,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
-      ]
-    }
-  },
-  {
     "appid": 1419170,
     "name": "My Singing Monsters",
-    "hours": 2.1,
+    "hours": 2.3,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1419170/header.jpg"
   },
   {
