@@ -102,6 +102,20 @@
     }
   },
   {
+    "appid": 1326470,
+    "name": "Sons Of The Forest",
+    "hours": 11.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
+    "achievements": {
+      "total": 3,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/b78cca7e125d9e3c29c80bdceca4c64b0dff0519.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/ff3982bcd15d7de6bbbed06d9c0f06aaa561a47e.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
+      ]
+    }
+  },
+  {
     "appid": 242760,
     "name": "The Forest",
     "hours": 10.8,
@@ -112,18 +126,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/519b16b82a539478198db74007f55801a3d669ab.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/765a83fa484c44da37e2009e21946fcb6250f38e.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/42d8a71cb24b2ae56471fc78743f772dfcd858f5.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 1326470,
-    "name": "Sons Of The Forest",
-    "hours": 9.1,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
-    "achievements": {
-      "total": 1,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/574d0dd3391c2d62357b912e51340e21502510cd.jpg"
       ]
     }
   },
@@ -148,6 +150,12 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2881650/header.jpg"
   },
   {
+    "appid": 1419170,
+    "name": "My Singing Monsters",
+    "hours": 3.8,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1419170/header.jpg"
+  },
+  {
     "appid": 739630,
     "name": "Phasmophobia",
     "hours": 3.6,
@@ -159,12 +167,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/739630/ed2d08f4f65a4c66d9af48a925c1b2a0be04e3b7.jpg"
       ]
     }
-  },
-  {
-    "appid": 1419170,
-    "name": "My Singing Monsters",
-    "hours": 3.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1419170/header.jpg"
   },
   {
     "appid": 230290,
