@@ -144,6 +144,20 @@
     }
   },
   {
+    "appid": 3527290,
+    "name": "PEAK",
+    "hours": 6.6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
+    "achievements": {
+      "total": 12,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/89f7a17e55764abe4b0d9b59ab514f3abfef9605.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/cd4367de9dca4e160bdf86297d7e9003cb791c74.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/c330833ce80ea47ee0093bacceda296dc7565e5c.jpg"
+      ]
+    }
+  },
+  {
     "appid": 1419170,
     "name": "My Singing Monsters",
     "hours": 5.4,
@@ -154,20 +168,6 @@
     "name": "Content Warning",
     "hours": 4.8,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2881650/header.jpg"
-  },
-  {
-    "appid": 3527290,
-    "name": "PEAK",
-    "hours": 4,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
-    "achievements": {
-      "total": 8,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/da9184f21ff1dae46b4de56ffda9a9458c4bfa09.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/5401aa59d9da99722a2b440cedf2bbe39baef566.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/7687e0907862bf82f0d64161bfbd9fa548482e32.jpg"
-      ]
-    }
   },
   {
     "appid": 739630,
