@@ -104,7 +104,7 @@
   {
     "appid": 1326470,
     "name": "Sons Of The Forest",
-    "hours": 18.6,
+    "hours": 18.9,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
     "achievements": {
       "total": 5,
@@ -112,6 +112,20 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/eba8a56cbf9297deea1b0eef9ad97c9643792143.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/678abf7ef62e1dfe1fb983ddea9375d17393ab56.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1326470/b78cca7e125d9e3c29c80bdceca4c64b0dff0519.jpg"
+      ]
+    }
+  },
+  {
+    "appid": 3527290,
+    "name": "PEAK",
+    "hours": 12.6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
+    "achievements": {
+      "total": 15,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/59f105343a7cda0259cfabd1992463f28dd95200.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/82d65f1b4dd1482707d2f2c2f74d52521adb8be1.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/a9e2236a6aa83d8cf0640e1317fb24bf27a2f5b0.jpg"
       ]
     }
   },
@@ -140,20 +154,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/46fd68f506f2ee8c3f8019ca49c6bc735a7f3f7a.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/0c8bb0bb9caa4c0a6391d2e1163d3cf6d29dbffd.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/eef2ce58e116ea0cd1e5b9d6a82968ebd22b843d.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 3527290,
-    "name": "PEAK",
-    "hours": 9,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
-    "achievements": {
-      "total": 14,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/82d65f1b4dd1482707d2f2c2f74d52521adb8be1.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/a9e2236a6aa83d8cf0640e1317fb24bf27a2f5b0.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/89f7a17e55764abe4b0d9b59ab514f3abfef9605.jpg"
       ]
     }
   },
