@@ -88,6 +88,20 @@
     }
   },
   {
+    "appid": 3527290,
+    "name": "PEAK",
+    "hours": 26.5,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
+    "achievements": {
+      "total": 36,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/adf04113ad409279bd2733d6ecc2504b96dc43a1.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/7904cc232eac6ffb345a96f2a265b1db4c1c535e.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/0a75723d2422fe320ec82d7d6a7c0749e9bb39dd.jpg"
+      ]
+    }
+  },
+  {
     "appid": 246620,
     "name": "Plague Inc: Evolved",
     "hours": 22,
@@ -98,20 +112,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/ef9f027b34b1514a13c13a06884dc2497b60a837.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/54892da76aed7ce33ec199b61c726bccf148ee58.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/246620/add34a5d580508190d14df94d8cae54c4d76df10.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 3527290,
-    "name": "PEAK",
-    "hours": 19,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
-    "achievements": {
-      "total": 25,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/68f452a9898f794532f05cb6167122dba64dfb57.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/d7fbe6dcb35a51e67be5f38023b99b7cc90e4dd1.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/4cfa107040054253f82d9d3dbf69a97d84701c19.jpg"
       ]
     }
   },
