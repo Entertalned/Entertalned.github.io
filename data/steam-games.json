@@ -62,6 +62,20 @@
     }
   },
   {
+    "appid": 3527290,
+    "name": "PEAK",
+    "hours": 29.1,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
+    "achievements": {
+      "total": 39,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/e54c31508e016e0599a54dc344cd63a50cf04a00.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/9757dbabadd3711df0ad3706383b36375d210dbd.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/d370dcb90349afee0020fe3e3bb919f9f35c5092.jpg"
+      ]
+    }
+  },
+  {
     "appid": 2524890,
     "name": "Pixel Gun 3D: PC Edition",
     "hours": 27.9,
@@ -84,20 +98,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/d634329bb6271dd2b1cb38c0a5703364985aea9b.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/04bc30c324be50a31afe33ad0a5bfe7b389588ff.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/588650/58a8e13072225ea2321362055f3059fbf6e57a2e.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 3527290,
-    "name": "PEAK",
-    "hours": 26.5,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
-    "achievements": {
-      "total": 36,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/adf04113ad409279bd2733d6ecc2504b96dc43a1.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/7904cc232eac6ffb345a96f2a265b1db4c1c535e.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/0a75723d2422fe320ec82d7d6a7c0749e9bb39dd.jpg"
       ]
     }
   },
