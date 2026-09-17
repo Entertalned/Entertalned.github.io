@@ -34,6 +34,20 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1966720/header.jpg"
   },
   {
+    "appid": 3527290,
+    "name": "PEAK",
+    "hours": 34.9,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
+    "achievements": {
+      "total": 43,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/40606fe9cbafb08a0e15d20315829f6747b335f9.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/e15c55deafcdfd3e6cb185100384c75d0e44496c.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/4e13456429b07d12f2eb8cda87c4d46b408dd128.jpg"
+      ]
+    }
+  },
+  {
     "appid": 444640,
     "name": "Bloons TD Battles",
     "hours": 34.4,
@@ -58,20 +72,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/233a65b34e21ed6e2ea81153e2e40305d3516d84.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/433340/8da3e5c9b92d1edcfb34e1cd1824cba9721cadd4.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 3527290,
-    "name": "PEAK",
-    "hours": 31.1,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
-    "achievements": {
-      "total": 40,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/cd63536e849abccb956946a00f8d9ee99009af81.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/e54c31508e016e0599a54dc344cd63a50cf04a00.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/9757dbabadd3711df0ad3706383b36375d210dbd.jpg"
       ]
     }
   },
