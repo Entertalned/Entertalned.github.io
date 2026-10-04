@@ -224,5 +224,11 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/960090/14a6294547ba08c15201a962fa48d006dabba61f.jpg"
       ]
     }
+  },
+  {
+    "appid": 2221490,
+    "name": "Tom Clancy's The Division 2",
+    "hours": 0,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg"
   }
 ]
