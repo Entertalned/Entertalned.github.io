@@ -36,7 +36,7 @@
   {
     "appid": 3527290,
     "name": "PEAK",
-    "hours": 37.4,
+    "hours": 38.7,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
     "achievements": {
       "total": 44,
@@ -164,6 +164,20 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1419170/header.jpg"
   },
   {
+    "appid": 2221490,
+    "name": "Tom Clancy's The Division 2",
+    "hours": 5,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
+    "achievements": {
+      "total": 3,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/7244235d990907b9e3452cbde2d5213ff6869123.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/248f54f45b22a10464ff10efa823ad9dfbe6ba87.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/ff4e103b161c7c09f2cb4f85f5158f6ba21fa12f.jpg"
+      ]
+    }
+  },
+  {
     "appid": 2881650,
     "name": "Content Warning",
     "hours": 4.8,
@@ -203,18 +217,6 @@
       "total": 1,
       "icons": [
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2448970/e9e8df6c8e54fc45ea94e3832199afb7d518cb6d.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 2221490,
-    "name": "Tom Clancy's The Division 2",
-    "hours": 1.1,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
-    "achievements": {
-      "total": 1,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/ff4e103b161c7c09f2cb4f85f5158f6ba21fa12f.jpg"
       ]
     }
   },
