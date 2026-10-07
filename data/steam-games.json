@@ -158,15 +158,9 @@
     }
   },
   {
-    "appid": 1419170,
-    "name": "My Singing Monsters",
-    "hours": 5.4,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1419170/header.jpg"
-  },
-  {
     "appid": 2221490,
     "name": "Tom Clancy's The Division 2",
-    "hours": 5,
+    "hours": 6.3,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
     "achievements": {
       "total": 3,
@@ -176,6 +170,12 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/ff4e103b161c7c09f2cb4f85f5158f6ba21fa12f.jpg"
       ]
     }
+  },
+  {
+    "appid": 1419170,
+    "name": "My Singing Monsters",
+    "hours": 5.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1419170/header.jpg"
   },
   {
     "appid": 2881650,
