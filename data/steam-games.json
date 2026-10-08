@@ -160,14 +160,14 @@
   {
     "appid": 2221490,
     "name": "Tom Clancy's The Division 2",
-    "hours": 6.5,
+    "hours": 6.9,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
     "achievements": {
-      "total": 3,
+      "total": 4,
       "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/0c03f493ecf3f177a61fab3cf6372de6155987a9.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/7244235d990907b9e3452cbde2d5213ff6869123.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/248f54f45b22a10464ff10efa823ad9dfbe6ba87.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/ff4e103b161c7c09f2cb4f85f5158f6ba21fa12f.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/248f54f45b22a10464ff10efa823ad9dfbe6ba87.jpg"
       ]
     }
   },
