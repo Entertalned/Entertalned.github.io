@@ -144,6 +144,20 @@
     }
   },
   {
+    "appid": 2221490,
+    "name": "Tom Clancy's The Division 2",
+    "hours": 10,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
+    "achievements": {
+      "total": 6,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/7f161b561402ee77c4b11af253b442bee2ec68c9.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/69b762c6ed5a5cfee806336665b1df30b65c2d60.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/0c03f493ecf3f177a61fab3cf6372de6155987a9.jpg"
+      ]
+    }
+  },
+  {
     "appid": 49520,
     "name": "Borderlands 2",
     "hours": 9,
@@ -154,20 +168,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/46fd68f506f2ee8c3f8019ca49c6bc735a7f3f7a.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/0c8bb0bb9caa4c0a6391d2e1163d3cf6d29dbffd.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/eef2ce58e116ea0cd1e5b9d6a82968ebd22b843d.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 2221490,
-    "name": "Tom Clancy's The Division 2",
-    "hours": 6.9,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
-    "achievements": {
-      "total": 4,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/0c03f493ecf3f177a61fab3cf6372de6155987a9.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/7244235d990907b9e3452cbde2d5213ff6869123.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/248f54f45b22a10464ff10efa823ad9dfbe6ba87.jpg"
       ]
     }
   },
