@@ -130,6 +130,20 @@
     }
   },
   {
+    "appid": 2221490,
+    "name": "Tom Clancy's The Division 2",
+    "hours": 10.9,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
+    "achievements": {
+      "total": 6,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/7f161b561402ee77c4b11af253b442bee2ec68c9.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/69b762c6ed5a5cfee806336665b1df30b65c2d60.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/0c03f493ecf3f177a61fab3cf6372de6155987a9.jpg"
+      ]
+    }
+  },
+  {
     "appid": 242760,
     "name": "The Forest",
     "hours": 10.8,
@@ -140,20 +154,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/519b16b82a539478198db74007f55801a3d669ab.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/765a83fa484c44da37e2009e21946fcb6250f38e.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/42d8a71cb24b2ae56471fc78743f772dfcd858f5.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 2221490,
-    "name": "Tom Clancy's The Division 2",
-    "hours": 10,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
-    "achievements": {
-      "total": 6,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/7f161b561402ee77c4b11af253b442bee2ec68c9.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/69b762c6ed5a5cfee806336665b1df30b65c2d60.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/0c03f493ecf3f177a61fab3cf6372de6155987a9.jpg"
       ]
     }
   },
