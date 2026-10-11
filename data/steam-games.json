@@ -118,7 +118,7 @@
   {
     "appid": 1326470,
     "name": "Sons Of The Forest",
-    "hours": 18.9,
+    "hours": 19,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1326470/header.jpg",
     "achievements": {
       "total": 5,
@@ -132,7 +132,7 @@
   {
     "appid": 2221490,
     "name": "Tom Clancy's The Division 2",
-    "hours": 10.9,
+    "hours": 11.4,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221490/header.jpg",
     "achievements": {
       "total": 6,
@@ -205,7 +205,7 @@
   {
     "appid": 108600,
     "name": "Project Zomboid",
-    "hours": 2.4,
+    "hours": 2.6,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
   },
   {
