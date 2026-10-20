@@ -238,5 +238,11 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/960090/14a6294547ba08c15201a962fa48d006dabba61f.jpg"
       ]
     }
+  },
+  {
+    "appid": 452060,
+    "name": "Caveblazers",
+    "hours": 0,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/452060/header.jpg"
   }
 ]
