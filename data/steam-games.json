@@ -172,6 +172,20 @@
     }
   },
   {
+    "appid": 1468260,
+    "name": "Leaf Blower Revolution - Idle Game",
+    "hours": 6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1468260/header.jpg",
+    "achievements": {
+      "total": 12,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/e499fec631521f7f5272ee25ea875b9ad11ee855.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/77a5de6cac8b3f722c51b6fa9fd9bd6da8e1b987.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/9d0c63ef700e561d0b0e5d4eee4560c359f2715c.jpg"
+      ]
+    }
+  },
+  {
     "appid": 1419170,
     "name": "My Singing Monsters",
     "hours": 5.4,
