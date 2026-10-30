@@ -2,7 +2,7 @@
   {
     "appid": 304930,
     "name": "Unturned",
-    "hours": 8330.2,
+    "hours": 8330.8,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/304930/header.jpg",
     "achievements": {
       "total": 54,
@@ -144,6 +144,20 @@
     }
   },
   {
+    "appid": 1468260,
+    "name": "Leaf Blower Revolution - Idle Game",
+    "hours": 11.6,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1468260/header.jpg",
+    "achievements": {
+      "total": 16,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/a24ff9c09a601bd15a19ede0081247c90ac55757.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/c3f265252fac8dc32f79d2d3be49e982e85afa3b.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/b53cef89a9c38245773c2a0733b375b34454e2a4.jpg"
+      ]
+    }
+  },
+  {
     "appid": 242760,
     "name": "The Forest",
     "hours": 10.8,
@@ -154,20 +168,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/519b16b82a539478198db74007f55801a3d669ab.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/765a83fa484c44da37e2009e21946fcb6250f38e.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/242760/42d8a71cb24b2ae56471fc78743f772dfcd858f5.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 1468260,
-    "name": "Leaf Blower Revolution - Idle Game",
-    "hours": 9.1,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1468260/header.jpg",
-    "achievements": {
-      "total": 16,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/a24ff9c09a601bd15a19ede0081247c90ac55757.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/c3f265252fac8dc32f79d2d3be49e982e85afa3b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/b53cef89a9c38245773c2a0733b375b34454e2a4.jpg"
       ]
     }
   },
