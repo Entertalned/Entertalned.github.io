@@ -116,6 +116,20 @@
     }
   },
   {
+    "appid": 1468260,
+    "name": "Leaf Blower Revolution - Idle Game",
+    "hours": 19.4,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1468260/header.jpg",
+    "achievements": {
+      "total": 16,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/a24ff9c09a601bd15a19ede0081247c90ac55757.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/c3f265252fac8dc32f79d2d3be49e982e85afa3b.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/b53cef89a9c38245773c2a0733b375b34454e2a4.jpg"
+      ]
+    }
+  },
+  {
     "appid": 1326470,
     "name": "Sons Of The Forest",
     "hours": 19,
@@ -140,20 +154,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/8c560e09170e231916f9edfbfbf7afa9976e8531.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/818b477e00fa035c6f8e1aa07b446d22a8bcd5ae.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/2221490/19549cc5ef0b947563936acf18bc01ce7301946f.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 1468260,
-    "name": "Leaf Blower Revolution - Idle Game",
-    "hours": 15.9,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/1468260/header.jpg",
-    "achievements": {
-      "total": 16,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/a24ff9c09a601bd15a19ede0081247c90ac55757.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/c3f265252fac8dc32f79d2d3be49e982e85afa3b.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/1468260/b53cef89a9c38245773c2a0733b375b34454e2a4.jpg"
       ]
     }
   },
