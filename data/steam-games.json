@@ -36,14 +36,14 @@
   {
     "appid": 3527290,
     "name": "PEAK",
-    "hours": 50.9,
+    "hours": 52.7,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/3527290/header.jpg",
     "achievements": {
-      "total": 53,
+      "total": 54,
       "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/7b9dca4f5bd14effe9605284fad4e54bf42bbdd7.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/05543471ee7f7ab73d2c873b6157ca2c5cfa7b27.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/437385b0e5c2930db3496429ffb06a135f21d197.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/537908bead031f940981ca6de3eec545619075f5.jpg"
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/3527290/437385b0e5c2930db3496429ffb06a135f21d197.jpg"
       ]
     }
   },
