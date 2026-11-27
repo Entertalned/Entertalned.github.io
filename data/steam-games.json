@@ -223,6 +223,19 @@
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
   },
   {
+    "appid": 552520,
+    "name": "Far Cry 5",
+    "hours": 2.3,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/552520/header.jpg",
+    "achievements": {
+      "total": 2,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/965dce58bed6addcf65c3b8cd678d624bbb44f4e.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/cf3a8d6d7e45e1c6c03a81eb31a63b5cf8e71e97.jpg"
+      ]
+    }
+  },
+  {
     "appid": 2448970,
     "name": "Dungeonborne",
     "hours": 1.4,
