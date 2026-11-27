@@ -186,6 +186,20 @@
     }
   },
   {
+    "appid": 552520,
+    "name": "Far Cry 5",
+    "hours": 5.5,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/552520/header.jpg",
+    "achievements": {
+      "total": 7,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/eedd7814800d34d21cb4f72f1dc919d30cf1f21d.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/35180c16b5e4ea062da6bbfe7ce1d32551284903.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/12e8e1ed8796284883aaf4e49eff037ecd70a88a.jpg"
+      ]
+    }
+  },
+  {
     "appid": 1419170,
     "name": "My Singing Monsters",
     "hours": 5.4,
@@ -221,19 +235,6 @@
     "name": "Project Zomboid",
     "hours": 2.6,
     "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/108600/header.jpg"
-  },
-  {
-    "appid": 552520,
-    "name": "Far Cry 5",
-    "hours": 2.3,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/552520/header.jpg",
-    "achievements": {
-      "total": 2,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/965dce58bed6addcf65c3b8cd678d624bbb44f4e.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/cf3a8d6d7e45e1c6c03a81eb31a63b5cf8e71e97.jpg"
-      ]
-    }
   },
   {
     "appid": 2448970,
