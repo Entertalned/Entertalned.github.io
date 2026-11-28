@@ -172,6 +172,20 @@
     }
   },
   {
+    "appid": 552520,
+    "name": "Far Cry 5",
+    "hours": 10.8,
+    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/552520/header.jpg",
+    "achievements": {
+      "total": 13,
+      "icons": [
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/88d5b65420bf48a8a5020ed1f62a71b951ec12b1.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/ef858fe080998ee9c3ae956110982b539e6d6329.jpg",
+        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/d00dc06520d3023348f4a7a0c9823521176b1447.jpg"
+      ]
+    }
+  },
+  {
     "appid": 49520,
     "name": "Borderlands 2",
     "hours": 9,
@@ -182,20 +196,6 @@
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/46fd68f506f2ee8c3f8019ca49c6bc735a7f3f7a.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/0c8bb0bb9caa4c0a6391d2e1163d3cf6d29dbffd.jpg",
         "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/49520/eef2ce58e116ea0cd1e5b9d6a82968ebd22b843d.jpg"
-      ]
-    }
-  },
-  {
-    "appid": 552520,
-    "name": "Far Cry 5",
-    "hours": 5.5,
-    "header": "https://cdn.cloudflare.steamstatic.com/steam/apps/552520/header.jpg",
-    "achievements": {
-      "total": 7,
-      "icons": [
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/eedd7814800d34d21cb4f72f1dc919d30cf1f21d.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/35180c16b5e4ea062da6bbfe7ce1d32551284903.jpg",
-        "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/552520/12e8e1ed8796284883aaf4e49eff037ecd70a88a.jpg"
       ]
     }
   },
